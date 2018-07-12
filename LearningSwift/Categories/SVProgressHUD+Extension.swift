@@ -1,9 +1,9 @@
 //
 //  SVProgressHUD+Extension.swift
-//  News
+//  LearningSwift
 //
-//  Created by 杨蒙 on 2017/12/23.
-//  Copyright © 2017年 hrscy. All rights reserved.
+//  Created by wangyuan on 2018/6/24.
+//  Copyright © 2018年 wangyuan. All rights reserved.
 //
 
 import SVProgressHUD

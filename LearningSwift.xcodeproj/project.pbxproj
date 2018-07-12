@@ -18,6 +18,10 @@
 		E04D877020DFA045006A6ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D876E20DFA045006A6ACD /* LaunchScreen.storyboard */; };
 		E04D877B20DFA046006A6ACD /* LearningSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D877A20DFA046006A6ACD /* LearningSwiftTests.swift */; };
 		E04D878620DFA046006A6ACD /* LearningSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */; };
+		E0C00BC820F7432400E1654F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C00BC720F7432400E1654F /* Emoji.swift */; };
+		E0C00BCC20F7434900E1654F /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BC920F7434900E1654F /* emojis.plist */; };
+		E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCA20F7434900E1654F /* emoji_sort.plist */; };
+		E0C00BCE20F7434900E1654F /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCB20F7434900E1654F /* emoji_mapping.plist */; };
 		E0F5687720EB10880017BED5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687620EB10880017BED5 /* Const.swift */; };
 		E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687820EC61CF0017BED5 /* NewsViewController.swift */; };
 		E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687A20EC766B0017BED5 /* MomentViewController.swift */; };
@@ -67,6 +71,10 @@
 		E04D878120DFA046006A6ACD /* LearningSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSwiftUITests.swift; sourceTree = "<group>"; };
 		E04D878720DFA046006A6ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0C00BC720F7432400E1654F /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		E0C00BC920F7434900E1654F /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
+		E0C00BCA20F7434900E1654F /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
+		E0C00BCB20F7434900E1654F /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
 		E0F5687620EB10880017BED5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E0F5687820EC61CF0017BED5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E0F5687A20EC766B0017BED5 /* MomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 		E044C79F20EB0A4200E9569B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E0C00BC720F7432400E1654F /* Emoji.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -175,6 +184,9 @@
 		E044C7A220EB0AE200E9569B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0C00BCB20F7434900E1654F /* emoji_mapping.plist */,
+				E0C00BCA20F7434900E1654F /* emoji_sort.plist */,
+				E0C00BC920F7434900E1654F /* emojis.plist */,
 				E0F5687F20EC77A20017BED5 /* default_theme.plist */,
 				E0F5687E20EC77A20017BED5 /* night_theme.plist */,
 				E04D876920DFA03C006A6ACD /* Main.storyboard */,
@@ -364,7 +376,10 @@
 			files = (
 				E04D877020DFA045006A6ACD /* LaunchScreen.storyboard in Resources */,
 				E04D876D20DFA045006A6ACD /* Assets.xcassets in Resources */,
+				E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */,
 				E04D876B20DFA03C006A6ACD /* Main.storyboard in Resources */,
+				E0C00BCE20F7434900E1654F /* emoji_mapping.plist in Resources */,
+				E0C00BCC20F7434900E1654F /* emojis.plist in Resources */,
 				E0F5688020EC77A20017BED5 /* night_theme.plist in Resources */,
 				E0F5688120EC77A20017BED5 /* default_theme.plist in Resources */,
 			);
@@ -462,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
