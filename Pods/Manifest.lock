@@ -7,9 +7,13 @@ PODS:
     - BMPlayer/Core
     - NVActivityIndicatorView (~> 4.0.0)
     - SnapKit (~> 4.0.0)
+  - CentrifugeiOS (5.0.1):
+    - IDZSwiftCommonCrypto (~> 0.10.0)
+    - Starscream (~> 3.0.4)
   - FDFullscreenPopGesture (1.1)
   - HandyJSON (4.1.1)
   - IBAnimatable (5.1.0)
+  - IDZSwiftCommonCrypto (0.10.0)
   - Kingfisher (4.8.0)
   - lottie-ios (2.5.0)
   - MJRefresh (3.1.15.3)
@@ -24,6 +28,7 @@ PODS:
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
   - SQLite.swift/standard (0.11.5)
+  - Starscream (3.0.5)
   - SVProgressHUD (2.2.5)
   - SwiftTheme (0.4.1)
   - SwiftyJSON (4.1.0)
@@ -31,6 +36,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - BMPlayer
+  - CentrifugeiOS
   - FDFullscreenPopGesture
   - HandyJSON (~> 4.1.1)
   - IBAnimatable
@@ -49,9 +55,11 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - BMPlayer
+    - CentrifugeiOS
     - FDFullscreenPopGesture
     - HandyJSON
     - IBAnimatable
+    - IDZSwiftCommonCrypto
     - Kingfisher
     - lottie-ios
     - MJRefresh
@@ -61,6 +69,7 @@ SPEC REPOS:
     - SGPagingView
     - SnapKit
     - SQLite.swift
+    - Starscream
     - SVProgressHUD
     - SwiftTheme
     - SwiftyJSON
@@ -68,9 +77,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   BMPlayer: 44eebf06eb01450dd14ea74b27d07c5222f0eed1
+  CentrifugeiOS: 1194c0928bda8f3cbbf3306d4165866e44a062e2
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
   IBAnimatable: dd81f8f22e9982b05e8ac50794e4c8988cc300f2
+  IDZSwiftCommonCrypto: 4eef2c46e262dfbcbc1fd76365e066336680ad7d
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -80,10 +91,11 @@ SPEC CHECKSUMS:
   SGPagingView: 5b6deb8fc907b7d5bdad2dbcf16a373c01400ff4
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: ce2e4639c6285343a3ba49eca229021ce884edf1
+PODFILE CHECKSUM: 6479e5889cc470d5b3f2348dfd34a8f28672d1a7
 
 COCOAPODS: 1.5.3

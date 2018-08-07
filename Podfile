@@ -24,5 +24,6 @@ target 'LearningSwift' do
   pod 'BMPlayer'
   pod 'FDFullscreenPopGesture'
   pod 'lottie-ios'
+  pod 'CentrifugeiOS'
 
 end
