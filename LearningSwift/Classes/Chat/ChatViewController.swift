@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ChatViewController: NSObject {
+class ChatViewController: UIViewController {
 
 }

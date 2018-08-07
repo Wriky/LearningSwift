@@ -25,6 +25,7 @@ class MainTabBarController: UITabBarController {
     private func addChildViewControllers() {
         setChildViewController(CommunityViewController(), title: "社区", imageName: "home")
         setChildViewController(VideoViewController(), title: "视频", imageName: "video")
+        setChildViewController(ChatViewController(), title: "聊天", imageName: "weitoutiao")
     }
     
     private func setChildViewController(_ childController:UIViewController, title:String, imageName: String) {

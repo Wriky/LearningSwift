@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		267C8289FB8B120DDB8C16B2 /* Pods_LearningSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F0AA6F2EAB9BBC19CDAA8E /* Pods_LearningSwift.framework */; };
 		E006B5A921199F7F0063F2A3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5A821199F7F0063F2A3 /* ChatViewController.swift */; };
+		E006B5B02119A3580063F2A3 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5AF2119A3580063F2A3 /* TableViewDataSource.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -57,6 +58,7 @@
 		53F0AA6F2EAB9BBC19CDAA8E /* Pods_LearningSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9E74CDE7CF43ABA8B59B3F /* Pods-LearningSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningSwift/Pods-LearningSwift.release.xcconfig"; sourceTree = "<group>"; };
 		E006B5A821199F7F0063F2A3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E006B5AF2119A3580063F2A3 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -151,17 +153,58 @@
 			path = MainTab;
 			sourceTree = "<group>";
 		};
+		E006B5AA2119A2CB0063F2A3 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				E04D876720DFA03C006A6ACD /* VideoViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		E006B5AB2119A2D60063F2A3 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */,
+				E0F5687A20EC766B0017BED5 /* MomentViewController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		E006B5AC2119A2DF0063F2A3 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5687820EC61CF0017BED5 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		E006B5AD2119A2EB0063F2A3 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E006B5A821199F7F0063F2A3 /* ChatViewController.swift */,
+				E006B5AF2119A3580063F2A3 /* TableViewDataSource.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		E006B5AE2119A3140063F2A3 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5688520EC7AEF0017BED5 /* RefreshHeader.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		E044C79C20EB098F00E9569B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E006B5AE2119A3140063F2A3 /* Refresh */,
+				E006B5AD2119A2EB0063F2A3 /* Chat */,
+				E006B5AC2119A2DF0063F2A3 /* News */,
+				E006B5AB2119A2D60063F2A3 /* Community */,
+				E006B5AA2119A2CB0063F2A3 /* Video */,
 				E006B5A72119792A0063F2A3 /* MainTab */,
 				E006B5A62119791D0063F2A3 /* Base */,
-				E04D876720DFA03C006A6ACD /* VideoViewController.swift */,
-				E0F5688520EC7AEF0017BED5 /* RefreshHeader.swift */,
-				E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */,
-				E0F5687820EC61CF0017BED5 /* NewsViewController.swift */,
-				E0F5687A20EC766B0017BED5 /* MomentViewController.swift */,
-				E006B5A821199F7F0063F2A3 /* ChatViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -504,6 +547,7 @@
 			files = (
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
+				E006B5B02119A3580063F2A3 /* TableViewDataSource.swift in Sources */,
 				E006B5A921199F7F0063F2A3 /* ChatViewController.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
