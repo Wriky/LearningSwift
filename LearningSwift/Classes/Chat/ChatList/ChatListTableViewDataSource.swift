@@ -1,5 +1,5 @@
 //
-//  ChatTableViewDataSource.swift
+//  ChatListTableViewDataSource.swift
 //  LearningSwift
 //
 //  Created by wangyuan on 2018/8/7.
@@ -13,15 +13,8 @@ struct TableViewItem {
     
 }
 
-extension ChatTableCell {
-    func configureWithItem(_ item : TableViewItem) {
-        self.textLabel?.text = item.title
-        self.detailTextLabel?.text = item.subTitle
-    }
-}
-
-class ChatTableViewDataSource: NSObject, UITableViewDataSource {
-    fileprivate var items = [TableViewItem]()
+class ChatListTableViewDataSource: NSObject, UITableViewDataSource {
+    var items = [TableViewItem]()
     
     func addItem(_ item: TableViewItem){
         items.append(item)
@@ -32,7 +25,7 @@ class ChatTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ChatTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ChatListTableCell
         cell.configureWithItem(items[indexPath.row])
         return cell
         

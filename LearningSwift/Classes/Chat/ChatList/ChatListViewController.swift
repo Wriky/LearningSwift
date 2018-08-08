@@ -1,5 +1,5 @@
 //
-//  ChatViewController.swift
+//  ChatListViewController.swift
 //  LearningSwift
 //
 //  Created by wangyuan on 2018/8/7.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ChatViewController: BaseViewController {
-    let dataSource = ChatTableViewDataSource()
+class ChatListViewController: BaseViewController {
+    let dataSource = ChatListTableViewDataSource()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = dataSource
         tableView.delegate = self;
-        tableView.register(ChatTableCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.register(ChatListTableCell.self, forCellReuseIdentifier: "cellIdentifier")
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
@@ -33,9 +33,11 @@ class ChatViewController: BaseViewController {
         }
         
         let array = ["Eggs", "Milk", "Vegetables"]
+        let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "头条发财中国年"]
         
-        for title in array {
-            self.addItem(title, subTitle: "sb"+title)
+        for (index, value) in array.enumerated() {
+            
+            self.addItem(value, subTitle: contentArray[index])
         }
         self.tableView.reloadData()
     }
@@ -45,10 +47,18 @@ class ChatViewController: BaseViewController {
     }
 }
 
-extension ChatViewController: UITableViewDelegate {
+extension ChatListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item: TableViewItem = dataSource.items[indexPath.row]
+        let vc = ChatDetailViewController()
+        vc.nameStr = item.title
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
