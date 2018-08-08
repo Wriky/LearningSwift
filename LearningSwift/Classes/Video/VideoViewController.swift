@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class VideoViewController: UIViewController {
+class VideoViewController: BaseViewController {
 
     @IBOutlet weak var goCom: UIButton!
     

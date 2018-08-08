@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		267C8289FB8B120DDB8C16B2 /* Pods_LearningSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F0AA6F2EAB9BBC19CDAA8E /* Pods_LearningSwift.framework */; };
 		E006B5A921199F7F0063F2A3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5A821199F7F0063F2A3 /* ChatViewController.swift */; };
-		E006B5B02119A3580063F2A3 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5AF2119A3580063F2A3 /* TableViewDataSource.swift */; };
+		E006B5B02119A3580063F2A3 /* ChatTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5AF2119A3580063F2A3 /* ChatTableViewDataSource.swift */; };
+		E006B5B2211A8B4B0063F2A3 /* ChatTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B1211A8B4B0063F2A3 /* ChatTableCell.swift */; };
+		E006B5B4211A92C80063F2A3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B3211A92C80063F2A3 /* BaseViewController.swift */; };
+		E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B5211A93160063F2A3 /* BaseTableViewCell.swift */; };
+		E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B7211A93310063F2A3 /* BaseView.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -58,7 +62,11 @@
 		53F0AA6F2EAB9BBC19CDAA8E /* Pods_LearningSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9E74CDE7CF43ABA8B59B3F /* Pods-LearningSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningSwift/Pods-LearningSwift.release.xcconfig"; sourceTree = "<group>"; };
 		E006B5A821199F7F0063F2A3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		E006B5AF2119A3580063F2A3 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		E006B5AF2119A3580063F2A3 /* ChatTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDataSource.swift; sourceTree = "<group>"; };
+		E006B5B1211A8B4B0063F2A3 /* ChatTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableCell.swift; sourceTree = "<group>"; };
+		E006B5B3211A92C80063F2A3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E006B5B5211A93160063F2A3 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		E006B5B7211A93310063F2A3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -141,6 +149,9 @@
 			children = (
 				E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */,
 				E0F5687C20EC77540017BED5 /* BaseTableViewController.swift */,
+				E006B5B3211A92C80063F2A3 /* BaseViewController.swift */,
+				E006B5B5211A93160063F2A3 /* BaseTableViewCell.swift */,
+				E006B5B7211A93310063F2A3 /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -182,7 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				E006B5A821199F7F0063F2A3 /* ChatViewController.swift */,
-				E006B5AF2119A3580063F2A3 /* TableViewDataSource.swift */,
+				E006B5B1211A8B4B0063F2A3 /* ChatTableCell.swift */,
+				E006B5AF2119A3580063F2A3 /* ChatTableViewDataSource.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -547,19 +559,23 @@
 			files = (
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
-				E006B5B02119A3580063F2A3 /* TableViewDataSource.swift in Sources */,
+				E006B5B02119A3580063F2A3 /* ChatTableViewDataSource.swift in Sources */,
 				E006B5A921199F7F0063F2A3 /* ChatViewController.swift in Sources */,
+				E006B5B4211A92C80063F2A3 /* BaseViewController.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,
+				E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */,
 				E0F5688420EC7A060017BED5 /* NetworkHelper.swift in Sources */,
 				E04D876820DFA03C006A6ACD /* VideoViewController.swift in Sources */,
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
 				E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */,
+				E006B5B2211A8B4B0063F2A3 /* ChatTableCell.swift in Sources */,
 				E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */,
 				E04D876620DFA03C006A6ACD /* AppDelegate.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
+				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 			);
