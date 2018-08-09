@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol ChatDetailToolBarDelegate: class {
+    func changeStatus(fromStatus: ChatToolBarStatus, toStatus: ChatToolBarStatus)
+    func sendTextMessage(textStr: String)
+    func changeToolBarHeight(height: CGFloat)
+}
+
 class ChatDetailToolBar: BaseView {
+    
+    weak var delegate: ChatDetailToolBarDelegate?
     
     private lazy var topLineLbl: UILabel = {
         let topLineLbl = UILabel()
@@ -64,12 +72,12 @@ class ChatDetailToolBar: BaseView {
         talkButton.layer.borderWidth = 0.5
         talkButton.layer.borderColor = RGBSame(165).cgColor
         talkButton.isHidden = true
-        talkButton.addTarget(self, action: #selector(talkButtonClick(_:)), for: .touchDown)
-        talkButton.addTarget(self, action: #selector(talkButtonClick(_:)), for: .touchUpInside)
-        talkButton.addTarget(self, action: #selector(talkButtonClick(_:)), for: .touchUpOutside)
-        talkButton.addTarget(self, action: #selector(talkButtonClick(_:)), for: .touchCancel)
-        talkButton.addTarget(self, action: #selector(talkButtonClick(_:)), for: .touchDragOutside)
-        talkButton.addTarget(self, action: #selector(talkButtonClick(_:)), for: .touchDragInside)
+        talkButton.addTarget(self, action: #selector(talkButtonDown(_:)), for: .touchDown)
+        talkButton.addTarget(self, action: #selector(talkButtonUpInside(_:)), for: .touchUpInside)
+        talkButton.addTarget(self, action: #selector(talkButtonUpOutside(_:)), for: .touchUpOutside)
+        talkButton.addTarget(self, action: #selector(talkButtonTouchCancel(_:)), for: .touchCancel)
+        talkButton.addTarget(self, action: #selector(talkButtonDragOutside(_:)), for: .touchDragOutside)
+        talkButton.addTarget(self, action: #selector(talkButtonDragInside(_:)), for: .touchDragInside)
 
         return talkButton
     }()
@@ -86,7 +94,27 @@ class ChatDetailToolBar: BaseView {
         
     }
     
-    @objc func talkButtonClick(_ button: UIButton) {
+    @objc func talkButtonDown(_ button: UIButton) {
+
+    }
+    
+    @objc func talkButtonUpInside(_ button: UIButton) {
+        
+    }
+    
+    @objc func talkButtonUpOutside(_ button: UIButton) {
+        
+    }
+    
+    @objc func talkButtonTouchCancel(_ button: UIButton) {
+        
+    }
+    
+    @objc func talkButtonDragOutside(_ button: UIButton) {
+        
+    }
+    
+    @objc func talkButtonDragInside(_ button: UIButton) {
         
     }
 
@@ -101,13 +129,43 @@ class ChatDetailToolBar: BaseView {
     }
     
     func configUI() {
-       
+        self.addSubview(topLineLbl)
+        self.addSubview(voiceButton)
+        self.addSubview(faceButton)
+        self.addSubview(moreButton)
+        self.addSubview(talkButton)
+        self.addSubview(textView)
         
         self.makeConstraints()
     }
     
     func makeConstraints() {
-        
+        topLineLbl.snp.makeConstraints {
+            $0.top.left.right.equalTo(self)
+        }
+        voiceButton.snp.makeConstraints {
+            $0.top.equalTo(6)
+            $0.left.equalTo(self)
+            $0.size.equalTo(CGSize(width: 37, height: 37))
+        }
+        faceButton.snp.makeConstraints {
+            $0.top.equalTo(voiceButton.snp.top)
+            $0.right.equalTo(moreButton.snp.left).offset(-4)
+            $0.size.equalTo(CGSize(width: 37, height: 37))
+        }
+        moreButton.snp.makeConstraints {
+            $0.size.equalTo(CGSize(width: 37, height: 37))
+            $0.top.equalTo(voiceButton.snp.top)
+            $0.right.equalTo(self)
+        }
+        talkButton.snp.makeConstraints {
+            $0.left.equalTo(voiceButton.snp.right).offset(4)
+            $0.top.equalTo(kTabBarHeight * 0.13)
+            $0.size.equalTo(CGSize(width: kScreenWidth-41*3, height: 37))
+        }
+        textView.snp.makeConstraints {
+            $0.edges.equalTo(talkButton)
+        }
     }
 }
 

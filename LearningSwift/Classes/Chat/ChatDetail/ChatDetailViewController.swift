@@ -27,6 +27,12 @@ class ChatDetailViewController: BaseViewController {
         tableView.register(ChatDetailTableCell.self, forCellReuseIdentifier: kCellIdentifier)
         return tableView;
     }()
+    
+    private lazy var toolBarVC: ChatDetailToolBarViewController = {
+        let toolBarVC = ChatDetailToolBarViewController()
+        
+        return toolBarVC
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +40,24 @@ class ChatDetailViewController: BaseViewController {
         self.view.backgroundColor = UIColor.white
         self.title = nameStr
         
+        self.configUI()
+        self.getOnlineData()
+    }
+    
+    func configUI() {
         view.addSubview(tableView);
+        view.addSubview(toolBarVC.view)
         
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view)
         }
-        
+        toolBarVC.view.snp.makeConstraints {
+            $0.left.bottom.right.equalTo(view)
+            $0.height.equalTo(kTabBarHeight)
+        }
+    }
+    
+    func getOnlineData() {
         let array = ["Eggs", "Milk", "Vegetables"]
         let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "沁园春.雪❄️"]
         
@@ -49,6 +67,7 @@ class ChatDetailViewController: BaseViewController {
         self.tableView.reloadData()
     }
 }
+
 
 extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

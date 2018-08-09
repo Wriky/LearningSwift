@@ -18,6 +18,10 @@
 		E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */; };
 		E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */; };
 		E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */; };
+		E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */; };
+		E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8645211C21E2001CF144 /* ChatMoreView.swift */; };
+		E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8647211C21F5001CF144 /* ChatFaceView.swift */; };
+		E03A864A211C2E4E001CF144 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8649211C2E4E001CF144 /* Enums.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -75,6 +79,10 @@
 		E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailTableCell.swift; sourceTree = "<group>"; };
 		E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBar.swift; sourceTree = "<group>"; };
 		E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBarViewController.swift; sourceTree = "<group>"; };
+		E03A8645211C21E2001CF144 /* ChatMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMoreView.swift; sourceTree = "<group>"; };
+		E03A8647211C21F5001CF144 /* ChatFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFaceView.swift; sourceTree = "<group>"; };
+		E03A8649211C2E4E001CF144 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -229,7 +237,10 @@
 			children = (
 				E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */,
 				E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */,
+				E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */,
 				E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */,
+				E03A8645211C21E2001CF144 /* ChatMoreView.swift */,
+				E03A8647211C21F5001CF144 /* ChatFaceView.swift */,
 			);
 			path = ChatDetail;
 			sourceTree = "<group>";
@@ -357,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				E0F5687620EB10880017BED5 /* Const.swift */,
+				E03A8649211C2E4E001CF144 /* Enums.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -596,12 +608,16 @@
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,
 				E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */,
+				E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */,
 				E0F5688420EC7A060017BED5 /* NetworkHelper.swift in Sources */,
 				E04D876820DFA03C006A6ACD /* VideoViewController.swift in Sources */,
 				E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */,
+				E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */,
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
+				E03A864A211C2E4E001CF144 /* Enums.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
 				E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */,
+				E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */,
 				E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */,
 				E006B5B2211A8B4B0063F2A3 /* ChatListTableCell.swift in Sources */,
 				E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */,
@@ -787,6 +803,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7C2JFD9GT2;
 				INFOPLIST_FILE = LearningSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,7 +812,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -808,6 +825,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7C2JFD9GT2;
 				INFOPLIST_FILE = LearningSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -815,7 +833,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.viper.LearningSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

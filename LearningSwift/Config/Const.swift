@@ -27,6 +27,8 @@ public let kTabBarHeight: CGFloat = 49
 //导航栏高度
 public let kNavBarHeight: CGFloat = 64
 
+//聊天ToolBar高度
+public let kChatBarHeight: CGFloat = 215
 
 public let kNight = "Night"
 
