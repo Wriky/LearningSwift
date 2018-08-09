@@ -10,29 +10,43 @@ import UIKit
 
 
 //服务器地址
-let BaseUrl = "https://is.snssdk.com"
+public let BaseUrl = "https://is.snssdk.com"
 
 //屏幕宽度
-let kScreenWidth = UIScreen.main.bounds.size.width
+public let kScreenWidth = UIScreen.main.bounds.size.width
 
 //屏幕高度
-let kScreenHeight = UIScreen.main.bounds.size.height
+public let kScreenHeight = UIScreen.main.bounds.size.height
 
 //状态栏高度
-let kStatusBarHeight = 20
+public let kStatusBarHeight: CGFloat = 20
 
 //底部导航栏高度
-let kTabBarHeight = 49
+public let kTabBarHeight: CGFloat = 49
 
 //导航栏高度
-let kNavBarHeight = 64
+public let kNavBarHeight: CGFloat = 64
 
 
-let kNight = "Night"
+public let kNight = "Night"
 
-let isIphoneX: Bool = (kScreenWidth == 812)
+public let isIphoneX: Bool = (kScreenWidth == 812)
 
 
+public func RGBA(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat,_ a:CGFloat) -> UIColor {
+    return UIColor.init(red: r/255, green: g/255, blue: b/255, alpha: a)
+}
 
+public func RGBASame(_ r: CGFloat,_ a: CGFloat) -> UIColor {
+    return RGBA(r, r, r, a)
+}
+
+public func RGB(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat) -> UIColor {
+    return RGBA(r, g, b, 1)
+}
+
+public func RGBSame(_ r: CGFloat) -> UIColor {
+    return RGBA(r, r, r, 1)
+}
 
 

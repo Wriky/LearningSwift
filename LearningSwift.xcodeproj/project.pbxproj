@@ -16,6 +16,8 @@
 		E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B7211A93310063F2A3 /* BaseView.swift */; };
 		E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */; };
 		E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */; };
+		E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */; };
+		E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -71,6 +73,8 @@
 		E006B5B7211A93310063F2A3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
 		E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailTableCell.swift; sourceTree = "<group>"; };
+		E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBar.swift; sourceTree = "<group>"; };
+		E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 			children = (
 				E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */,
 				E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */,
+				E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */,
 			);
 			path = ChatDetail;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				E0F5688B20EC9C020017BED5 /* Foundation+Extension.swift */,
 				E0F5688A20EC9C020017BED5 /* SVProgressHUD+Extension.swift */,
 				E0F5688C20EC9C020017BED5 /* UIKit+Extension.swift */,
+				E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,
@@ -595,6 +602,7 @@
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
 				E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */,
+				E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */,
 				E006B5B2211A8B4B0063F2A3 /* ChatListTableCell.swift in Sources */,
 				E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */,
 				E04D876620DFA03C006A6ACD /* AppDelegate.swift in Sources */,
