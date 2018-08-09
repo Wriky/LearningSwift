@@ -15,7 +15,7 @@ class ChatListViewController: BaseViewController {
         let tableView = UITableView()
         tableView.dataSource = dataSource
         tableView.delegate = self;
-        tableView.register(ChatListTableCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.register(ChatListTableCell.self, forCellReuseIdentifier: dataSource.kChatListCellIdentifier)
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
@@ -33,7 +33,7 @@ class ChatListViewController: BaseViewController {
         }
         
         let array = ["Eggs", "Milk", "Vegetables"]
-        let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "头条发财中国年"]
+        let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "沁园春.雪❄️"]
         
         for (index, value) in array.enumerated() {
             

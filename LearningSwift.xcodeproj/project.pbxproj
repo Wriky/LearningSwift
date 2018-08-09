@@ -15,6 +15,7 @@
 		E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B5211A93160063F2A3 /* BaseTableViewCell.swift */; };
 		E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B7211A93310063F2A3 /* BaseView.swift */; };
 		E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */; };
+		E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -69,6 +70,7 @@
 		E006B5B5211A93160063F2A3 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		E006B5B7211A93310063F2A3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
+		E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailTableCell.swift; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */,
+				E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */,
 			);
 			path = ChatDetail;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,
 				E006B5A921199F7F0063F2A3 /* ChatListViewController.swift in Sources */,
 				E006B5B4211A92C80063F2A3 /* BaseViewController.swift in Sources */,
+				E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,

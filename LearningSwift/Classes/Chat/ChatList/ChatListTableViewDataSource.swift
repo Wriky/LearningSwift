@@ -10,11 +10,12 @@ import UIKit
 struct TableViewItem {
     let title : String
     let subTitle : String
-    
 }
 
 class ChatListTableViewDataSource: NSObject, UITableViewDataSource {
     var items = [TableViewItem]()
+    let kChatListCellIdentifier: String = "ChatListCellIdentifier"
+
     
     func addItem(_ item: TableViewItem){
         items.append(item)
@@ -25,7 +26,7 @@ class ChatListTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ChatListTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kChatListCellIdentifier, for: indexPath) as! ChatListTableCell
         cell.configureWithItem(items[indexPath.row])
         return cell
         
