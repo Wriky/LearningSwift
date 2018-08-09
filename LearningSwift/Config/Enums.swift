@@ -10,10 +10,10 @@ import Foundation
 
 enum ChatToolBarStatus: String {
     
-    case ChatToolBarStatusNothing = "Nothing"     // 默认状态
-    case ChatToolBarStatusShowVoice = "ShowVoice"  // 录音状态
-    case ChatToolBarStatusShowFace = "ShowFace"    // 输入表情状态
-    case ChatToolBarStatusShowMore = "ShowMore"    // 显示“更多”页面状态
-    case ChatToolBarStatusShowKeyboard = "ShowKeyboard"// 正常键盘
-    case ChatToolBarStatusShowVideo = "ShowVideo"   // 录制视频
+    case Nothing = "Nothing"     // 默认状态
+    case ShowVoice = "ShowVoice"  // 录音状态
+    case ShowFace = "ShowFace"    // 输入表情状态
+    case ShowMore = "ShowMore"    // 显示“更多”页面状态
+    case ShowKeyboard = "ShowKeyboard"// 正常键盘
+    case ShowVideo = "ShowVideo"   // 录制视频
 }
