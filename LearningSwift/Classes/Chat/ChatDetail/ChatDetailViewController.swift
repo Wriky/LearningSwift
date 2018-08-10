@@ -30,7 +30,7 @@ class ChatDetailViewController: BaseViewController {
     
     private lazy var toolBarVC: ChatDetailToolBarViewController = {
         let toolBarVC = ChatDetailToolBarViewController()
-        
+        toolBarVC.delegate = self
         return toolBarVC
     }()
 
@@ -46,15 +46,21 @@ class ChatDetailViewController: BaseViewController {
     
     func configUI() {
         view.addSubview(tableView);
+        
+        self.addChildViewController(toolBarVC)
         view.addSubview(toolBarVC.view)
         
         tableView.snp.makeConstraints {
-            $0.edges.equalTo(view)
+            $0.top.left.right.equalTo(view)
+            $0.height.equalTo(kScreenHeight-kTabBarHeight)
         }
         toolBarVC.view.snp.makeConstraints {
-            $0.left.bottom.right.equalTo(view)
+            $0.left.right.equalTo(view)
+            $0.bottom.equalTo(0)
             $0.height.equalTo(kTabBarHeight)
         }
+        
+        self.addTapGestureOnTableView()
     }
     
     func getOnlineData() {
@@ -65,6 +71,28 @@ class ChatDetailViewController: BaseViewController {
             items.append(MessageTableItem(nameStr: value, timeStr: "2018-08-08", contentStr: contentArray[index]))
         }
         self.tableView.reloadData()
+    }
+    
+    func addTapGestureOnTableView() {
+        let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(tapTableView(_:)))
+        self.tableView.addGestureRecognizer(singleTap)
+    }
+    
+    @objc func tapTableView(_ gesture: UITapGestureRecognizer) {
+        toolBarVC.view.endEditing(true)
+        self.didChangeChatToolBarHeight(height: kTabBarHeight)
+    }
+    
+    func scrollToBottom() {
+        if self.items.count > 0 {
+            self.tableView.scrollToRow(at: NSIndexPath.init(row: self.items.count-1, section: 0) as IndexPath, at: .bottom, animated: true)
+        }
+    }
+    
+    func addMessage(message: String, isSender:Bool) {
+        self.items.append(MessageTableItem(nameStr: "superMan", timeStr: "2018-08-10", contentStr: message))
+        self.tableView.reloadData()
+        self.scrollToBottom()
     }
 }
 
@@ -83,4 +111,39 @@ extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+}
+
+extension ChatDetailViewController: ChatDetailToolBarViewControllerDelegate {
+    
+    func didChangeChatToolBarHeight(height: CGFloat) {
+        self.toolBarVC.view.snp.updateConstraints {
+            $0.bottom.equalTo(-height+kTabBarHeight)
+        }
+        
+        
+        self.tableView.snp.updateConstraints {
+            $0.height.equalTo(kScreenHeight-height-kNavBarHeight)
+        }
+        
+        if height == kTabBarHeight {
+            self.tableView.reloadData()
+        }else {
+            self.scrollToBottom()
+        }
+    }
+    
+    func sendTextMessage(textStr: String) {
+        self.addMessage(message: textStr, isSender: true)
+        self.tapTableView(UITapGestureRecognizer())
+    }
+    
+    func sendImageMessage(image: UIImage, imagePath: String) {
+        
+    }
+    
+    func sendVoiceMessage(voicePath: String) {
+        
+    }
+    
+    
 }

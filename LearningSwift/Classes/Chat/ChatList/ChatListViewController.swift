@@ -54,6 +54,7 @@ extension ChatListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let item: TableViewItem = dataSource.items[indexPath.row]
         let vc = ChatDetailViewController()
         vc.nameStr = item.title

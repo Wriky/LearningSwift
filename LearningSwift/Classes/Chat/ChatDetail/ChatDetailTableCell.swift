@@ -16,6 +16,13 @@ class ChatDetailTableCell: BaseTableViewCell {
         return avatarView
     }()
     
+    private lazy var nameLbl: UILabel = {
+        let nameLbl = UILabel()
+        nameLbl.font = UIFont.systemFont(ofSize: 12)
+        nameLbl.textColor = UIColor.lightGray
+        return nameLbl
+    }()
+    
     private lazy var bubbleView: UIImageView = {
         let bubbleView = UIImageView()
         let bubbleImage = UIImage.init(named: "chat_bg_right")!
@@ -49,6 +56,7 @@ class ChatDetailTableCell: BaseTableViewCell {
     
     func configUI() {
         contentView.addSubview(avatarView)
+        contentView.addSubview(nameLbl)
         contentView.addSubview(bubbleView)
         bubbleView.addSubview(contentLbl)
         contentView.addSubview(activityView)
@@ -62,9 +70,12 @@ class ChatDetailTableCell: BaseTableViewCell {
             $0.right.equalTo(-20)
             $0.size.equalTo(CGSize(width: 40, height: 40))
         }
-        
+        nameLbl.snp.makeConstraints {
+            $0.top.equalTo(avatarView.snp.top).offset(-3)
+            $0.right.equalTo(avatarView.snp.left).offset(-10)
+        }
         bubbleView.snp.makeConstraints {
-            $0.top.equalTo(avatarView.snp.top)
+            $0.top.equalTo(nameLbl.snp.bottom).offset(2)
             $0.right.equalTo(avatarView.snp.left).offset(-5)
             $0.width.lessThanOrEqualTo(230)
             $0.bottom.equalTo(-15)
@@ -83,6 +94,7 @@ class ChatDetailTableCell: BaseTableViewCell {
     func configureWithItem(_ item: MessageTableItem) {
         avatarView.image = UIImage.init(named: "icon_center_information_upload")
         contentLbl.text = item.contentStr
+        nameLbl.text = item.nameStr
     }
 
 }

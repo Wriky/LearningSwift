@@ -38,16 +38,21 @@ class ChatDetailToolBarViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.view.backgroundColor = UIColor.white
+        
         self.configUI()
         self.addNotification()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     func configUI() {
-        self.view.addSubview(chatMoreView)
-        self.view.addSubview(chatFaceView)
-        self.view.addSubview(chatBar)
+//        view.addSubview(chatMoreView)
+//        view.addSubview(chatFaceView)
+        view.addSubview(chatBar)
 
         self.makeConstraints()
     }
@@ -55,18 +60,18 @@ class ChatDetailToolBarViewController: BaseViewController {
     func makeConstraints() {
         chatBar.snp.makeConstraints {
             $0.left.bottom.right.equalTo(view)
-            $0.height.equalTo(kChatBarHeight)
+            $0.height.equalTo(kTabBarHeight)
         }
         
-        chatMoreView.snp.makeConstraints {
-            $0.top.equalTo(kTabBarHeight)
-            $0.left.equalTo(view)
-            $0.size.equalTo(CGSize(width: kScreenWidth, height: kChatBarHeight))
-        }
-        
-        chatFaceView.snp.makeConstraints {
-            $0.edges.equalTo(chatMoreView)
-        }
+//        chatMoreView.snp.makeConstraints {
+//            $0.top.equalTo(kTabBarHeight)
+//            $0.left.equalTo(view)
+//            $0.size.equalTo(CGSize(width: kScreenWidth, height: kChatBarHeight))
+//        }
+//        
+//        chatFaceView.snp.makeConstraints {
+//            $0.edges.equalTo(chatMoreView)
+//        }
     }
 
     func addNotification() {
@@ -74,58 +79,51 @@ class ChatDetailToolBarViewController: BaseViewController {
             self.keyBoardFrame = CGRect.zero
         }
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: OperationQueue.main) { (notification) in
             
             let userInfo = notification.userInfo!
             let keyBoardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
             self.keyBoardFrame = keyBoardSize
+            let keyBoardHeight: CGFloat = self.keyBoardFrame.height
+            let chatBarStatus: ChatToolBarStatus = self.chatBar.status
+            
+            if (chatBarStatus == .ShowKeyboard || chatBarStatus == .ShowFace || chatBarStatus == .ShowMore) && (keyBoardHeight <= kChatBarHeight) {
+                return
+            }            
+            
+            if self.delegate != nil {
+                self.delegate?.didChangeChatToolBarHeight(height: self.keyBoardFrame.size.height+kTabBarHeight)
+                self.chatBar.status = .ShowKeyboard
+            }
         }
     }
     
     func adjustToolBarHeight(barHeight: CGFloat) {
-        
+        guard let changeTooBarHeight = delegate?.didChangeChatToolBarHeight(height: barHeight) else {
+            return
+        }
+        changeTooBarHeight
     }
     
     //todo
-    func showChatFaceView(fromHeight: CGFloat, toHeight: CGFloat) {
-        view.addSubview(self.chatFaceView)
-        self.chatFaceView.snp.makeConstraints {
+    func showChatToolView(toolView:BaseView, fromHeight: CGFloat, toHeight: CGFloat, toolHeight: CGFloat) {
+        view.addSubview(toolView)
+        toolView.snp.makeConstraints {
             $0.top.equalTo(kTabBarHeight)
             $0.left.equalTo(view)
             $0.size.equalTo(CGSize(width: kScreenWidth, height: fromHeight))
         }
         
-        if(toHeight < fromHeight) {
-            self.chatFaceView.snp.updateConstraints {
-                $0.height.equalTo(toHeight)
-            }
-        }
-
-        UIView.animate(withDuration: 0.3, animations: {
-            self.adjustToolBarHeight(barHeight: toHeight)
-        }) { (finished) in
-            self.chatFaceView.removeFromSuperview()
-        }
-    }
-    
-    func showChatMoreView(fromHeight: CGFloat, toHeight: CGFloat) {
-        view.addSubview(self.chatMoreView)
-        self.chatMoreView.snp.makeConstraints {
-            $0.top.equalTo(kTabBarHeight)
-            $0.left.equalTo(view)
-            $0.size.equalTo(CGSize(width: kScreenWidth, height: fromHeight))
-        }
-        
-        if(toHeight < fromHeight) {
-            self.chatMoreView.snp.updateConstraints {
+        if(toHeight > 0) {
+            toolView.snp.updateConstraints {
                 $0.height.equalTo(toHeight)
             }
         }
         
         UIView.animate(withDuration: 0.3, animations: {
-            self.adjustToolBarHeight(barHeight: toHeight)
+            self.adjustToolBarHeight(barHeight: toolHeight)
         }) { (finished) in
-            self.chatMoreView.removeFromSuperview()
+            toolView.removeFromSuperview()
         }
     }
 }
@@ -148,9 +146,9 @@ extension ChatDetailToolBarViewController: ChatDetailToolBarDelegate {
             }
         case .ShowFace:
             if(fromStatus == .ShowVoice || fromStatus == .Nothing) {
-                self.showChatFaceView(fromHeight: kChatBarHeight, toHeight: kTabBarHeight+kChatBarHeight)
+                self.showChatToolView(toolView: self.chatFaceView, fromHeight: kChatBarHeight, toHeight: 0, toolHeight: kTabBarHeight+kChatBarHeight)
             } else {
-                self.showChatFaceView(fromHeight: kTabBarHeight+kChatBarHeight, toHeight: kChatBarHeight)
+                self.showChatToolView(toolView: self.chatFaceView, fromHeight: kTabBarHeight+kChatBarHeight, toHeight: kChatBarHeight, toolHeight: kTabBarHeight+kChatBarHeight)
                 if(fromStatus != .ShowMore) {
                     UIView.animate(withDuration: 0.2) {
                         self.adjustToolBarHeight(barHeight: kTabBarHeight+kChatBarHeight)
@@ -159,9 +157,9 @@ extension ChatDetailToolBarViewController: ChatDetailToolBarDelegate {
             }
         default://.showMore
             if(fromStatus == .ShowVoice || fromStatus == .Nothing) {
-                self.showChatMoreView(fromHeight: kChatBarHeight, toHeight: kChatBarHeight+kTabBarHeight)
+                self.showChatToolView(toolView: self.chatMoreView,fromHeight: kChatBarHeight, toHeight: 0, toolHeight: kTabBarHeight+kChatBarHeight)
             } else {
-                self.showChatMoreView(fromHeight: kChatBarHeight+kTabBarHeight, toHeight: kChatBarHeight)
+                self.showChatToolView(toolView: self.chatMoreView,fromHeight: kChatBarHeight+kTabBarHeight, toHeight: kChatBarHeight, toolHeight: kTabBarHeight+kChatBarHeight)
             }
        }
     }

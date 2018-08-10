@@ -17,6 +17,7 @@ protocol ChatDetailToolBarDelegate: class {
 class ChatDetailToolBar: BaseView {
     
     weak var delegate: ChatDetailToolBarDelegate?
+    var status: ChatToolBarStatus = .Nothing
     
     private lazy var topLineLbl: UILabel = {
         let topLineLbl = UILabel()
@@ -28,22 +29,25 @@ class ChatDetailToolBar: BaseView {
        let voiceButton = UIButton()
         voiceButton.setImage(UIImage.init(named: "ToolViewInputVoice"), for: UIControlState.normal)
         voiceButton.setImage(UIImage.init(named: "ToolViewInputVoiceHL"), for: UIControlState.highlighted)
+        voiceButton.setImage(UIImage.init(named: "ToolViewKeyboard"), for: UIControlState.selected)
         voiceButton.addTarget(self, action: #selector(voiceButtonClick(_:)), for: UIControlEvents.touchUpInside)
         return voiceButton
     }()
     
     public lazy var moreButton: UIButton = {
         let moreButton = UIButton()
-        moreButton.setImage(UIImage.init(named: "TypeSelectorBtn_Black"), for: UIControlState.normal)
-        moreButton.setImage(UIImage.init(named: "TypeSelectorBtnHL_Black"), for: UIControlState.highlighted)
-        moreButton.addTarget(self, action: #selector(moreButtonClick(_:)), for: UIControlEvents.touchUpInside)
+        moreButton.setImage(UIImage.init(named: "TypeSelectorBtn_Black"), for: .normal)
+        moreButton.setImage(UIImage.init(named: "TypeSelectorBtnHL_Black"), for: .highlighted)
+        moreButton.addTarget(self, action: #selector(moreButtonClick(_:)), for: .touchUpInside)
         return moreButton
     }()
     
     public lazy var faceButton: UIButton = {
         let faceButton = UIButton()
-        faceButton.setImage(UIImage.init(named: "ToolViewEmotion"), for: UIControlState.normal)
-        faceButton.setImage(UIImage.init(named: "ToolViewEmotionHL"), for: UIControlState.highlighted)
+        faceButton.setImage(UIImage.init(named: "ToolViewEmotion"), for: .normal)
+        faceButton.setImage(UIImage.init(named: "ToolViewEmotionHL"), for: .highlighted)
+        faceButton.setImage(UIImage.init(named: "ToolViewKeyboard"), for: .selected)
+
         faceButton.addTarget(self, action: #selector(faceButtonClick(_:)), for: UIControlEvents.touchUpInside)
         return faceButton
     }()
@@ -83,15 +87,75 @@ class ChatDetailToolBar: BaseView {
     }()
     
     @objc func voiceButtonClick(_ button: UIButton) {
+        let lastStatus = self.status
         
+        let isShowVoice: Bool = (lastStatus == .ShowVoice)
+        self.talkButton.isHidden = isShowVoice
+        self.textView.isHidden = !isShowVoice
+        self.voiceButton.isSelected = isShowVoice
+        self.status = isShowVoice ? .ShowKeyboard : .ShowVoice
+        
+        if isShowVoice {
+            self.textView.becomeFirstResponder()
+        }else {
+            self.textView.resignFirstResponder()
+        }
+        
+        guard let changeStatus = delegate?.changeStatus(fromStatus: lastStatus, toStatus: self.status)  else {
+            return
+        }
+        changeStatus
     }
     
     @objc func moreButtonClick(_ button: UIButton) {
+        let lastStatus = self.status
+        let isShowMore = (lastStatus == .ShowMore)
         
+        if isShowMore {
+            self.status = .ShowKeyboard
+            self.textView.becomeFirstResponder()
+        } else {
+            self.talkButton.isHidden = true
+            self.textView.isHidden = false
+            self.voiceButton.isSelected = false
+            self.status = .ShowMore
+            
+            if lastStatus == .ShowFace {
+                self.faceButton.isSelected = false
+            } else if lastStatus == .ShowKeyboard{
+                self.textView.resignFirstResponder()
+            }
+        }
+        
+        guard let changeStatus = delegate?.changeStatus(fromStatus: lastStatus, toStatus: self.status) else {
+            return
+        }
+        changeStatus
     }
     
     @objc func faceButtonClick(_ button: UIButton) {
+        let lastStatus = self.status
+        let isShowFace = (lastStatus == .ShowFace)
+        if isShowFace {
+            self.status = .ShowKeyboard
+            self.faceButton.isSelected = false
+            self.textView.becomeFirstResponder()
+        } else {
+            self.status = .ShowFace
+            self.talkButton.isHidden = true
+            self.textView.isHidden = false
+            self.faceButton.isSelected = true
+            self.voiceButton.isSelected = false
+            
+            if lastStatus == .ShowKeyboard {
+                self.textView.resignFirstResponder()
+            }
+        }
         
+        guard let changeStatus = delegate?.changeStatus(fromStatus: lastStatus, toStatus: self.status) else {
+            return
+        }
+        changeStatus
     }
     
     @objc func talkButtonDown(_ button: UIButton) {
@@ -142,6 +206,7 @@ class ChatDetailToolBar: BaseView {
     func makeConstraints() {
         topLineLbl.snp.makeConstraints {
             $0.top.left.right.equalTo(self)
+            $0.height.equalTo(0.5)
         }
         voiceButton.snp.makeConstraints {
             $0.top.equalTo(6)
@@ -170,5 +235,24 @@ class ChatDetailToolBar: BaseView {
 }
 
 extension ChatDetailToolBar: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.status = .ShowKeyboard
+    }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text.elementsEqual("\n") {
+            if textView.text.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+                if let sendTextMessage = delegate?.sendTextMessage(textStr: textView.text) {
+                    sendTextMessage
+                    
+                    self.textView.text = ""
+                }
+            }
+            
+            return false
+        }
+        return true
+    }
 }
+
+
