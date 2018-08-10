@@ -134,7 +134,6 @@ extension ChatDetailViewController: ChatDetailToolBarViewControllerDelegate {
     
     func sendTextMessage(textStr: String) {
         self.addMessage(message: textStr, isSender: true)
-        self.tapTableView(UITapGestureRecognizer())
     }
     
     func sendImageMessage(image: UIImage, imagePath: String) {
