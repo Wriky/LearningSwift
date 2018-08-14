@@ -87,7 +87,7 @@ class EmotionListView: BaseView {
 
 extension EmotionListView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageNum: Double = scrollView.contentOffset.x / scrollView.width
+        let pageNum: Double = Double(scrollView.contentOffset.x / scrollView.width)
         self.pageControl.currentPage = Int(pageNum+0.5)
     }
 }
