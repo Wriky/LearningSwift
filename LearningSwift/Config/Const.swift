@@ -34,7 +34,6 @@ public let kNight = "Night"
 
 public let isIphoneX: Bool = (kScreenWidth == 812)
 
-
 public func RGBA(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat,_ a:CGFloat) -> UIColor {
     return UIColor.init(red: r/255, green: g/255, blue: b/255, alpha: a)
 }

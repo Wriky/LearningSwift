@@ -36,7 +36,13 @@
 		E0C00BCC20F7434900E1654F /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BC920F7434900E1654F /* emojis.plist */; };
 		E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCA20F7434900E1654F /* emoji_sort.plist */; };
 		E0C00BCE20F7434900E1654F /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCB20F7434900E1654F /* emoji_mapping.plist */; };
-		E0C3071C211D9A4F00C9C263 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3071B211D9A4F00C9C263 /* EmotionView.swift */; };
+		E0C3071C211D9A4F00C9C263 /* EmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3071B211D9A4F00C9C263 /* EmotionListView.swift */; };
+		E0C3071F212269F500C9C263 /* EmotionMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3071E212269F500C9C263 /* EmotionMenuView.swift */; };
+		E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072021226A2700C9C263 /* EmotionButton.swift */; };
+		E0C3072321226AD200C9C263 /* EmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072221226AD200C9C263 /* EmotionPageView.swift */; };
+		E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072421226B2E00C9C263 /* WYEmotion.swift */; };
+		E0C3072821226DE600C9C263 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072721226DE600C9C263 /* String+Extension.swift */; };
+		E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C307292122836700C9C263 /* MessageConst.swift */; };
 		E0F5687720EB10880017BED5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687620EB10880017BED5 /* Const.swift */; };
 		E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687820EC61CF0017BED5 /* NewsViewController.swift */; };
 		E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687A20EC766B0017BED5 /* MomentViewController.swift */; };
@@ -104,7 +110,13 @@
 		E0C00BC920F7434900E1654F /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		E0C00BCA20F7434900E1654F /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
 		E0C00BCB20F7434900E1654F /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
-		E0C3071B211D9A4F00C9C263 /* EmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
+		E0C3071B211D9A4F00C9C263 /* EmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionListView.swift; sourceTree = "<group>"; };
+		E0C3071E212269F500C9C263 /* EmotionMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionMenuView.swift; sourceTree = "<group>"; };
+		E0C3072021226A2700C9C263 /* EmotionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButton.swift; sourceTree = "<group>"; };
+		E0C3072221226AD200C9C263 /* EmotionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPageView.swift; sourceTree = "<group>"; };
+		E0C3072421226B2E00C9C263 /* WYEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYEmotion.swift; sourceTree = "<group>"; };
+		E0C3072721226DE600C9C263 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E0C307292122836700C9C263 /* MessageConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageConst.swift; sourceTree = "<group>"; };
 		E0F5687620EB10880017BED5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E0F5687820EC61CF0017BED5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E0F5687A20EC766B0017BED5 /* MomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +222,7 @@
 		E006B5AD2119A2EB0063F2A3 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				E0C3072621226B3400C9C263 /* Model */,
 				E006B5BA211AC01D0063F2A3 /* ChatDetail */,
 				E006B5B9211AC00E0063F2A3 /* ChatList */,
 			);
@@ -243,7 +256,7 @@
 				E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */,
 				E03A8645211C21E2001CF144 /* ChatMoreView.swift */,
 				E03A8647211C21F5001CF144 /* ChatFaceView.swift */,
-				E0C3071B211D9A4F00C9C263 /* EmotionView.swift */,
+				E0C3071D212269C400C9C263 /* Emotion */,
 			);
 			path = ChatDetail;
 			sourceTree = "<group>";
@@ -285,6 +298,7 @@
 				E0F5688A20EC9C020017BED5 /* SVProgressHUD+Extension.swift */,
 				E0F5688C20EC9C020017BED5 /* UIKit+Extension.swift */,
 				E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */,
+				E0C3072721226DE600C9C263 /* String+Extension.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -367,10 +381,30 @@
 			path = LearningSwiftUITests;
 			sourceTree = "<group>";
 		};
+		E0C3071D212269C400C9C263 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				E0C3071B211D9A4F00C9C263 /* EmotionListView.swift */,
+				E0C3071E212269F500C9C263 /* EmotionMenuView.swift */,
+				E0C3072021226A2700C9C263 /* EmotionButton.swift */,
+				E0C3072221226AD200C9C263 /* EmotionPageView.swift */,
+			);
+			path = Emotion;
+			sourceTree = "<group>";
+		};
+		E0C3072621226B3400C9C263 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0C3072421226B2E00C9C263 /* WYEmotion.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E0F5687520EB10750017BED5 /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				E0F5687620EB10880017BED5 /* Const.swift */,
+				E0C307292122836700C9C263 /* MessageConst.swift */,
 				E03A8649211C2E4E001CF144 /* Enums.swift */,
 			);
 			path = Config;
@@ -600,13 +634,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0C3071C211D9A4F00C9C263 /* EmotionView.swift in Sources */,
+				E0C3071C211D9A4F00C9C263 /* EmotionListView.swift in Sources */,
 				E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,
+				E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */,
+				E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */,
 				E006B5A921199F7F0063F2A3 /* ChatListViewController.swift in Sources */,
 				E006B5B4211A92C80063F2A3 /* BaseViewController.swift in Sources */,
+				E0C3072821226DE600C9C263 /* String+Extension.swift in Sources */,
+				E0C3072321226AD200C9C263 /* EmotionPageView.swift in Sources */,
 				E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
@@ -624,10 +662,12 @@
 				E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */,
 				E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */,
 				E006B5B2211A8B4B0063F2A3 /* ChatListTableCell.swift in Sources */,
+				E0C3071F212269F500C9C263 /* EmotionMenuView.swift in Sources */,
 				E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */,
 				E04D876620DFA03C006A6ACD /* AppDelegate.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
+				E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 			);

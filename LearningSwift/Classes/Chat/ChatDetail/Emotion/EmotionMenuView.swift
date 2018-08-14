@@ -1,14 +1,14 @@
 //
-//  EmotionView.swift
+//  EmotionMenuView.swift
 //  LearningSwift
 //
-//  Created by wangyuan on 2018/8/10.
+//  Created by wangyuan on 2018/8/14.
 //  Copyright © 2018年 wangyuan. All rights reserved.
 //
 
 import UIKit
 
-class EmotionView: BaseView {
+class EmotionMenuView: BaseView {
 
     
 
