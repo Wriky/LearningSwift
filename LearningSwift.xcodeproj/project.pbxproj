@@ -43,6 +43,9 @@
 		E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072421226B2E00C9C263 /* WYEmotion.swift */; };
 		E0C3072821226DE600C9C263 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072721226DE600C9C263 /* String+Extension.swift */; };
 		E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C307292122836700C9C263 /* MessageConst.swift */; };
+		E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072B2122D77100C9C263 /* FaceManager.swift */; };
+		E0C3072E2122D9B200C9C263 /* normal_face.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C3072D2122D9B200C9C263 /* normal_face.plist */; };
+		E0C307302122D9BC00C9C263 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C3072F2122D9BC00C9C263 /* emoji.plist */; };
 		E0F5687720EB10880017BED5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687620EB10880017BED5 /* Const.swift */; };
 		E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687820EC61CF0017BED5 /* NewsViewController.swift */; };
 		E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687A20EC766B0017BED5 /* MomentViewController.swift */; };
@@ -117,6 +120,9 @@
 		E0C3072421226B2E00C9C263 /* WYEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYEmotion.swift; sourceTree = "<group>"; };
 		E0C3072721226DE600C9C263 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E0C307292122836700C9C263 /* MessageConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageConst.swift; sourceTree = "<group>"; };
+		E0C3072B2122D77100C9C263 /* FaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceManager.swift; sourceTree = "<group>"; };
+		E0C3072D2122D9B200C9C263 /* normal_face.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = normal_face.plist; sourceTree = "<group>"; };
+		E0C3072F2122D9BC00C9C263 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		E0F5687620EB10880017BED5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E0F5687820EC61CF0017BED5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E0F5687A20EC766B0017BED5 /* MomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +320,8 @@
 		E044C7A220EB0AE200E9569B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0C3072F2122D9BC00C9C263 /* emoji.plist */,
+				E0C3072D2122D9B200C9C263 /* normal_face.plist */,
 				E0C00BCB20F7434900E1654F /* emoji_mapping.plist */,
 				E0C00BCA20F7434900E1654F /* emoji_sort.plist */,
 				E0C00BC920F7434900E1654F /* emojis.plist */,
@@ -388,6 +396,7 @@
 				E0C3071E212269F500C9C263 /* EmotionMenuView.swift */,
 				E0C3072021226A2700C9C263 /* EmotionButton.swift */,
 				E0C3072221226AD200C9C263 /* EmotionPageView.swift */,
+				E0C3072B2122D77100C9C263 /* FaceManager.swift */,
 			);
 			path = Emotion;
 			sourceTree = "<group>";
@@ -529,10 +538,12 @@
 				E04D876D20DFA045006A6ACD /* Assets.xcassets in Resources */,
 				E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */,
 				E04D876B20DFA03C006A6ACD /* Main.storyboard in Resources */,
+				E0C3072E2122D9B200C9C263 /* normal_face.plist in Resources */,
 				E0C00BCE20F7434900E1654F /* emoji_mapping.plist in Resources */,
 				E0C00BCC20F7434900E1654F /* emojis.plist in Resources */,
 				E0F5688020EC77A20017BED5 /* night_theme.plist in Resources */,
 				E0F5688120EC77A20017BED5 /* default_theme.plist in Resources */,
+				E0C307302122D9BC00C9C263 /* emoji.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +647,7 @@
 			files = (
 				E0C3071C211D9A4F00C9C263 /* EmotionListView.swift in Sources */,
 				E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */,
+				E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,

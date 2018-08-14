@@ -10,12 +10,35 @@ import UIKit
 
 class ChatFaceView: BaseView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    private lazy var showingListView: EmotionListView = {
+        let showingListView: EmotionListView = EmotionListView()
+        
+        return showingListView
+    }()
+    
+    private lazy var emojiListView: EmotionListView = {
+        let emojiListView: EmotionListView = EmotionListView()
+        
+        return emojiListView
+    }()
+    
+    private lazy var customListView: EmotionListView = {
+        let customListView: EmotionListView = EmotionListView()
+        
+        return customListView
+    }()
+    
+    private lazy var gifListView: EmotionListView = {
+        let gifListView: EmotionListView = EmotionListView()
+        
+        return gifListView
+    }()
+    
+    private lazy var menuView:EmotionMenuView = {
+        let menuView: EmotionMenuView = EmotionMenuView()
+        
+        return menuView
+    }()
+    
 
 }
