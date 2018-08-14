@@ -68,6 +68,7 @@ class EmotionListView: BaseView {
     }
     
     func configUI() {
+        self.backgroundColor = RGB(237, 237, 246)
         self.addSubview(topLine)
         self.addSubview(scrollView)
         self.addSubview(pageControl)

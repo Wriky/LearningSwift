@@ -17,3 +17,9 @@ enum ChatToolBarStatus: String {
     case ShowKeyboard = "ShowKeyboard"// 正常键盘
     case ShowVideo = "ShowVideo"   // 录制视频
 }
+
+enum EmotionMenuButtonType: Int {
+    case Emoji = 100
+    case Custom = 101
+    case Gif = 102
+} 
