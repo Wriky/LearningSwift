@@ -16,7 +16,7 @@ class ChatFaceView: BaseView {
 
     private lazy var showingListView: EmotionListView = {
         let showingListView: EmotionListView = EmotionListView()
-        showingListView.emotions = FaceManager .emojiEmotions
+        showingListView.setEmotions(FaceManager .emojiEmotions)
         return showingListView
     }()
     
@@ -27,7 +27,7 @@ class ChatFaceView: BaseView {
     
     private lazy var customListView: EmotionListView = {
         let customListView: EmotionListView = EmotionListView()
-        customListView.emotions = FaceManager.customEmotions
+        customListView.setEmotions(FaceManager.customEmotions)
         return customListView
     }()
     
@@ -50,9 +50,9 @@ class ChatFaceView: BaseView {
         
         self.addSubview(menuView)
         
-        DispatchQueue.global().async {
+//        DispatchQueue.global().async {
             self.customListView.emotions = FaceManager.customEmotion()
-        }
+//        }
     }
     
     required init?(coder aDecoder: NSCoder) {

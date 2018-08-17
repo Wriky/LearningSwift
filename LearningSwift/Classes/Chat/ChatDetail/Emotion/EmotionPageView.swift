@@ -30,13 +30,13 @@ class EmotionPageView: BaseView {
     }
    
     
-    func seEmotions(emotionArr: Array<WYEmotion>) {
+    func setEmotions(_ emotionArr: Array<WYEmotion>) {
         self.emotions = emotionArr
         for emotion:WYEmotion in emotionArr {
             let emotionBtn: EmotionButton = EmotionButton()
-            emotionBtn.emotion = emotion
+            emotionBtn.setEmotion(emotion)
             emotionBtn.addTarget(self, action: #selector(emotionBtnClicked(_:)), for: .touchUpInside)
-            self .addSubview(emotionBtn)
+            self.addSubview(emotionBtn)
         }
     }
     
@@ -48,7 +48,7 @@ class EmotionPageView: BaseView {
         let btnW: CGFloat = (self.width - 2*inset) / CGFloat(EmotionMaxCols)
         let btnH: CGFloat = (self.height - 2*inset) / CGFloat(EmotionMaxRows)
         
-        for (index, _) in self.subviews.enumerated() {
+        for index in 0 ..< count {
             let btn: EmotionButton = self.subviews[index + 1] as! EmotionButton
             btn.width = btnW
             btn.height = btnH

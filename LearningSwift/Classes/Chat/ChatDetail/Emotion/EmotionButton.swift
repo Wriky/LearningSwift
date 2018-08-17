@@ -12,7 +12,7 @@ class EmotionButton: UIButton {
    
     var emotion: WYEmotion = WYEmotion()
     
-    public func setEmotion(emotionParam: WYEmotion) {
+    public func setEmotion(_ emotionParam: WYEmotion) {
         emotion = emotionParam
         if !emotion.code.isEmpty {
             self.setTitle(emotion.code, for: .normal)
