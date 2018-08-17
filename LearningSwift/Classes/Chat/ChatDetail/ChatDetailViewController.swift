@@ -42,6 +42,7 @@ class ChatDetailViewController: BaseViewController {
         
         self.configUI()
         self.getOnlineData()
+        
     }
     
     func configUI() {

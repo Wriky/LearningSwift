@@ -9,7 +9,13 @@
 
 import UIKit
 
+protocol EmotionMenuViewDelegate: class {
+    func emotionMenuDidSelectButton(menuView: EmotionMenuView, buttonType:EmotionMenuButtonType)
+}
+
 class EmotionMenuView: BaseView {
+    weak var delegate: EmotionMenuViewDelegate?
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView: UIScrollView = UIScrollView()
         scrollView.scrollsToTop = false
@@ -40,13 +46,14 @@ class EmotionMenuView: BaseView {
     }
     
     func configUI() {
-        
+        self.addSubview(scrollView)
+
         let emojiBtn: UIButton =  self.setupMenuBtnWithType(title: "Custom", buttonType: .Emoji)
         let customBtn: UIButton = self.setupMenuBtnWithType(title: "Custom", buttonType: .Custom)
+        scrollView.addSubview(emojiBtn)
+        scrollView.addSubview(customBtn)
         
-        self.addSubview(emojiBtn)
-        self.addSubview(customBtn)
-        self.addSubview(scrollView)
+        self.addSubview(sendBtn)
     }
     
     override func layoutSubviews() {
@@ -87,6 +94,16 @@ class EmotionMenuView: BaseView {
     }
     
     @objc func menuBtnClicked(_ button: UIButton) {
+        guard let selectMenuButton = delegate?.emotionMenuDidSelectButton(menuView: self, buttonType: EmotionMenuButtonType(rawValue: button.tag)!)  else {
+            return
+        }
+        selectMenuButton
+    }
+    
+    func setDelegate(_ delegate: EmotionMenuViewDelegate) {
+        self.delegate = delegate
         
+        let clickedBtn: UIButton = self.viewWithTag(EmotionMenuButtonType.Emoji.rawValue) as! UIButton
+        self.menuBtnClicked(clickedBtn)
     }
 }

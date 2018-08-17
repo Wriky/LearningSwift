@@ -7,21 +7,49 @@
 //
 
 import UIKit
+import HandyJSON
 
 class FaceManager: NSObject {
-//    var emojiEmotionArr:Array<Any>
     
-    public func emojiEmotion() -> Array<WYEmotion> {
+   static var emojiEmotions: NSArray = []
+   static var customEmotions: NSArray = []
+   static var gifEmotions: NSArray = []
+
+    class func emojiEmotion() -> NSArray {
+        
+        if emojiEmotions.count > 0 {
+            return emojiEmotions
+        }
         let path: String = Bundle.main.path(forResource: "emoji.plist", ofType: nil)!
-//        emojiEmotionArr = WYEmotion.
-        return []
+        
+        let pathArr = NSArray(contentsOfFile: path)
+        emojiEmotions = [WYEmotion].deserialize(from: pathArr)! as NSArray
+        return emojiEmotions
     }
     
-    public func customEmotion() -> Array<WYEmotion> {
-        return []
+    class func customEmotion() -> NSArray {
+        if customEmotions.count > 0 {
+            return customEmotions
+        }
+        let path: String = Bundle.main.path(forResource: "normal_face.plist", ofType: nil)!
+        let pathArr = NSArray(contentsOfFile: path)
+        customEmotions = [WYEmotion].deserialize(from: pathArr)! as NSArray
+        
+        return customEmotions
     }
     
-    public func gifEmotion() -> Array<WYEmotion> {
-        return []
+    class func gifEmotion() -> NSArray {
+        if gifEmotions.count > 0 {
+            return gifEmotions
+        }
+        let path: String = Bundle.main.path(forResource: "normal_face.plist", ofType: nil)!
+        let pathArr = NSArray(contentsOfFile: path)
+        gifEmotions = [WYEmotion].deserialize(from: pathArr)! as NSArray
+        
+        return gifEmotions
+    }
+    
+    class func transferMessageToEmoji(message: String, font: UIFont, lineHeight:CGFloat) {
+        
     }
 }

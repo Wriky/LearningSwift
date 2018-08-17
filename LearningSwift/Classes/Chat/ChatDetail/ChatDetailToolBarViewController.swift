@@ -123,7 +123,7 @@ class ChatDetailToolBarViewController: BaseViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.adjustToolBarHeight(barHeight: toolHeight)
         }) { (finished) in
-            toolView.removeFromSuperview()
+            //toolView.removeFromSuperview()
         }
     }
 }

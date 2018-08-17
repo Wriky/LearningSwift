@@ -141,15 +141,14 @@ class ChatDetailToolBar: BaseView {
             self.faceButton.isSelected = false
             self.textView.becomeFirstResponder()
         } else {
-            self.status = .ShowFace
+            if lastStatus == .ShowKeyboard {
+                self.textView.resignFirstResponder()
+            }
             self.talkButton.isHidden = true
             self.textView.isHidden = false
             self.faceButton.isSelected = true
             self.voiceButton.isSelected = false
-            
-            if lastStatus == .ShowKeyboard {
-                self.textView.resignFirstResponder()
-            }
+            self.status = .ShowFace
         }
         
         guard let changeStatus = delegate?.changeStatus(fromStatus: lastStatus, toStatus: self.status) else {

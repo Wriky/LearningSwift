@@ -11,7 +11,8 @@ import UIKit
 class EmotionListView: BaseView {
     let topLineH: CGFloat = 0.5
     
-    
+    var emotions: NSArray = []
+
     private lazy var topLine: UIView = {
         let topLine: UIView = UIView()
         topLine.backgroundColor = RGBSame(188)
@@ -24,6 +25,7 @@ class EmotionListView: BaseView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
+        scrollView.backgroundColor = UIColor.blue
         return scrollView
     }()
     
@@ -83,12 +85,37 @@ class EmotionListView: BaseView {
             $0.height.equalTo(topLineH)
         }
     }
+    
+    func setEmotions(emotions: NSArray) {
+        self.emotions = emotions
+        
+        self.scrollView.subviews.forEach { subview in
+            subview.removeFromSuperview()
+        }
+        
+        let count: Int = (emotions.count + EmotionPageSize - 1) / EmotionPageSize
+        self.pageControl.numberOfPages = count
+        for (index, _) in emotions.enumerated() {
+            let pageView: EmotionPageView = EmotionPageView()
+            var range: NSRange = NSRange(location: index*EmotionPageSize, length: 0)
+            let left: Int = emotions.count - range.location
+            if left >= EmotionPageSize {
+                range.length = EmotionPageSize
+            } else {
+                range.length = left
+            }
+            pageView.emotions = emotions.subarray(with: range) as! [WYEmotion]
+            self.scrollView.addSubview(pageView)
+        }
+        self.setNeedsLayout()
+    }
 
 }
 
 extension EmotionListView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageNum: Double = Double(scrollView.contentOffset.x / scrollView.width)
+        
+        let pageNum: CGFloat = CGFloat(scrollView.contentOffset.x / scrollView.width)
         self.pageControl.currentPage = Int(pageNum+0.5)
     }
 }

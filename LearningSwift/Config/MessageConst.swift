@@ -11,5 +11,6 @@ import UIKit
 
 public let EmotionMaxRows: Int = 3
 public let EmotionMaxCols: Int = 7
+public let EmotionPageSize: Int = (EmotionMaxCols * EmotionMaxRows) - 1
 
 public let SelectEmotionKey: String = "SelectEmotionKey"

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import HandyJSON
 
-class WYEmotion: NSObject {
-    var faceName: String = ""
-    var faceId: String = ""
+struct WYEmotion: HandyJSON {
+    var face_name: String = ""
+    var face_id: String = ""
     var code: String = ""
+    var type: String = ""
 }

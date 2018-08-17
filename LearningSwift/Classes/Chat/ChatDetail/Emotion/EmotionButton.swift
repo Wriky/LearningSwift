@@ -17,7 +17,7 @@ class EmotionButton: UIButton {
         if !emotion.code.isEmpty {
             self.setTitle(emotion.code, for: .normal)
         } else {
-            self.setImage(UIImage.init(named: emotion.faceName), for: .normal)
+            self.setImage(UIImage.init(named: emotion.face_name), for: .normal)
         }
     }
     
