@@ -25,7 +25,7 @@ class EmotionListView: BaseView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
-        scrollView.backgroundColor = UIColor.blue
+        scrollView.backgroundColor = UIColor.white
         return scrollView
     }()
     
@@ -47,30 +47,32 @@ class EmotionListView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        self.pageControl.width = self.width
-//        self.pageControl.height = 10
-//        self.pageControl.x = 0
-//        self.pageControl.y = self.height - self.pageControl.height
-//        self.scrollView.width = self.width
-//        self.scrollView.height = self.pageControl.y
-//        self.scrollView.x = 0
-//
-//        let count: Int = self.scrollView.subviews.count
-//        for(index, value) in self.scrollView.subviews.enumerated() {
-//            let pageView: EmotionPageView = value as! EmotionPageView
-//            pageView.width = self.scrollView.width
-//            pageView.height = self.scrollView.height
-//            pageView.y = 0
-//            pageView.x = CGFloat(index) * pageView.width
-//        }
-//        self.scrollView.contentSize = CGSize(width: 3.0 * self.scrollView.width, height: 170)
-//    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.pageControl.width = self.width
+        self.pageControl.height = 10
+        self.pageControl.x = 0
+        self.pageControl.y = self.height - self.pageControl.height
+        self.scrollView.width = self.width
+        self.scrollView.height = self.pageControl.y
+        self.scrollView.x = 0
+
+        let count: Int = self.scrollView.subviews.count
+        for index in 0 ..< count {
+            let pageView: EmotionPageView = self.scrollView.subviews[index] as! EmotionPageView
+            pageView.width = self.scrollView.width
+            pageView.height = self.scrollView.height
+            pageView.y = 0
+            pageView.x = CGFloat(index) * pageView.width
+        }
+        self.scrollView.contentSize = CGSize(width: CGFloat(count)*self.scrollView.width, height: 0)
+    }
     
     func configUI() {
         self.backgroundColor = RGB(237, 237, 246)
+        self.isUserInteractionEnabled = true
+        
         self.addSubview(topLine)
         self.addSubview(scrollView)
         self.addSubview(pageControl)
@@ -85,12 +87,12 @@ class EmotionListView: BaseView {
             $0.height.equalTo(topLineH)
         }
         
-        scrollView.snp.makeConstraints {
-            $0.left.equalTo(0)
-            $0.top.equalTo(topLine.snp.bottom)
-            $0.width.equalTo(kScreenWidth)
-            $0.height.equalTo(170)
-        }
+//        scrollView.snp.makeConstraints {
+//            $0.left.equalTo(0)
+//            $0.top.equalTo(topLine.snp.bottom)
+//            $0.width.equalTo(kScreenWidth)
+//            $0.height.equalTo(170)
+//        }
     }
     
     func setEmotions(_ emotions: NSArray) {
@@ -103,9 +105,8 @@ class EmotionListView: BaseView {
         let count: Int = (emotions.count + EmotionPageSize - 1) / EmotionPageSize
         self.pageControl.numberOfPages = count
         for index in 0 ..< count {
-            let pageView: EmotionPageView = EmotionPageView.init(frame:CGRect(x: CGFloat(index) * kScreenWidth
-                , y: 0, width: kScreenWidth, height: 168))
-            pageView.backgroundColor = UIColor.purple
+            let pageView: EmotionPageView = EmotionPageView()
+            pageView.backgroundColor = UIColor.white
             var range: NSRange = NSRange(location: index*EmotionPageSize, length: 0)
             let left: Int = emotions.count - range.location
             if left >= EmotionPageSize {

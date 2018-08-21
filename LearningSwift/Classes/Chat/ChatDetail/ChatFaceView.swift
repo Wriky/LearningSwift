@@ -12,22 +12,17 @@ let bottomViewH: CGFloat = 36
 
 
 class ChatFaceView: BaseView {
-    
-
-    private lazy var showingListView: EmotionListView = {
-        let showingListView: EmotionListView = EmotionListView()
-        showingListView.setEmotions(FaceManager .emojiEmotions)
-        return showingListView
-    }()
+    weak var showingListView: EmotionListView?
     
     private lazy var emojiListView: EmotionListView = {
         let emojiListView: EmotionListView = EmotionListView()
+        emojiListView.setEmotions(FaceManager.customEmotion())
         return emojiListView
     }()
     
     private lazy var customListView: EmotionListView = {
         let customListView: EmotionListView = EmotionListView()
-        customListView.setEmotions(FaceManager.customEmotions)
+        customListView.setEmotions(FaceManager.customEmotion())
         return customListView
     }()
     
@@ -45,14 +40,10 @@ class ChatFaceView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.isUserInteractionEnabled = true
         self.backgroundColor = UIColor.white
         
         self.addSubview(menuView)
-        
-//        DispatchQueue.global().async {
-            self.customListView.emotions = FaceManager.customEmotion()
-//        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,10 +58,10 @@ class ChatFaceView: BaseView {
         self.menuView.x             = 0;
         self.menuView.y             = self.height - self.menuView.height
         
-        self.showingListView.y = 0
-        self.showingListView.x      = self.showingListView.y
-        self.showingListView.width  = self.width
-        self.showingListView.height = self.menuView.y
+        self.showingListView?.y = 0
+        self.showingListView?.x      = 0
+        self.showingListView?.width  = self.width
+        self.showingListView?.height = self.menuView.y
         
     }
 }
@@ -78,7 +69,7 @@ class ChatFaceView: BaseView {
 extension ChatFaceView: EmotionMenuViewDelegate {
     
     func emotionMenuDidSelectButton(menuView: EmotionMenuView, buttonType: EmotionMenuButtonType) {
-        self.showingListView.removeFromSuperview()
+        self.showingListView?.removeFromSuperview()
         switch buttonType {
         case .Emoji:
             self.addSubview(self.emojiListView)
@@ -87,8 +78,8 @@ extension ChatFaceView: EmotionMenuViewDelegate {
         default:
             self.addSubview(self.gifListView)
         }
-        
-        self.showingListView = self.subviews.last as! EmotionListView
+
+        self.showingListView = self.subviews.last as? EmotionListView
         self.setNeedsLayout()
     }
 }
