@@ -86,13 +86,6 @@ class EmotionListView: BaseView {
             $0.width.equalTo(kScreenWidth)
             $0.height.equalTo(topLineH)
         }
-        
-//        scrollView.snp.makeConstraints {
-//            $0.left.equalTo(0)
-//            $0.top.equalTo(topLine.snp.bottom)
-//            $0.width.equalTo(kScreenWidth)
-//            $0.height.equalTo(170)
-//        }
     }
     
     func setEmotions(_ emotions: NSArray) {
