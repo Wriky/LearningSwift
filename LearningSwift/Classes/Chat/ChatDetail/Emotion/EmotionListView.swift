@@ -41,8 +41,8 @@ class EmotionListView: BaseView {
         super.init(frame: frame)
         self.configUI()
         
-        let currentVC = BaseViewController.currentViewController()
-        currentVC?.navigationController?.interactivePopGestureRecognizer?.require(toFail: self.scrollView.panGestureRecognizer)
+//        let currentVC = BaseViewController.currentViewController()
+//        currentVC?.navigationController?.interactivePopGestureRecognizer?.require(toFail: self.scrollView.panGestureRecognizer)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,11 +62,11 @@ class EmotionListView: BaseView {
 
         let count: Int = self.scrollView.subviews.count
         for index in 0 ..< count {
-            let pageView: EmotionPageView = self.scrollView.subviews[index] as! EmotionPageView
-            pageView.width = self.scrollView.width
-            pageView.height = self.scrollView.height
-            pageView.y = 0
-            pageView.x = CGFloat(index) * pageView.width
+            let pageView = self.scrollView.subviews[index]
+                pageView.width = self.scrollView.width
+                pageView.height = self.scrollView.height
+                pageView.y = 0
+                pageView.x = CGFloat(index) * pageView.width
         }
         self.scrollView.contentSize = CGSize(width: CGFloat(count)*self.scrollView.width, height: 0)
     }

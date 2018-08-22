@@ -59,7 +59,7 @@ class ChatDetailToolBarViewController: BaseViewController {
     
     func makeConstraints() {
         chatBar.snp.makeConstraints {
-            $0.left.bottom.right.equalTo(view)
+            $0.left.top.right.equalTo(view)
             $0.height.equalTo(kTabBarHeight)
         }
         

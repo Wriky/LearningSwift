@@ -46,21 +46,22 @@ class ChatDetailViewController: BaseViewController {
     }
     
     func configUI() {
-        view.addSubview(tableView);
         
         self.addChildViewController(toolBarVC)
         view.addSubview(toolBarVC.view)
         
-        tableView.snp.makeConstraints {
-            $0.top.left.right.equalTo(view)
-            $0.height.equalTo(kScreenHeight-kTabBarHeight)
-        }
+        view.addSubview(tableView);
+
         toolBarVC.view.snp.makeConstraints {
             $0.left.right.equalTo(view)
             $0.bottom.equalTo(0)
             $0.height.equalTo(kTabBarHeight)
         }
         
+        tableView.snp.makeConstraints {
+            $0.top.left.right.equalTo(view)
+            $0.height.equalTo(kScreenHeight-kTabBarHeight-kNavBarHeight)
+        }
         self.addTapGestureOnTableView()
     }
     
@@ -118,7 +119,8 @@ extension ChatDetailViewController: ChatDetailToolBarViewControllerDelegate {
     
     func didChangeChatToolBarHeight(height: CGFloat) {
         self.toolBarVC.view.snp.updateConstraints {
-            $0.bottom.equalTo(-height+kTabBarHeight)
+//            $0.bottom.equalTo(0)
+            $0.height.equalTo(height)
         }
         
         
