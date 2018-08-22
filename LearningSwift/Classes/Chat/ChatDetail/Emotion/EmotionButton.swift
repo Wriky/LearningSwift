@@ -15,7 +15,7 @@ class EmotionButton: UIButton {
     public func setEmotion(_ emotionParam: WYEmotion) {
         emotion = emotionParam
         if !emotion.code.isEmpty {
-            self.setTitle(emotion.code, for: .normal)
+            self.setTitle(emotion.code.emoji(), for: .normal)
         } else {
             self.setImage(UIImage.init(named: emotion.face_name), for: .normal)
         }

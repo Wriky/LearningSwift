@@ -25,7 +25,6 @@ class EmotionListView: BaseView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
-        scrollView.backgroundColor = UIColor.white
         return scrollView
     }()
     
@@ -40,9 +39,6 @@ class EmotionListView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configUI()
-        
-//        let currentVC = BaseViewController.currentViewController()
-//        currentVC?.navigationController?.interactivePopGestureRecognizer?.require(toFail: self.scrollView.panGestureRecognizer)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,7 +55,8 @@ class EmotionListView: BaseView {
         self.scrollView.width = self.width
         self.scrollView.height = self.pageControl.y
         self.scrollView.x = 0
-
+        self.scrollView.y = 0.5
+        
         let count: Int = self.scrollView.subviews.count
         for index in 0 ..< count {
             let pageView = self.scrollView.subviews[index]
@@ -100,7 +97,6 @@ class EmotionListView: BaseView {
         self.pageControl.numberOfPages = count
         for index in 0 ..< count {
             let pageView: EmotionPageView = EmotionPageView()
-            pageView.backgroundColor = UIColor.white
             var range: NSRange = NSRange(location: index*EmotionPageSize, length: 0)
             let left: Int = emotions.count - range.location
             if left >= EmotionPageSize {

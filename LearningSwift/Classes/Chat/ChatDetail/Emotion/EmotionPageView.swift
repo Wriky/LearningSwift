@@ -21,6 +21,8 @@ class EmotionPageView: BaseView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        self.backgroundColor = RGB(237, 237, 246)
         self.addSubview(deleteBtn)
     }
     
@@ -48,7 +50,7 @@ class EmotionPageView: BaseView {
         let btnH: CGFloat = (self.height - 2*inset) / CGFloat(EmotionMaxRows)
         
         for index in 0 ..< count {
-            let btn: EmotionButton = self.subviews[index + 1] as! EmotionButton
+            let btn = self.subviews[index + 1]
             btn.width = btnW
             btn.height = btnH
             btn.x = inset + CGFloat(index % EmotionMaxCols)*btnW
@@ -62,7 +64,7 @@ class EmotionPageView: BaseView {
     
     
     @objc func deleteBtnClicked() {
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: EmotionDidDeleteNotification), object: nil)
     }
     
     @objc func emotionBtnClicked(_ button: EmotionButton) {
@@ -70,7 +72,5 @@ class EmotionPageView: BaseView {
         userInfoDic[SelectEmotionKey] = button.emotion
         
         NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: EmotionDidSelectNotification), object: nil, userInfo: userInfoDic))
-        
     }
-    
 }

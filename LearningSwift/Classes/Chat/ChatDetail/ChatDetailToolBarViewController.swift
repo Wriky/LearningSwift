@@ -39,7 +39,7 @@ class ChatDetailToolBarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = RGB(237, 237, 246)
         
         self.configUI()
         self.addNotification()

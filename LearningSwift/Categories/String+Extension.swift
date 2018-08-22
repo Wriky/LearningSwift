@@ -10,28 +10,14 @@ import UIKit
 
 
 extension String {
-//    func emoji()->String {
-//      return  emojiWithStringCode(stringCode: self)
-//    }
-//    
-//    func emojiWithStringCode(stringCode: String) -> String {
-//        var charCode = stringCode.utf8CString
-//        var intCode = strtof(charCode, nil)
-//        return emojiWithIntCode(intCode: intCode)
-//    }
-//    
-//    func emojiWithIntCode(intCode: Int) -> String {
-//        var symbol: Int = EmojiCodeToSymbol(intCode: intCode)
-//        var symbolString = NSString.init(bytesNoCopy: &symbol, length:MemoryLayout.size(ofValue: symbol) , encoding: String.Encoding.utf8.rawValue, freeWhenDone: true)
-//        symbolString = NSString.init(format: "%C", unichar(intCode))
-//    
-//        return symbolString! as String
-//    }
-//    
-//    func EmojiCodeToSymbol(intCode: Int) -> Int {
-//        return ((((0x808080F0 | (intCode & 0x3F000) >> 4) | (intCode & 0xFC0) << 10) | (intCode & 0x1C0000) << 18) | (intCode & 0x3F) << 24)
-//    }
-    
-    
-    
+    func emoji()->String {
+        
+        let scanner = Scanner(string: self)
+        var result: UInt32 = 0
+        scanner.scanHexInt32(&result)
+        
+        let emojiStr = Character(UnicodeScalar(result)!)
+        
+      return  String(emojiStr)
+    }
 }

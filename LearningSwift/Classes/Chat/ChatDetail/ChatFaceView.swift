@@ -16,7 +16,7 @@ class ChatFaceView: BaseView {
     
     private lazy var emojiListView: EmotionListView = {
         let emojiListView: EmotionListView = EmotionListView()
-        emojiListView.setEmotions(FaceManager.customEmotion())
+        emojiListView.setEmotions(FaceManager.emojiEmotion())
         return emojiListView
     }()
     
@@ -40,7 +40,7 @@ class ChatFaceView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = RGB(237, 237, 246)
         
         self.addSubview(menuView)
     }

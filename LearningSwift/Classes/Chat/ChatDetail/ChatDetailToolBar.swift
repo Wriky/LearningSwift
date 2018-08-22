@@ -183,7 +183,7 @@ class ChatDetailToolBar: BaseView {
     func emotionDidSelected(_ notification: Notification) {
         let emotion: WYEmotion = notification.userInfo![SelectEmotionKey] as! WYEmotion
         if !emotion.code.isEmpty {
-            self.textView.insertText(emotion.code)
+            self.textView.insertText(emotion.code.emoji())
         self.textView.scrollRangeToVisible(NSMakeRange(self.textView.text.lengthOfBytes(using: String.Encoding.utf8), 0))
         } else {
             self.textView.insertText(emotion.face_name)
@@ -194,12 +194,25 @@ class ChatDetailToolBar: BaseView {
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: EmotionDidSelectNotification), object: nil, queue: OperationQueue.main) { (notification) in
             self.emotionDidSelected(notification)
         }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: EmotionDidDeleteNotification), object: nil, queue: OperationQueue.main) { (notification) in
+            self.textView.deleteBackward()
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: EmotionDidSendNotification), object: nil, queue: OperationQueue.main) { (notification) in
+            if self.textView.text.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+                if let sendTextMessage = self.delegate?.sendTextMessage(textStr: self.textView.text) {
+                    sendTextMessage
+                    
+                    self.textView.text = ""
+                }
+            }
+        }
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.configUI()
+        self.addNotification()
     }
     
     required init?(coder aDecoder: NSCoder) {

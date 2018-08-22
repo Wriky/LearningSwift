@@ -119,7 +119,6 @@ extension ChatDetailViewController: ChatDetailToolBarViewControllerDelegate {
     
     func didChangeChatToolBarHeight(height: CGFloat) {
         self.toolBarVC.view.snp.updateConstraints {
-//            $0.bottom.equalTo(0)
             $0.height.equalTo(height)
         }
         

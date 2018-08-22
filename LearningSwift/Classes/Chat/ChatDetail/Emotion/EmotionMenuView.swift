@@ -15,6 +15,7 @@ protocol EmotionMenuViewDelegate: class {
 
 class EmotionMenuView: BaseView {
     weak var delegate: EmotionMenuViewDelegate?
+    weak var selectedBtn: UIButton?
     
     private lazy var scrollView: UIScrollView = {
         let scrollView: UIScrollView = UIScrollView()
@@ -48,7 +49,7 @@ class EmotionMenuView: BaseView {
     func configUI() {
         self.addSubview(scrollView)
 
-        let emojiBtn: UIButton =  self.setupMenuBtnWithType(title: "Custom", buttonType: .Emoji)
+        let emojiBtn: UIButton =  self.setupMenuBtnWithType(title: "0x1f603".emoji(), buttonType: .Emoji)
         let customBtn: UIButton = self.setupMenuBtnWithType(title: "Custom", buttonType: .Custom)
         scrollView.addSubview(emojiBtn)
         scrollView.addSubview(customBtn)
@@ -85,15 +86,20 @@ class EmotionMenuView: BaseView {
         }
         btn.addTarget(self, action: #selector(menuBtnClicked(_:)), for: .touchUpInside)
         btn.setBackgroundImage(UIImage().fillImageWithColor(color: UIColor.white), for: .normal)
-        btn.setImage(UIImage().fillImageWithColor(color: RGBSame(241)), for: .selected)
+        btn.setBackgroundImage(UIImage().fillImageWithColor(color: RGBSame(241)), for: .selected)
         return btn
     }
     
     @objc func sendBtnClicked(_ button: UIButton) {
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: EmotionDidSendNotification), object: nil)
     }
     
     @objc func menuBtnClicked(_ button: UIButton) {
+        self.selectedBtn?.isSelected = false
+        
+        button.isSelected = true
+        self.selectedBtn = button
+        
         guard let selectMenuButton = delegate?.emotionMenuDidSelectButton(menuView: self, buttonType: EmotionMenuButtonType(rawValue: button.tag)!)  else {
             return
         }

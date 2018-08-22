@@ -10,3 +10,5 @@ import UIKit
 
 
 public var EmotionDidSelectNotification: String = "EmotionDidSelectNotification"
+public var EmotionDidDeleteNotification: String = "EmotionDidDeleteNotification"
+public var EmotionDidSendNotification: String = "EmotionDidSendNotification"
