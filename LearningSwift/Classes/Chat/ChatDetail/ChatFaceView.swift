@@ -40,7 +40,6 @@ class ChatFaceView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.isUserInteractionEnabled = true
         self.backgroundColor = UIColor.white
         
         self.addSubview(menuView)

@@ -39,8 +39,10 @@ class EmotionListView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.configUI()
+        
+        let currentVC = BaseViewController.currentViewController()
+        currentVC?.navigationController?.interactivePopGestureRecognizer?.require(toFail: self.scrollView.panGestureRecognizer)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -71,7 +73,6 @@ class EmotionListView: BaseView {
     
     func configUI() {
         self.backgroundColor = RGB(237, 237, 246)
-        self.isUserInteractionEnabled = true
         
         self.addSubview(topLine)
         self.addSubview(scrollView)

@@ -20,8 +20,20 @@ class BaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-   
-
+extension BaseViewController {
+    class func currentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> BaseViewController? {
+        if let nav = base as? UINavigationController {
+            return currentViewController(base: nav.visibleViewController)
+        }
+        
+        if let tab = base as? UITabBarController {
+            return currentViewController(base: tab.selectedViewController)
+        }
+        if let presented = base?.presentedViewController {
+            return currentViewController(base: presented)
+        }
+        return (base as! BaseViewController)
+    }
 }

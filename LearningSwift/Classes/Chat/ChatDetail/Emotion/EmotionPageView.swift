@@ -21,7 +21,6 @@ class EmotionPageView: BaseView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.addSubview(deleteBtn)
     }
     
@@ -70,6 +69,7 @@ class EmotionPageView: BaseView {
         var userInfoDic: [String: WYEmotion] = [:]
         userInfoDic[SelectEmotionKey] = button.emotion
         
+        NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: EmotionDidSelectNotification), object: nil, userInfo: userInfoDic))
         
     }
     

@@ -47,7 +47,6 @@ class ChatDetailToolBar: BaseView {
         faceButton.setImage(UIImage.init(named: "ToolViewEmotion"), for: .normal)
         faceButton.setImage(UIImage.init(named: "ToolViewEmotionHL"), for: .highlighted)
         faceButton.setImage(UIImage.init(named: "ToolViewKeyboard"), for: .selected)
-
         faceButton.addTarget(self, action: #selector(faceButtonClick(_:)), for: UIControlEvents.touchUpInside)
         return faceButton
     }()
@@ -180,6 +179,22 @@ class ChatDetailToolBar: BaseView {
     @objc func talkButtonDragInside(_ button: UIButton) {
         
     }
+    
+    func emotionDidSelected(_ notification: Notification) {
+        let emotion: WYEmotion = notification.userInfo![SelectEmotionKey] as! WYEmotion
+        if !emotion.code.isEmpty {
+            self.textView.insertText(emotion.code)
+        self.textView.scrollRangeToVisible(NSMakeRange(self.textView.text.lengthOfBytes(using: String.Encoding.utf8), 0))
+        } else {
+            self.textView.insertText(emotion.face_name)
+        }
+    }
+    
+    func addNotification() {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: EmotionDidSelectNotification), object: nil, queue: OperationQueue.main) { (notification) in
+            self.emotionDidSelected(notification)
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -189,6 +204,10 @@ class ChatDetailToolBar: BaseView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func configUI() {
