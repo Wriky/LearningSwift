@@ -25,9 +25,6 @@ class ChatDetailTableCell: BaseTableViewCell {
     
     private lazy var bubbleView: UIImageView = {
         let bubbleView = UIImageView()
-        let bubbleImage = UIImage.init(named: "chat_bg_right")!
-        let resizable = bubbleImage.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
-        bubbleView.image = resizable
         return bubbleView
     }()
     
@@ -46,7 +43,8 @@ class ChatDetailTableCell: BaseTableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+    
+        self.contentView.backgroundColor = RGB(237, 237, 246)
         self.selectionStyle = UITableViewCellSelectionStyle.none
         self.configUI()
     }
@@ -68,34 +66,89 @@ class ChatDetailTableCell: BaseTableViewCell {
     func makeConstraints() {
         avatarView.snp.makeConstraints {
             $0.top.equalTo(15)
-            $0.right.equalTo(-20)
+            $0.left.equalTo(20)
             $0.size.equalTo(CGSize(width: 40, height: 40))
         }
         nameLbl.snp.makeConstraints {
             $0.top.equalTo(avatarView.snp.top).offset(-3)
-            $0.right.equalTo(avatarView.snp.left).offset(-10)
+            $0.left.equalTo(avatarView.snp.right).offset(10)
         }
         bubbleView.snp.makeConstraints {
             $0.top.equalTo(nameLbl.snp.bottom).offset(2)
-            $0.right.equalTo(avatarView.snp.left).offset(-5)
             $0.width.lessThanOrEqualTo(230)
             $0.bottom.equalTo(-15)
+            $0.left.equalTo(avatarView.snp.right).offset(5)
         }
         
         contentLbl.snp.makeConstraints {
-            $0.edges.equalTo(UIEdgeInsetsMake(10, 12, 10, 18))
+            $0.edges.equalTo(UIEdgeInsetsMake(10, 18, 10, 12))
         }
         
         activityView.snp.makeConstraints {
-            $0.right.equalTo(bubbleView.snp.left).offset(-3)
+            $0.left.equalTo(bubbleView.snp.right).offset(3)
             $0.centerY.equalTo(bubbleView.snp.centerY)
         }
     }
     
-    func configureWithItem(_ item: MessageTableItem) {
+    func updateConstraints(_ isLeft: Bool) {
+        avatarView.snp.remakeConstraints {
+            $0.top.equalTo(15)
+            if isLeft {
+                $0.left.equalTo(20)
+            } else {
+                $0.right.equalTo(-20)
+            }
+            $0.size.equalTo(CGSize(width: 40, height: 40))
+        }
+        nameLbl.snp.remakeConstraints {
+            $0.top.equalTo(avatarView.snp.top).offset(-3)
+            if isLeft {
+                $0.left.equalTo(avatarView.snp.right).offset(10)
+            } else {
+                $0.right.equalTo(avatarView.snp.left).offset(-10)
+            }
+        }
+        bubbleView.snp.remakeConstraints {
+            $0.top.equalTo(nameLbl.snp.bottom).offset(2)
+            $0.width.lessThanOrEqualTo(230)
+            $0.bottom.equalTo(-15)
+            if isLeft {
+                $0.left.equalTo(avatarView.snp.right).offset(5)
+            } else {
+                $0.right.equalTo(avatarView.snp.left).offset(-5)
+            }
+        }
+        
+        contentLbl.snp.remakeConstraints {
+            if isLeft {
+                $0.edges.equalTo(UIEdgeInsetsMake(10, 18, 10, 12))
+            } else {
+                $0.edges.equalTo(UIEdgeInsetsMake(10, 12, 10, 18))
+            }
+        }
+        
+        activityView.snp.remakeConstraints {
+            if isLeft {
+                $0.left.equalTo(bubbleView.snp.right).offset(3)
+            } else {
+                $0.right.equalTo(bubbleView.snp.left).offset(-3)
+            }
+            $0.centerY.equalTo(bubbleView.snp.centerY)
+        }
+    }
+    
+    func configureWithItem(_ item: MessageTableItem, isLeft: Bool) {
+        self.updateConstraints(isLeft)
+        
+        let bubbleImage = UIImage.init(named: (isLeft ? "chat_bg_left":"chat_bg_right"))!
+        let resizable = bubbleImage.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+        bubbleView.image = resizable
+
         avatarView.image = UIImage.init(named: "icon_center_information_upload")
-//        contentLbl.text = item.contentStr
-        nameLbl.text = item.nameStr
+        
+        let name: String = isLeft ? item.nameStr : "superMan"
+        nameLbl.text =  name
+        
         contentLbl.attributedText = FaceManager.transferMessageToEmoji(message: item.contentStr, font: contentLbl.font, lineHeight: contentLbl.font.lineHeight)
     }
 

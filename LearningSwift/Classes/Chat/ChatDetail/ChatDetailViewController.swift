@@ -23,6 +23,7 @@ class ChatDetailViewController: BaseViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = RGB(237, 237, 246)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.register(ChatDetailTableCell.self, forCellReuseIdentifier: kCellIdentifier)
         return tableView;
@@ -66,11 +67,10 @@ class ChatDetailViewController: BaseViewController {
     }
     
     func getOnlineData() {
-        let array = ["Eggs", "Milk", "Vegetables"]
         let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "沁园春.雪❄️"]
         
-        for (index, value) in array.enumerated() {
-            items.append(MessageTableItem(nameStr: value, timeStr: "2018-08-08", contentStr: contentArray[index]))
+        for (index, _) in contentArray.enumerated() {
+            items.append(MessageTableItem(nameStr: nameStr, timeStr: "2018-08-08", contentStr: contentArray[index]))
         }
         self.tableView.reloadData()
     }
@@ -87,12 +87,12 @@ class ChatDetailViewController: BaseViewController {
     
     func scrollToBottom() {
         if self.items.count > 0 {
-            self.tableView.scrollToRow(at: NSIndexPath.init(row: self.items.count-1, section: 0) as IndexPath, at: .bottom, animated: true)
+            self.tableView.scrollToRow(at: NSIndexPath.init(row: self.items.count-1, section: 0) as IndexPath, at: .bottom, animated: false)
         }
     }
     
     func addMessage(message: String, isSender:Bool) {
-        self.items.append(MessageTableItem(nameStr: "superMan", timeStr: "2018-08-10", contentStr: message))
+        self.items.append(MessageTableItem(nameStr: nameStr, timeStr: "2018-08-10", contentStr: message))
         self.tableView.reloadData()
         self.scrollToBottom()
     }
@@ -102,7 +102,8 @@ class ChatDetailViewController: BaseViewController {
 extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier, for: indexPath) as! ChatDetailTableCell
-        cell.configureWithItem(items[indexPath.row])
+        let isLeft: Bool = (indexPath.row % 2 == 0)
+        cell.configureWithItem(items[indexPath.row], isLeft: isLeft)
         return cell
     }
     
