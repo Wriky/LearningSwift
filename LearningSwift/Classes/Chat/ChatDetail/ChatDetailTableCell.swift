@@ -94,8 +94,9 @@ class ChatDetailTableCell: BaseTableViewCell {
     
     func configureWithItem(_ item: MessageTableItem) {
         avatarView.image = UIImage.init(named: "icon_center_information_upload")
-        contentLbl.text = item.contentStr
+//        contentLbl.text = item.contentStr
         nameLbl.text = item.nameStr
+        contentLbl.attributedText = FaceManager.transferMessageToEmoji(message: item.contentStr, font: contentLbl.font, lineHeight: contentLbl.font.lineHeight)
     }
 
 }
