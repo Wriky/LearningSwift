@@ -47,6 +47,7 @@
 		E0C3072E2122D9B200C9C263 /* normal_face.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C3072D2122D9B200C9C263 /* normal_face.plist */; };
 		E0C307302122D9BC00C9C263 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C3072F2122D9BC00C9C263 /* emoji.plist */; };
 		E0E54314212C05EB00CB46EF /* NotificationConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54313212C05EB00CB46EF /* NotificationConst.swift */; };
+		E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54316212EBB7600CB46EF /* CentrifugeHelper.swift */; };
 		E0F5687720EB10880017BED5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687620EB10880017BED5 /* Const.swift */; };
 		E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687820EC61CF0017BED5 /* NewsViewController.swift */; };
 		E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687A20EC766B0017BED5 /* MomentViewController.swift */; };
@@ -125,6 +126,7 @@
 		E0C3072D2122D9B200C9C263 /* normal_face.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = normal_face.plist; sourceTree = "<group>"; };
 		E0C3072F2122D9BC00C9C263 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		E0E54313212C05EB00CB46EF /* NotificationConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConst.swift; sourceTree = "<group>"; };
+		E0E54316212EBB7600CB46EF /* CentrifugeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentrifugeHelper.swift; sourceTree = "<group>"; };
 		E0F5687620EB10880017BED5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E0F5687820EC61CF0017BED5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E0F5687A20EC766B0017BED5 /* MomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		E044C79E20EB0A3100E9569B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E0E54315212EBB5B00CB46EF /* Centrifuge */,
 				E0F5688220EC79CD0017BED5 /* Network */,
 			);
 			path = Helpers;
@@ -409,6 +412,14 @@
 				E0C3072421226B2E00C9C263 /* WYEmotion.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E0E54315212EBB5B00CB46EF /* Centrifuge */ = {
+			isa = PBXGroup;
+			children = (
+				E0E54316212EBB7600CB46EF /* CentrifugeHelper.swift */,
+			);
+			path = Centrifuge;
 			sourceTree = "<group>";
 		};
 		E0F5687520EB10750017BED5 /* Config */ = {
@@ -674,6 +685,7 @@
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
 				E03A864A211C2E4E001CF144 /* Enums.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
+				E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */,
 				E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */,
 				E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */,
 				E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */,
