@@ -48,6 +48,7 @@
 		E0C307302122D9BC00C9C263 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C3072F2122D9BC00C9C263 /* emoji.plist */; };
 		E0E54314212C05EB00CB46EF /* NotificationConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54313212C05EB00CB46EF /* NotificationConst.swift */; };
 		E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54316212EBB7600CB46EF /* CentrifugeHelper.swift */; };
+		E0E54319212F968D00CB46EF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54318212F968D00CB46EF /* Alert.swift */; };
 		E0F5687720EB10880017BED5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687620EB10880017BED5 /* Const.swift */; };
 		E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687820EC61CF0017BED5 /* NewsViewController.swift */; };
 		E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687A20EC766B0017BED5 /* MomentViewController.swift */; };
@@ -127,6 +128,7 @@
 		E0C3072F2122D9BC00C9C263 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		E0E54313212C05EB00CB46EF /* NotificationConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConst.swift; sourceTree = "<group>"; };
 		E0E54316212EBB7600CB46EF /* CentrifugeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentrifugeHelper.swift; sourceTree = "<group>"; };
+		E0E54318212F968D00CB46EF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E0F5687620EB10880017BED5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E0F5687820EC61CF0017BED5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E0F5687A20EC766B0017BED5 /* MomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewController.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C00BC720F7432400E1654F /* Emoji.swift */,
+				E0E54318212F968D00CB46EF /* Alert.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
 				E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
+				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

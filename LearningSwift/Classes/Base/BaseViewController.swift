@@ -23,7 +23,7 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController {
-    class func currentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> BaseViewController? {
+     class func currentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> BaseViewController? {
         if let nav = base as? UINavigationController {
             return currentViewController(base: nav.visibleViewController)
         }
