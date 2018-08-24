@@ -23,3 +23,18 @@ enum EmotionMenuButtonType: Int {
     case Custom = 101
     case Gif = 102
 } 
+
+public enum CentrifugeMethod: String {
+    case connect = "connect"
+    case disconnect = "disconnect"
+    case subscribe = "subscribe"
+    case unsubscribe = "unsubscribe"
+    case publish = "publish"
+    case presence = "presence"
+    case history = "history"
+    case join = "join"
+    case leave = "leave"
+    case message = "message"
+    case refresh = "refresh"
+    case ping = "ping"
+}
