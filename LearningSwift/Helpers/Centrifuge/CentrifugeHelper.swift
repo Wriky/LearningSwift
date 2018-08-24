@@ -10,8 +10,9 @@ import UIKit
 import CentrifugeiOS
 
 class CentrifugeHelper: NSObject {
+    
     var client: CentrifugeClient!
-
+ 
     let channel = "jsfiddle-chat"
     let user = "ios-swift"
     let secret = "secret"
@@ -28,7 +29,7 @@ class CentrifugeHelper: NSObject {
         let creds = CentrifugeCredentials(token: token, user: user, timestamp: timestamp)
         let url = "wss://centrifugo.herokuapp.com/connection/websocket"
         
-        client = Centrifuge.client(url: url, creds: creds, delegate: self)
+        client = Centrifuge.client(url: url, creds: creds, delegate: self as CentrifugeClientDelegate)
     }
     
     func publish(_ text: String) {
@@ -36,41 +37,55 @@ class CentrifugeHelper: NSObject {
             print("publish message: \(String(describing: message))")
         }
     }
+    
+    func showMessage(_ message: CentrifugeServerMessage) {
+        Alert.showAlert("Message", message: "\(message)")
+    }
+    
+    func showResponse(_ message: CentrifugeServerMessage?, error: Error) {
+        if let msg = message {
+            showMessage(msg)
+        } else {
+           Alert.showError(error)
+        }
+    }
 }
 
-extension CentrifugeHelper: CentrifugeChannelDelegate, CentrifugeClientDelegate {
-    
+extension CentrifugeHelper : CentrifugeChannelDelegate, CentrifugeClientDelegate {
+   
+    //MARK: CentrifugeClientDelegate
+    func client(_ client: CentrifugeClient, didDisconnectWithError error: Error) {
+        Alert.showError(error)
+    }
+
+    func client(_ client: CentrifugeClient, didReceiveRefreshMessage message: CentrifugeServerMessage) {
+        print("didReceiveRefresh message: \(message)")
+    }
+
     //MARK: CentrifugeChannelDelegate
     func client(_ client: CentrifugeClient, didReceiveMessageInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let input = data["input"] as? String, let nick = data["nick"] as? String {
             print("\(nick) && \(input)")
         }
     }
-    
+
     func client(_ client: CentrifugeClient, didReceiveJoinInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let user = data["user"] as? String {
             print("\(message.method.rawValue) && \(user)")
         }
     }
-    
+
     func client(_ client: CentrifugeClient, didReceiveLeaveInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let user = data["user"] as? String {
             print("\(message.method.rawValue) && \(user)")
         }
     }
-    
+
     func client(_ client: CentrifugeClient, didReceiveUnsubscribeInChannel channel: String, message: CentrifugeServerMessage) {
-        print("didRecieveUnsubscibeInChannel \(message)")
+        print("didReceiveUnsubscribeInChannel \(message)"   )
     }
-    
-    //MARK: CentrifugeClientDelegate
-    func client(_ client: CentrifugeClient, didReceiveRefreshMessage message: CentrifugeServerMessage) {
-        print("didRecieveRefresh message: \(message)")
-    }
-    
-    func client(_ client: CentrifugeClient, didDisconnectWithError error: Error) {
-        Alert.showError(error)
-    }
-    
-    
 }
+
+
+
+

@@ -14,11 +14,3 @@ public let EmotionPageSize: Int = (EmotionMaxCols * EmotionMaxRows) - 1
 
 public let SelectEmotionKey: String = "SelectEmotionKey"
 
-
-
-public struct CentrifugeServerMessage {
-    public let uid: String?
-    public let method: CentrifugeMethod
-    public let error: String
-    public let body: [String : Any]?
-}

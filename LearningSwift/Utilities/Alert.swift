@@ -23,16 +23,5 @@ class Alert: NSObject {
         let currentVC =  BaseViewController.currentViewController()
         currentVC?.show(vc, sender: self)
     }
-    
-    class func showMessage(_ message: CentrifugeServerMessage) {
-        showAlert("Message", message: "\(message)")
-    }
-    
-    class func showResponse(_ message: CentrifugeServerMessage?, error: Error?) {
-        if let msg = message {
-            showMessage(msg)
-        } else {
-            showError(error!)
-        }
-    }
+  
 }
