@@ -146,6 +146,4 @@ extension ChatDetailViewController: ChatDetailToolBarViewControllerDelegate {
     func sendVoiceMessage(voicePath: String) {
         
     }
-    
-    
 }

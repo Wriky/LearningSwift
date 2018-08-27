@@ -9,6 +9,10 @@
 import UIKit
 
 
+let device_id: Int = 6096495334
+let iid: Int = 5034850950
+
+
 //服务器地址
 public let BaseUrl = "https://is.snssdk.com"
 

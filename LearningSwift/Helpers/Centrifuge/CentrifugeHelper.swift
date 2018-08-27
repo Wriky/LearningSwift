@@ -42,11 +42,11 @@ class CentrifugeHelper: NSObject {
         Alert.showAlert("Message", message: "\(message)")
     }
     
-    func showResponse(_ message: CentrifugeServerMessage?, error: Error) {
+    func showResponse(_ message: CentrifugeServerMessage?, error: Error?) {
         if let msg = message {
             showMessage(msg)
-        } else {
-           Alert.showError(error)
+        } else if let err = error {
+           Alert.showError(err)
         }
     }
 }
@@ -83,6 +83,36 @@ extension CentrifugeHelper : CentrifugeChannelDelegate, CentrifugeClientDelegate
 
     func client(_ client: CentrifugeClient, didReceiveUnsubscribeInChannel channel: String, message: CentrifugeServerMessage) {
         print("didReceiveUnsubscribeInChannel \(message)"   )
+    }
+}
+
+extension CentrifugeHelper {
+    func connectClient() {
+        self.client.connect(withCompletion: self.showResponse)
+    }
+    
+    func disconnectClient() {
+        self.client.disconnect()
+    }
+    
+    func pingClient() {
+        self.client.ping(withCompletion: self.showResponse)
+    }
+    
+    func subscribeClient() {
+        self.client.subscribe(toChannel: self.channel, delegate: self, completion: self.showResponse)
+    }
+    
+    func unsubscibeClient() {
+        self.client.unsubscribe(fromChannel: self.channel, completion: self.showResponse)
+    }
+    
+    func clientHistory() {
+        self.client.history(ofChannel: self.channel, completion: self.showResponse)
+    }
+    
+    func presenceClient() {
+        self.client.history(ofChannel: self.channel, completion: self.showResponse)
     }
 }
 

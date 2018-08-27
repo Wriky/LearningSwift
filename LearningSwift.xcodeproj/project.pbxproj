@@ -22,6 +22,9 @@
 		E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8645211C21E2001CF144 /* ChatMoreView.swift */; };
 		E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8647211C21F5001CF144 /* ChatFaceView.swift */; };
 		E03A864A211C2E4E001CF144 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8649211C2E4E001CF144 /* Enums.swift */; };
+		E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */; };
+		E03DCF882133EEBF00BB2E43 /* NewsListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */; };
+		E03DCF8B2133FA3A00BB2E43 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF8A2133FA3A00BB2E43 /* NewsModel.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -96,6 +99,9 @@
 		E03A8645211C21E2001CF144 /* ChatMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMoreView.swift; sourceTree = "<group>"; };
 		E03A8647211C21F5001CF144 /* ChatFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFaceView.swift; sourceTree = "<group>"; };
 		E03A8649211C2E4E001CF144 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OathTokenHelper.swift; sourceTree = "<group>"; };
+		E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableCell.swift; sourceTree = "<group>"; };
+		E03DCF8A2133FA3A00BB2E43 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -226,7 +232,9 @@
 		E006B5AC2119A2DF0063F2A3 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				E03DCF892133FA1400BB2E43 /* Model */,
 				E0F5687820EC61CF0017BED5 /* NewsViewController.swift */,
+				E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -271,6 +279,14 @@
 				E0C3071D212269C400C9C263 /* Emotion */,
 			);
 			path = ChatDetail;
+			sourceTree = "<group>";
+		};
+		E03DCF892133FA1400BB2E43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E03DCF8A2133FA3A00BB2E43 /* NewsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E044C79C20EB098F00E9569B /* Classes */ = {
@@ -440,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				E0F5688320EC7A060017BED5 /* NetworkHelper.swift */,
+				E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -672,6 +689,7 @@
 				E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */,
 				E0E54314212C05EB00CB46EF /* NotificationConst.swift in Sources */,
 				E006B5A921199F7F0063F2A3 /* ChatListViewController.swift in Sources */,
+				E03DCF8B2133FA3A00BB2E43 /* NewsModel.swift in Sources */,
 				E006B5B4211A92C80063F2A3 /* BaseViewController.swift in Sources */,
 				E0C3072821226DE600C9C263 /* String+Extension.swift in Sources */,
 				E0C3072321226AD200C9C263 /* EmotionPageView.swift in Sources */,
@@ -683,6 +701,7 @@
 				E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */,
 				E0F5688420EC7A060017BED5 /* NetworkHelper.swift in Sources */,
 				E04D876820DFA03C006A6ACD /* VideoViewController.swift in Sources */,
+				E03DCF882133EEBF00BB2E43 /* NewsListTableCell.swift in Sources */,
 				E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */,
 				E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */,
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
@@ -702,6 +721,7 @@
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
 				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
+				E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
