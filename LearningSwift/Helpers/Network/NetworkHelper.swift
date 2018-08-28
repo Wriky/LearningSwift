@@ -10,13 +10,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class NetworkHelper: NSObject {
-
-}
 
 protocol NetworkHelperProtocol {
     //获取新闻列表数据
     static func loadNewsFeeds(category: NewsTitleCategory, ttFrom: TTFrom, _ completionHandler: @escaping (_ maxBehotTime: TimeInterval, _ news: [NewsModel]) -> ())
+    
+    //获取更多新闻列表数据
+    static func loadMoreNewsFeeds(category: NewsTitleCategory, ttFrom: TTFrom, maxBehotTime: TimeInterval, listCount: Int, _ completionHandler: @escaping (_ news: [NewsModel]) -> ())
+
 }
 
 extension NetworkHelperProtocol {
@@ -50,4 +51,37 @@ extension NetworkHelperProtocol {
         }
     }
     
+    static func loadMoreNewsFeeds(category: NewsTitleCategory, ttFrom: TTFrom, maxBehotTime: TimeInterval, listCount: Int, _ completionHandler: @escaping (_ news: [NewsModel]) -> ()) {
+        
+        let url = BaseUrl + "/api/news/feed/v75/?"
+        let params = ["device_id": device_id,
+                      "count": 20,
+                      "list_count": listCount,
+                      "category": category.rawValue,
+                      "min_behot_time": maxBehotTime,
+                      "strict": 0,
+                      "detail": 1,
+                      "refresh_reason": 1,
+                      "tt_from": ttFrom,
+                      "iid": iid] as [String: Any]
+        
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+            
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else { return }
+                guard let datas = json["data"].array else { return }
+                completionHandler(datas.compactMap({
+                    NewsModel.deserialize(from: $0["content"].string)
+                }))
+            }
+        }
+    }
+    
 }
+
+struct NetworkHelper: NetworkHelperProtocol {
+    
+}
+

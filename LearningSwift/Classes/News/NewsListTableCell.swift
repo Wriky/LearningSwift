@@ -29,10 +29,10 @@ class NewsListTableCell: BaseTableViewCell {
         return subTitleLbl
     }()
     
-    func configureWithItem(_ item: NewsListTableItem){
-        iconImgView.image = UIImage.init(named: item.iconStr)
-        titleLbl.text = item.titleStr
-        subTitleLbl.text = item.subTitleStr
+    func configureWithItem(_ item: NewsModel){
+        iconImgView.image = UIImage.init(named: "[棒棒糖]")
+        titleLbl.text = item.title
+        subTitleLbl.text = item.abstract
     }
     
     
@@ -52,7 +52,6 @@ class NewsListTableCell: BaseTableViewCell {
         contentView.addSubview(subTitleLbl)
         
         self.makeConstraints()
-        
     }
     
     func makeConstraints() {
@@ -65,11 +64,12 @@ class NewsListTableCell: BaseTableViewCell {
         titleLbl.snp.makeConstraints {
             $0.left.equalTo(iconImgView.snp.right).offset(10)
             $0.top.equalTo(iconImgView.snp.top)
+            $0.right.equalTo(-20)
         }
         subTitleLbl.snp.makeConstraints {
             $0.left.equalTo(titleLbl.snp.left)
             $0.top.equalTo(titleLbl.snp.bottom).offset(5)
-            $0.bottom.equalTo(-15)
+            $0.right.bottom.equalTo(-15)
         }
         
     }

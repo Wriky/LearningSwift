@@ -9,5 +9,10 @@
 import HandyJSON
 
 struct NewsModel: HandyJSON {
+    var abstract: String = ""
+    var title: String = ""
+    var description = ""
 
+    
+    
 }

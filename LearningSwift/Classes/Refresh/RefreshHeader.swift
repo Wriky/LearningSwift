@@ -58,7 +58,7 @@ class RefreshAutoGifFooter: MJRefreshAutoGifFooter {
         setImages(images, for: .idle)
         // 设置刷新状态的图片
         setImages(images, for: .refreshing)
-        setTitle("下拉刷新", for: .idle)
+        setTitle("上拉刷新", for: .idle)
         setTitle("松开刷新", for: .pulling)
         setTitle("刷新中", for: .refreshing)
         setTitle("没有更多数据啦", for: .noMoreData)

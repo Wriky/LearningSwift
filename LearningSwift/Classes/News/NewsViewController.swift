@@ -7,19 +7,17 @@
 //
 
 import UIKit
-
-struct NewsListTableItem {
-    let iconStr: String
-    let titleStr: String
-    let subTitleStr: String
-}
+import SVProgressHUD
 
 class NewsViewController: BaseViewController {
     let kNewsListCellIdentifier = "NewsListCellIdentifier"
     
-    private var items = [NewsListTableItem]()
+    //数据
+    private var items = [NewsModel]()
     
-    
+    //刷新时间
+    var maxBehotTime: TimeInterval = 0.0
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
@@ -34,7 +32,9 @@ class NewsViewController: BaseViewController {
 
         self.configUI()
         
-        self.getOnlineData()
+        self.loadOnlineData()
+        
+        self.setupRefresh()
     }
     
     func configUI() {
@@ -49,13 +49,51 @@ class NewsViewController: BaseViewController {
         }
     }
     
-    func getOnlineData() {
-        let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "沁园春.雪❄️"]
-        
-        for (index, _) in contentArray.enumerated() {
-            items.append(NewsListTableItem(iconStr: "[棒棒糖]", titleStr: "重大新闻", subTitleStr: contentArray[index]))
+    func loadOnlineData() {
+        NetworkHelper.loadNewsFeeds(category: .recommend, ttFrom: .pull) { (timeInterval, news) in
+            if self.tableView.mj_header.isRefreshing {
+                self.tableView.mj_header.endRefreshing()
+            }
+            
+            self.items = news
+            
+            self.tableView.reloadData()
         }
-        self.tableView.reloadData()
+    }
+    
+    func loadMoreOnlineData() {
+        
+        NetworkHelper.loadMoreNewsFeeds(category: .recommend, ttFrom: .loadMore, maxBehotTime: self.maxBehotTime, listCount: self.items.count) { (news) in
+            
+            self.tableView.mj_footer.pullingPercent = 0
+            if self.tableView.mj_footer.isRefreshing {
+                self.tableView.mj_footer.endRefreshing()
+            }
+            
+            if news.count == 0 {
+                SVProgressHUD.showInfo(withStatus: "没有更多数据啦！")
+                return
+            }
+            
+            self.items += news
+            self.tableView.reloadData()
+        }
+    }
+    
+    func setupRefresh() {
+        let header = RefreshHeader { [weak self] in
+            self?.loadOnlineData()
+        }
+        header?.isAutomaticallyChangeAlpha = true
+        header?.lastUpdatedTimeLabel.isHidden = true
+        tableView.mj_header = header
+        
+        
+        let gifFooter = RefreshAutoGifFooter { [weak self] in
+            self?.loadMoreOnlineData()
+        }
+        tableView.mj_footer = gifFooter
+        tableView.mj_footer.isAutomaticallyChangeAlpha = true
     }
 
     override func didReceiveMemoryWarning() {
