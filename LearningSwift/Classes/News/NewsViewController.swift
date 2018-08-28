@@ -50,11 +50,12 @@ class NewsViewController: BaseViewController {
     }
     
     func loadOnlineData() {
-        NetworkHelper.loadNewsFeeds(category: .recommend, ttFrom: .pull) { (timeInterval, news) in
+        NetworkHelper.loadNewsFeeds(category: .hot, ttFrom: .pull) { (timeInterval, news) in
             if self.tableView.mj_header.isRefreshing {
                 self.tableView.mj_header.endRefreshing()
             }
             
+            self.maxBehotTime = timeInterval
             self.items = news
             
             self.tableView.reloadData()
@@ -63,7 +64,7 @@ class NewsViewController: BaseViewController {
     
     func loadMoreOnlineData() {
         
-        NetworkHelper.loadMoreNewsFeeds(category: .recommend, ttFrom: .loadMore, maxBehotTime: self.maxBehotTime, listCount: self.items.count) { (news) in
+        NetworkHelper.loadMoreNewsFeeds(category: .hot, ttFrom: .loadMore, maxBehotTime: self.maxBehotTime, listCount: self.items.count) { (news) in
             
             self.tableView.mj_footer.pullingPercent = 0
             if self.tableView.mj_footer.isRefreshing {

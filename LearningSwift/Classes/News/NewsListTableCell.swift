@@ -26,6 +26,7 @@ class NewsListTableCell: BaseTableViewCell {
         let subTitleLbl = UILabel()
         subTitleLbl.font = UIFont.systemFont(ofSize: 13)
         subTitleLbl.textColor = UIColor.lightGray
+        subTitleLbl.numberOfLines = 3
         return subTitleLbl
     }()
     
