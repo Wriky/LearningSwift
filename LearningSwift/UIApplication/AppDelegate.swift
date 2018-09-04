@@ -14,12 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var client: CentrifugeHelper?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         /// 设置主题颜色
         ThemeManager.setTheme(plistName: UserDefaults.standard.bool(forKey: kNight) ? "night_theme" : "default_theme", path: .mainBundle)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
+        
+        client = CentrifugeHelper()
+        client?.connectClient()
+
         return true
     }
     

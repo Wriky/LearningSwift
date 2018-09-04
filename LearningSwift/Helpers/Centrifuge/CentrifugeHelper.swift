@@ -9,6 +9,8 @@
 import UIKit
 import CentrifugeiOS
 
+
+
 class CentrifugeHelper: NSObject {
     
     var client: CentrifugeClient!
@@ -21,6 +23,11 @@ class CentrifugeHelper: NSObject {
         get {
             return "anonymous"
         }
+    }
+    
+    override init() {
+        super.init()
+        self.configCentrifuge()
     }
     
     func configCentrifuge() {
@@ -59,13 +66,15 @@ extension CentrifugeHelper : CentrifugeChannelDelegate, CentrifugeClientDelegate
     }
 
     func client(_ client: CentrifugeClient, didReceiveRefreshMessage message: CentrifugeServerMessage) {
+        
         print("didReceiveRefresh message: \(message)")
     }
 
+    
     //MARK: CentrifugeChannelDelegate
     func client(_ client: CentrifugeClient, didReceiveMessageInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let input = data["input"] as? String, let nick = data["nick"] as? String {
-            print("\(nick) && \(input)")
+            print("didReceiveMessageInChannel:"+"\(nick) && \(input) && \(channel)")
         }
     }
 
@@ -77,7 +86,7 @@ extension CentrifugeHelper : CentrifugeChannelDelegate, CentrifugeClientDelegate
 
     func client(_ client: CentrifugeClient, didReceiveLeaveInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let user = data["user"] as? String {
-            print("\(message.method.rawValue) && \(user)")
+            print("didReceiveLeaveInChannel:\(message.method.rawValue) && \(user)")
         }
     }
 

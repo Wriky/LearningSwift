@@ -18,7 +18,8 @@ class ChatDetailViewController: BaseViewController {
     var nameStr: String = ""
     private let kCellIdentifier: String = "ChatDetailCellIdentifier"
     var items = [MessageTableItem]()
-    
+    let appDelegate: AppDelegate = (UIApplication.shared.delegate) as! AppDelegate
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -38,9 +39,11 @@ class ChatDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         self.view.backgroundColor = UIColor.white
         self.title = nameStr
         
+        appDelegate.client?.subscribeClient()
         self.configUI()
         self.getOnlineData()
         
@@ -92,6 +95,8 @@ class ChatDetailViewController: BaseViewController {
     }
     
     func addMessage(message: String, isSender:Bool) {
+        appDelegate.client?.publish(message)
+        
         self.items.append(MessageTableItem(nameStr: nameStr, timeStr: "2018-08-10", contentStr: message))
         self.tableView.reloadData()
         self.scrollToBottom()

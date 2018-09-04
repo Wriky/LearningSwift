@@ -15,13 +15,19 @@ class Alert: NSObject {
     
     class func showAlert(_ title: String, message: String) {
         let vc = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        vc.view.backgroundColor = UIColor.white
+        vc.hidesBottomBarWhenPushed = true
         let close = UIAlertAction(title: "Close", style: .cancel) { _ in
             vc.dismiss(animated: true, completion: nil)
         }
         vc.addAction(close)
         
-        let currentVC =  BaseViewController.currentViewController()
-        currentVC?.show(vc, sender: self)
+        
+        let keyWindow: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+        let viewController = keyWindow.rootViewController
+        viewController?.show(vc, sender: viewController)
+        
+        
     }
   
 }
