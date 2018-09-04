@@ -32,18 +32,27 @@ class ChatListViewController: BaseViewController {
             $0.edges.equalTo(view)
         }
         
-        let array = ["Eggs", "Milk", "Vegetables"]
-        let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "沁园春.雪❄️"]
-        
-        for (index, value) in array.enumerated() {
-            
-            self.addItem(value, subTitle: contentArray[index])
-        }
-        self.tableView.reloadData()
     }
     
-    func addItem(_ title: String, subTitle: String) {
-        self.dataSource.addItem(TableViewItem(title: title, subTitle: subTitle))
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.loadFriendListData()
+    }
+    
+    
+    func loadFriendListData() {
+        NetworkHelper.loadFriendsList { (responseArr) in
+            
+            for friendModel: FriendModel in responseArr {
+                let channelCode = friendModel.channel?.code
+                
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.client?.subscribeClient(channelCode!)
+            }
+            self.dataSource.items = responseArr
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -55,9 +64,9 @@ extension ChatListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let item: TableViewItem = dataSource.items[indexPath.row]
+        let item: FriendModel = dataSource.items[indexPath.row]
         let vc = ChatDetailViewController()
-        vc.nameStr = item.title
+        vc.nameStr = (item.user?.nick_name)!
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

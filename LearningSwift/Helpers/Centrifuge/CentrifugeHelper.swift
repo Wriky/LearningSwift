@@ -15,7 +15,7 @@ class CentrifugeHelper: NSObject {
     
     var client: CentrifugeClient!
  
-    let channel = "jsfiddle-chat"
+    var channel = "jsfiddle-chat"
     let user = "ios-swift"
     let secret = "secret"
 
@@ -31,16 +31,21 @@ class CentrifugeHelper: NSObject {
     }
     
     func configCentrifuge() {
-        let timestamp = "\(Int(Date().timeIntervalSince1970))"
-        let token = Centrifuge.createToken(string: "\(user)\(timestamp)", key: secret)
-        let creds = CentrifugeCredentials(token: token, user: user, timestamp: timestamp)
-        let url = "wss://centrifugo.herokuapp.com/connection/websocket"
+//        let timestamp = "\(Int(Date().timeIntervalSince1970))"
+//        let token = Centrifuge.createToken(string: "\(user)\(timestamp)", key: secret)
+//        let creds = CentrifugeCredentials(token: token, user: user, timestamp: timestamp)
+//        let url = "wss://centrifugo.herokuapp.com/connection/websocket"
+        
+        let timestamp = "1536029226"
+        let token = "395b800cc7d09a9404d0924a70db9465e00c677a7da1f3e12a566ed377e4850b"
+        let creds = CentrifugeCredentials(token: token, user: "10", timestamp: timestamp)
+        let url = "ws://wd-api.h2he.cn:8000/connection/websocket"
         
         client = Centrifuge.client(url: url, creds: creds, delegate: self as CentrifugeClientDelegate)
     }
     
     func publish(_ text: String) {
-        client.publish(toChannel: channel, data: ["nick": nickName, "input": text]) { (message, error) in
+        client.publish(toChannel: self.channel, data: ["nick": nickName, "input": text]) { (message, error) in
             print("publish message: \(String(describing: message))")
         }
     }
@@ -75,23 +80,27 @@ extension CentrifugeHelper : CentrifugeChannelDelegate, CentrifugeClientDelegate
     func client(_ client: CentrifugeClient, didReceiveMessageInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let input = data["input"] as? String, let nick = data["nick"] as? String {
             print("didReceiveMessageInChannel:"+"\(nick) && \(input) && \(channel)")
+            self.channel = channel
         }
     }
 
     func client(_ client: CentrifugeClient, didReceiveJoinInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let user = data["user"] as? String {
             print("\(message.method.rawValue) && \(user)")
+            self.channel = channel
         }
     }
 
     func client(_ client: CentrifugeClient, didReceiveLeaveInChannel channel: String, message: CentrifugeServerMessage) {
         if let data = message.body?["data"] as? [String : AnyObject], let user = data["user"] as? String {
             print("didReceiveLeaveInChannel:\(message.method.rawValue) && \(user)")
+            self.channel = channel
         }
     }
 
     func client(_ client: CentrifugeClient, didReceiveUnsubscribeInChannel channel: String, message: CentrifugeServerMessage) {
         print("didReceiveUnsubscribeInChannel \(message)"   )
+        self.channel = channel
     }
 }
 
@@ -108,8 +117,12 @@ extension CentrifugeHelper {
         self.client.ping(withCompletion: self.showResponse)
     }
     
-    func subscribeClient() {
-        self.client.subscribe(toChannel: self.channel, delegate: self, completion: self.showResponse)
+    func subscribeClient(_ channelCode: String) {
+        var code = self.channel
+        if channelCode != "" {
+            code = channelCode
+        }
+        self.client.subscribe(toChannel: code, delegate: self, completion: self.showResponse)
     }
     
     func unsubscibeClient() {

@@ -43,7 +43,6 @@ class ChatDetailViewController: BaseViewController {
         self.view.backgroundColor = UIColor.white
         self.title = nameStr
         
-        appDelegate.client?.subscribeClient()
         self.configUI()
         self.getOnlineData()
         

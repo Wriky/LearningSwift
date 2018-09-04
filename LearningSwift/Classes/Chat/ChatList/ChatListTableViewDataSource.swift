@@ -7,19 +7,11 @@
 //
 import UIKit
 
-struct TableViewItem {
-    let title : String
-    let subTitle : String
-}
+
 
 class ChatListTableViewDataSource: NSObject, UITableViewDataSource {
-    var items = [TableViewItem]()
+    var items = [FriendModel]()
     let kChatListCellIdentifier: String = "ChatListCellIdentifier"
-
-    
-    func addItem(_ item: TableViewItem){
-        items.append(item)
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count

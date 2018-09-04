@@ -18,6 +18,8 @@ protocol NetworkHelperProtocol {
     //获取更多新闻列表数据
     static func loadMoreNewsFeeds(category: NewsTitleCategory, ttFrom: TTFrom, maxBehotTime: TimeInterval, listCount: Int, _ completionHandler: @escaping (_ news: [NewsModel]) -> ())
 
+    //获取好友列表
+    static func loadFriendsList( _ completionHandler: @escaping (_ friendsList: [FriendModel]) -> ())
 }
 
 extension NetworkHelperProtocol {
@@ -75,6 +77,30 @@ extension NetworkHelperProtocol {
                 completionHandler(datas.compactMap({
                     NewsModel.deserialize(from: $0["content"].string)
                 }))
+            }
+        }
+    }
+    
+    static func loadFriendsList( _ completionHandler: @escaping (_ friendsList: [FriendModel]) -> ()) {
+        
+        let header: HTTPHeaders = ["Authorization": authToken,
+                                   "Accept": "application/json"]
+        Alamofire.request(url, parameters: params, headers: header).responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json.error == nil else {return}
+                
+                guard let datas = json["response"].array else {return}
+                
+                print("resultData + \(datas)")
+
+                completionHandler(datas.compactMap({ data in
+                    FriendModel.deserialize(from: data.description)
+                    
+                }))
+
             }
         }
     }

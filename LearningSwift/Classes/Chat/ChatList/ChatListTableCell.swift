@@ -32,10 +32,12 @@ class ChatListTableCell: BaseTableViewCell {
         return messageLbl
     }()
     
-    func configureWithItem(_ item: TableViewItem){
+    func configureWithItem(_ item: FriendModel){
         avatarImgView.image = UIImage.init(named: "icon_center_information_upload")
-        nameLbl.text = item.title
-        messageLbl.text = item.subTitle
+        nameLbl.text = item.user?.nick_name
+        if let userMobile = item.user?.mobile {
+            messageLbl.text = "My phone number + \(userMobile)"
+        }
     }
     
 
