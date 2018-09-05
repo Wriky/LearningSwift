@@ -26,6 +26,8 @@ class ChatListViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+        self.addRightNavBarButton()
+        
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
@@ -33,15 +35,13 @@ class ChatListViewController: BaseViewController {
         }
         
         self.loadFriendListData()
-        
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func addRightNavBarButton() {
         
+        let buttonItem = UIBarButtonItem.init(title: "好友列表", style: .done, target: self, action: #selector(jumpToFriendListInterface))
+        self.navigationItem.rightBarButtonItem = buttonItem
     }
-    
     
     func loadFriendListData() {
         NetworkHelper.loadFriendsList { (responseArr) in
@@ -55,6 +55,12 @@ class ChatListViewController: BaseViewController {
             self.dataSource.items = responseArr
             self.tableView.reloadData()
         }
+    }
+    
+    @objc func jumpToFriendListInterface() {
+        let vc = FriendListViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

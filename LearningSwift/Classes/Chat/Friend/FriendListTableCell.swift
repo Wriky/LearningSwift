@@ -1,26 +1,25 @@
 //
-//  ChatListTableCell.swift
+//  FriendListTableCell.swift
 //  LearningSwift
 //
-//  Created by wangyuan on 2018/8/8.
+//  Created by wangyuan on 2018/9/5.
 //  Copyright © 2018年 wangyuan. All rights reserved.
 //
 
 import UIKit
 
+class FriendListTableCell: BaseTableViewCell {
 
-class ChatListTableCell: BaseTableViewCell {
-
-    private lazy var avatarImgView: UIImageView = {
-        let avatarImgView = UIImageView()
-        avatarImgView.clipsToBounds = true
-        avatarImgView.layer.cornerRadius = 20
-        return avatarImgView
+    private lazy var avatarView: UIImageView = {
+        let avatarView = UIImageView()
+        avatarView.layer.cornerRadius = 20
+        avatarView.clipsToBounds = true
+        return avatarView
     }()
     
     private lazy var nameLbl: UILabel = {
         let nameLbl = UILabel()
-        nameLbl.font = UIFont.systemFont(ofSize: 15)
+        nameLbl.font = UIFont.systemFont(ofSize: 14)
         nameLbl.textColor = UIColor.black
         return nameLbl
     }()
@@ -32,18 +31,12 @@ class ChatListTableCell: BaseTableViewCell {
         return messageLbl
     }()
     
-    func configureWithItem(_ item: FriendModel){
-        avatarImgView.image = UIImage.init(named: "icon_center_information_upload")
-        nameLbl.text = item.user?.nick_name
-//        if let userMobile = item.user?.mobile {
-            messageLbl.text = "最后一条消息"
-//        }
-    }
     
-
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.contentView.backgroundColor = UIColor.white
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         self.configUI()
     }
     
@@ -52,30 +45,34 @@ class ChatListTableCell: BaseTableViewCell {
     }
     
     func configUI() {
-        contentView.addSubview(avatarImgView)
+        contentView.addSubview(avatarView)
         contentView.addSubview(nameLbl)
         contentView.addSubview(messageLbl)
-        
+
         self.makeConstraints()
-        
     }
     
     func makeConstraints() {
-        avatarImgView.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 40, height: 40))
-            $0.left.equalTo(20)
+        avatarView.snp.makeConstraints {
             $0.top.equalTo(15)
-        }
-        
-        nameLbl.snp.makeConstraints {
-            $0.left.equalTo(avatarImgView.snp.right).offset(10)
-            $0.top.equalTo(avatarImgView.snp.top)
-        }
-        messageLbl.snp.makeConstraints {
-            $0.left.equalTo(nameLbl.snp.left)
-            $0.top.equalTo(nameLbl.snp.bottom).offset(5)
+            $0.left.equalTo(20)
+            $0.size.equalTo(CGSize(width: 40, height: 40))
             $0.bottom.equalTo(-15)
         }
-        
+        nameLbl.snp.makeConstraints {
+            $0.top.equalTo(avatarView.snp.top).offset(3)
+            $0.left.equalTo(avatarView.snp.right).offset(10)
+        }
+        messageLbl.snp.makeConstraints {
+            $0.top.equalTo(nameLbl.snp.bottom).offset(3)
+            $0.left.equalTo(nameLbl.snp.left)
+        }
     }
+    
+    func configureWithItem(_ item: UserModel) {
+        avatarView.backgroundColor = UIColor.lightGray
+        nameLbl.text = item.nick_name
+        messageLbl.text = "My phone number \(item.mobile)"
+    }
+
 }
