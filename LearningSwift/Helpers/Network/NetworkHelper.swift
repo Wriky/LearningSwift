@@ -82,7 +82,9 @@ extension NetworkHelperProtocol {
     }
     
     static func loadFriendsList( _ completionHandler: @escaping (_ friendsList: [FriendModel]) -> ()) {
-        
+        let url = "http://wd-api.h2he.cn/v1/friends/approved?"
+        let authToken = "Bearer Y9QuivZhTDqa-So8DeGBwA"
+        let params = ["user_id":"10"]
         let header: HTTPHeaders = ["Authorization": authToken,
                                    "Accept": "application/json"]
         Alamofire.request(url, parameters: params, headers: header).responseJSON { (response) in
@@ -104,7 +106,6 @@ extension NetworkHelperProtocol {
             }
         }
     }
-    
 }
 
 struct NetworkHelper: NetworkHelperProtocol {

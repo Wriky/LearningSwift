@@ -32,12 +32,14 @@ class ChatListViewController: BaseViewController {
             $0.edges.equalTo(view)
         }
         
+        self.loadFriendListData()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.loadFriendListData()
     }
     
     
@@ -66,7 +68,7 @@ extension ChatListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let item: FriendModel = dataSource.items[indexPath.row]
         let vc = ChatDetailViewController()
-        vc.nameStr = (item.user?.nick_name)!
+        vc.itemModel = item
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -15,11 +15,11 @@ struct MessageTableItem {
 }
 
 class ChatDetailViewController: BaseViewController {
-    var nameStr: String = ""
     private let kCellIdentifier: String = "ChatDetailCellIdentifier"
     var items = [MessageTableItem]()
     let appDelegate: AppDelegate = (UIApplication.shared.delegate) as! AppDelegate
-
+    var itemModel: FriendModel?
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -41,7 +41,7 @@ class ChatDetailViewController: BaseViewController {
 
 
         self.view.backgroundColor = UIColor.white
-        self.title = nameStr
+        self.title = (itemModel?.user?.nick_name)!
         
         self.configUI()
         self.getOnlineData()
@@ -72,7 +72,7 @@ class ChatDetailViewController: BaseViewController {
         let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "沁园春.雪❄️"]
         
         for (index, _) in contentArray.enumerated() {
-            items.append(MessageTableItem(nameStr: nameStr, timeStr: "2018-08-08", contentStr: contentArray[index]))
+            items.append(MessageTableItem(nameStr: (itemModel?.user?.nick_name)!, timeStr: "2018-08-08", contentStr: contentArray[index]))
         }
         self.tableView.reloadData()
     }
@@ -94,9 +94,9 @@ class ChatDetailViewController: BaseViewController {
     }
     
     func addMessage(message: String, isSender:Bool) {
-        appDelegate.client?.publish(message)
+        appDelegate.client?.publish((self.itemModel?.user?.nick_name)!, message, (self.itemModel?.channel?.code)!)
         
-        self.items.append(MessageTableItem(nameStr: nameStr, timeStr: "2018-08-10", contentStr: message))
+        self.items.append(MessageTableItem(nameStr: (itemModel?.user?.nick_name)!, timeStr: "2018-08-10", contentStr: message))
         self.tableView.reloadData()
         self.scrollToBottom()
     }
