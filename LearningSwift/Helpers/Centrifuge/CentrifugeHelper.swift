@@ -80,8 +80,9 @@ extension CentrifugeHelper : CentrifugeChannelDelegate, CentrifugeClientDelegate
     
     //MARK: CentrifugeChannelDelegate
     func client(_ client: CentrifugeClient, didReceiveMessageInChannel channel: String, message: CentrifugeServerMessage) {
-        if let data = message.body?["data"] as? [String : AnyObject], let input = data["input"] as? [String: Any], let text = input["content"] as? String , let nick = data["nick"] as? String {
-            print("didReceiveMessageInChannel:"+"\(nick) && \(text) && \(channel)")
+        if let data = message.body?["data"] as? [String : AnyObject], let input = data["input"] as? [String: Any], let text = input["content"] as? String {
+            print("didReceiveMessageInChannel:"+"\(text) && \(channel)")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: RecieveMessageNotification), object: nil)
         }
     }
 

@@ -39,7 +39,7 @@ class ChatDetailViewController: BaseViewController {
         
         self.configUI()
         self.getOnlineData()
-        
+        self.addNotification()
     }
     
     func configUI() {
@@ -66,8 +66,10 @@ class ChatDetailViewController: BaseViewController {
 
         NetworkHelper.loadMessageHistory((itemModel?.channel?.code)!) { (messgeList) in
             self.items = messgeList
+            
             self.tableView.reloadData()
             self.scrollToBottom()
+            print("receive message")
         }
     }
     
@@ -93,6 +95,16 @@ class ChatDetailViewController: BaseViewController {
         self.items.append(MessageModel(msg_id: "1", content: message, msg_type: 1, user_id: (itemModel?.user_id)!, channel_code: (itemModel?.channel?.code)!, channel_type: 1))
         self.tableView.reloadData()
         self.scrollToBottom()
+    }
+    
+    func addNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(recieveMessage(_:)), name: Notification.Name(rawValue: RecieveMessageNotification) , object: nil)
+    }
+    
+    @objc func recieveMessage(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            self.getOnlineData()
+        }
     }
 }
 
