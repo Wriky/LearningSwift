@@ -137,7 +137,9 @@ class ChatDetailTableCell: BaseTableViewCell {
         }
     }
     
-    func configureWithItem(_ item: MessageTableItem, isLeft: Bool) {
+    func configureWithItem(_ item: MessageModel,_ user: UserModel) {
+        let isLeft: Bool = (item.user_id != "10")
+        
         self.updateConstraints(isLeft)
         
         let bubbleImage = UIImage.init(named: (isLeft ? "chat_bg_left":"chat_bg_right"))!
@@ -146,10 +148,10 @@ class ChatDetailTableCell: BaseTableViewCell {
 
         avatarView.image = UIImage.init(named: "icon_center_information_upload")
         
-        let name: String = isLeft ? item.nameStr : "superMan"
+        let name: String = isLeft ? user.nick_name : "DownLoad"
         nameLbl.text =  name
         
-        contentLbl.attributedText = FaceManager.transferMessageToEmoji(message: item.contentStr, font: contentLbl.font, lineHeight: contentLbl.font.lineHeight)
+        contentLbl.attributedText = FaceManager.transferMessageToEmoji(message: item.content, font: contentLbl.font, lineHeight: contentLbl.font.lineHeight)
     }
 
 }

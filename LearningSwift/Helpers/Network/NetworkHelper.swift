@@ -20,6 +20,12 @@ protocol NetworkHelperProtocol {
 
     //获取好友列表
     static func loadFriendsList( _ completionHandler: @escaping (_ friendsList: [FriendModel]) -> ())
+    
+    //获取历史聊天记录
+    static func loadMessageHistory(_ channelCode: String, _ completionHandler: @escaping (_ messageList: [MessageModel]) -> ())
+    
+    //发送聊天消息
+    static func sendMessageInfo(_ content: String ,_ channelCode: String, _ completionHandler: @escaping(_ messageList: MessageModel) -> ())
 }
 
 extension NetworkHelperProtocol {
@@ -102,7 +108,65 @@ extension NetworkHelperProtocol {
                     FriendModel.deserialize(from: data.description)
                     
                 }))
+            }
+        }
+    }
+    
+    static func loadMessageHistory(_ channelCode: String, _ completionHandler: @escaping (_ messageList: [MessageModel]) -> ()) {
+        let url = "http://wd-api.h2he.cn/v1/messages/history?"
+        let params: [String : Any] = ["channel_code": channelCode,
+                      "per_page": 30,
+                      "page": 1,
+                      "last_msg_id": 0,
+                      "client_msg_id": 0]
 
+        let authToken = "Bearer Y9QuivZhTDqa-So8DeGBwA"
+        let header: HTTPHeaders = ["Authorization": authToken,
+                                   "Accept": "application/json"]
+        Alamofire.request(url, parameters: params, headers: header).responseJSON { (response) in
+            guard response.result.isSuccess else {return}
+            
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json.error == nil else {return}
+                
+                guard let responseDic = json["response"].dictionary else {return}
+                
+                guard let datas = responseDic["messages"]?.array else {return}
+                
+                completionHandler(datas.reversed().compactMap({data in
+                    MessageModel.deserialize(from: data.description)
+                }))
+            }
+        }
+    }
+    
+    static func sendMessageInfo(_ content: String ,_ channelCode: String, _ completionHandler: @escaping(_ messageList: MessageModel) -> ()) {
+        let url = "http://wd-api.h2he.cn/v1/messages?"
+        let params: [String : Any] = ["channel_code": channelCode,
+                                      "channel_type": 2,
+                                      "content": content,
+                                      "tag": "1536205342730493",
+                                      "msg_type": 1,
+                                      "user_id": 10,
+                                      "target_id": 11]
+        
+        let authToken = "Bearer Y9QuivZhTDqa-So8DeGBwA"
+        let header: HTTPHeaders = ["Authorization": authToken,
+                                   "Accept": "application/json"]
+        Alamofire.request(url, method: .post , parameters: params, encoding:JSONEncoding.default, headers: header).responseJSON { (response) in
+            guard response.result.isSuccess else {return}
+            
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json.error == nil else {return}
+                
+                guard let responseDic = json["response"].dictionary else {return}
+                guard let messageDic = responseDic["message"]?.dictionary else {return}
+
+                completionHandler(
+                    MessageModel.deserialize(from: messageDic)!
+                )
             }
         }
     }

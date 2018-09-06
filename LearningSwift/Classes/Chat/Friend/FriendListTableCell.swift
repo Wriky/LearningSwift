@@ -70,9 +70,9 @@ class FriendListTableCell: BaseTableViewCell {
     }
     
     func configureWithItem(_ item: UserModel) {
-        avatarView.backgroundColor = UIColor.lightGray
+        avatarView.backgroundColor = RGB(237, 237, 246)
         nameLbl.text = item.nick_name
-        messageLbl.text = "My phone number \(item.mobile)"
+        messageLbl.text = "Phone number :\(item.mobile)"
     }
 
 }

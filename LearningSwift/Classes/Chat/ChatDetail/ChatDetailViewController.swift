@@ -8,15 +8,9 @@
 
 import UIKit
 
-struct MessageTableItem {
-    let nameStr: String
-    let timeStr: String
-    let contentStr: String
-}
-
 class ChatDetailViewController: BaseViewController {
     private let kCellIdentifier: String = "ChatDetailCellIdentifier"
-    var items = [MessageTableItem]()
+    var items = [MessageModel]()
     let appDelegate: AppDelegate = (UIApplication.shared.delegate) as! AppDelegate
     var itemModel: FriendModel?
     
@@ -69,12 +63,12 @@ class ChatDetailViewController: BaseViewController {
     }
     
     func getOnlineData() {
-        let contentArray = ["香蜜沉沉烬如霜很好看", "今天天气不错", "沁园春.雪❄️"]
-        
-        for (index, _) in contentArray.enumerated() {
-            items.append(MessageTableItem(nameStr: (itemModel?.user?.nick_name)!, timeStr: "2018-08-08", contentStr: contentArray[index]))
+
+        NetworkHelper.loadMessageHistory((itemModel?.channel?.code)!) { (messgeList) in
+            self.items = messgeList
+            self.tableView.reloadData()
+            self.scrollToBottom()
         }
-        self.tableView.reloadData()
     }
     
     func addTapGestureOnTableView() {
@@ -96,7 +90,7 @@ class ChatDetailViewController: BaseViewController {
     func addMessage(message: String, isSender:Bool) {
         appDelegate.client?.publish((self.itemModel?.user?.nick_name)!, message, (self.itemModel?.channel?.code)!)
         
-        self.items.append(MessageTableItem(nameStr: (itemModel?.user?.nick_name)!, timeStr: "2018-08-10", contentStr: message))
+        self.items.append(MessageModel(msg_id: "1", content: message, msg_type: 1, user_id: (itemModel?.user_id)!, channel_code: (itemModel?.channel?.code)!, channel_type: 1))
         self.tableView.reloadData()
         self.scrollToBottom()
     }
@@ -106,8 +100,7 @@ class ChatDetailViewController: BaseViewController {
 extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier, for: indexPath) as! ChatDetailTableCell
-        let isLeft: Bool = (indexPath.row % 2 == 0)
-        cell.configureWithItem(items[indexPath.row], isLeft: isLeft)
+        cell.configureWithItem(items[indexPath.row], (self.itemModel?.user)!)
         return cell
     }
     
@@ -141,6 +134,10 @@ extension ChatDetailViewController: ChatDetailToolBarViewControllerDelegate {
     
     func sendTextMessage(textStr: String) {
         self.addMessage(message: textStr, isSender: true)
+        
+        NetworkHelper.sendMessageInfo(textStr, (itemModel?.channel?.code)!) { messageObject in
+            
+        }
     }
     
     func sendImageMessage(image: UIImage, imagePath: String) {

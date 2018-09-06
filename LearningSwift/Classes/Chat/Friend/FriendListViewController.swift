@@ -18,7 +18,6 @@ class FriendListViewController: BaseViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = RGB(237, 237, 246)
         tableView.register(FriendListTableCell.self, forCellReuseIdentifier: kCellIdentifier)
         return tableView;
     }()

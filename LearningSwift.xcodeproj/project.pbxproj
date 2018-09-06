@@ -28,6 +28,7 @@
 		E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF92213D24CE00BB2E43 /* ChatViewModel.swift */; };
 		E03DCF96213FD1A800BB2E43 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF95213FD1A800BB2E43 /* FriendListViewController.swift */; };
 		E03DCF98213FD1C600BB2E43 /* FriendListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF97213FD1C600BB2E43 /* FriendListTableCell.swift */; };
+		E03DCF9A2140C6B000BB2E43 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF992140C6B000BB2E43 /* ChatModel.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -108,6 +109,7 @@
 		E03DCF92213D24CE00BB2E43 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		E03DCF95213FD1A800BB2E43 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		E03DCF97213FD1C600BB2E43 /* FriendListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableCell.swift; sourceTree = "<group>"; };
+		E03DCF992140C6B000BB2E43 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C3072421226B2E00C9C263 /* WYEmotion.swift */,
+				E03DCF992140C6B000BB2E43 /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				E0C3071C211D9A4F00C9C263 /* EmotionListView.swift in Sources */,
 				E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */,
 				E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */,
+				E03DCF9A2140C6B000BB2E43 /* ChatModel.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,

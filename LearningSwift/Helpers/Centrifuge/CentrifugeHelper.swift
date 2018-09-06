@@ -56,7 +56,9 @@ class CentrifugeHelper: NSObject {
     
     func showResponse(_ message: CentrifugeServerMessage?, error: Error?) {
         if let msg = message {
-            showMessage(msg)
+            if msg.method == .сonnect {
+                showMessage(msg)
+            }
         } else if let err = error {
            Alert.showError(err)
         }
@@ -118,7 +120,7 @@ extension CentrifugeHelper {
     }
     
     func unsubscibeClient(_ channelCode: String) {
-        self.client.unsubscribe(fromChannel: channelCode, completion: self.showResponse)
+        self.client.unsubscribe(fromChannel: channelCode, completion:self.showResponse)
     }
     
     func clientHistory(_ channelCode: String) {
