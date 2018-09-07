@@ -16,6 +16,8 @@
 		E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5B7211A93310063F2A3 /* BaseView.swift */; };
 		E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */; };
 		E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */; };
+		E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CC10C214213E800CAFD93 /* CoreDataHelper.swift */; };
+		E01CC110214216AC00CAFD93 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E01CC10E214216AC00CAFD93 /* CoreDataModel.xcdatamodeld */; };
 		E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */; };
 		E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */; };
 		E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */; };
@@ -39,6 +41,14 @@
 		E04D877020DFA045006A6ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D876E20DFA045006A6ACD /* LaunchScreen.storyboard */; };
 		E04D877B20DFA046006A6ACD /* LearningSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D877A20DFA046006A6ACD /* LearningSwiftTests.swift */; };
 		E04D878620DFA046006A6ACD /* LearningSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */; };
+		E0620368214279CF00D17846 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620360214279CF00D17846 /* User+CoreDataClass.swift */; };
+		E0620369214279CF00D17846 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620361214279CF00D17846 /* User+CoreDataProperties.swift */; };
+		E062036A214279CF00D17846 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620362214279CF00D17846 /* Message+CoreDataClass.swift */; };
+		E062036B214279CF00D17846 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620363214279CF00D17846 /* Message+CoreDataProperties.swift */; };
+		E062036C214279CF00D17846 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620364214279CF00D17846 /* Friend+CoreDataClass.swift */; };
+		E062036D214279CF00D17846 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620365214279CF00D17846 /* Friend+CoreDataProperties.swift */; };
+		E062036E214279CF00D17846 /* Channel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620366214279CF00D17846 /* Channel+CoreDataClass.swift */; };
+		E062036F214279CF00D17846 /* Channel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0620367214279CF00D17846 /* Channel+CoreDataProperties.swift */; };
 		E0C00BC820F7432400E1654F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C00BC720F7432400E1654F /* Emoji.swift */; };
 		E0C00BCC20F7434900E1654F /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BC920F7434900E1654F /* emojis.plist */; };
 		E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCA20F7434900E1654F /* emoji_sort.plist */; };
@@ -97,6 +107,8 @@
 		E006B5B7211A93310063F2A3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E006B5BB211AC1810063F2A3 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
 		E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailTableCell.swift; sourceTree = "<group>"; };
+		E01CC10C214213E800CAFD93 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		E01CC10F214216AC00CAFD93 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBar.swift; sourceTree = "<group>"; };
 		E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBarViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +138,14 @@
 		E04D878120DFA046006A6ACD /* LearningSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSwiftUITests.swift; sourceTree = "<group>"; };
 		E04D878720DFA046006A6ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0620360214279CF00D17846 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0620361214279CF00D17846 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0620362214279CF00D17846 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0620363214279CF00D17846 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0620364214279CF00D17846 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0620365214279CF00D17846 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0620366214279CF00D17846 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0620367214279CF00D17846 /* Channel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0C00BC720F7432400E1654F /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		E0C00BC920F7434900E1654F /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		E0C00BCA20F7434900E1654F /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
@@ -291,6 +311,29 @@
 			path = ChatDetail;
 			sourceTree = "<group>";
 		};
+		E01CC10B2142135700CAFD93 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E01CC10C214213E800CAFD93 /* CoreDataHelper.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E01CC14121426BA300CAFD93 /* CoreDataClass */ = {
+			isa = PBXGroup;
+			children = (
+				E0620360214279CF00D17846 /* User+CoreDataClass.swift */,
+				E0620361214279CF00D17846 /* User+CoreDataProperties.swift */,
+				E0620362214279CF00D17846 /* Message+CoreDataClass.swift */,
+				E0620363214279CF00D17846 /* Message+CoreDataProperties.swift */,
+				E0620364214279CF00D17846 /* Friend+CoreDataClass.swift */,
+				E0620365214279CF00D17846 /* Friend+CoreDataProperties.swift */,
+				E0620366214279CF00D17846 /* Channel+CoreDataClass.swift */,
+				E0620367214279CF00D17846 /* Channel+CoreDataProperties.swift */,
+			);
+			path = CoreDataClass;
+			sourceTree = "<group>";
+		};
 		E03DCF892133FA1400BB2E43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +376,7 @@
 		E044C79E20EB0A3100E9569B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E01CC10B2142135700CAFD93 /* CoreData */,
 				E0E54315212EBB5B00CB46EF /* Centrifuge */,
 				E0F5688220EC79CD0017BED5 /* Network */,
 			);
@@ -371,6 +415,7 @@
 		E044C7A220EB0AE200E9569B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E01CC10E214216AC00CAFD93 /* CoreDataModel.xcdatamodeld */,
 				E0C3072F2122D9BC00C9C263 /* emoji.plist */,
 				E0C3072D2122D9B200C9C263 /* normal_face.plist */,
 				E0C00BCB20F7434900E1654F /* emoji_mapping.plist */,
@@ -411,6 +456,7 @@
 		E04D876420DFA03B006A6ACD /* LearningSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E01CC14121426BA300CAFD93 /* CoreDataClass */,
 				E0F5687520EB10750017BED5 /* Config */,
 				E044C7A020EB0A7500E9569B /* Categories */,
 				E044C79F20EB0A4200E9569B /* Utilities */,
@@ -709,6 +755,8 @@
 			files = (
 				E0C3071C211D9A4F00C9C263 /* EmotionListView.swift in Sources */,
 				E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */,
+				E062036D214279CF00D17846 /* Friend+CoreDataProperties.swift in Sources */,
+				E062036E214279CF00D17846 /* Channel+CoreDataClass.swift in Sources */,
 				E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */,
 				E03DCF9A2140C6B000BB2E43 /* ChatModel.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
@@ -725,6 +773,7 @@
 				E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
+				E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,
 				E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */,
 				E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */,
@@ -733,12 +782,15 @@
 				E04D876820DFA03C006A6ACD /* VideoViewController.swift in Sources */,
 				E03DCF882133EEBF00BB2E43 /* NewsListTableCell.swift in Sources */,
 				E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */,
+				E062036F214279CF00D17846 /* Channel+CoreDataProperties.swift in Sources */,
 				E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */,
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
 				E03A864A211C2E4E001CF144 /* Enums.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
+				E062036C214279CF00D17846 /* Friend+CoreDataClass.swift in Sources */,
 				E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */,
 				E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */,
+				E01CC110214216AC00CAFD93 /* CoreDataModel.xcdatamodeld in Sources */,
 				E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */,
 				E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */,
 				E006B5B2211A8B4B0063F2A3 /* ChatListTableCell.swift in Sources */,
@@ -749,8 +801,12 @@
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
 				E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */,
+				E062036B214279CF00D17846 /* Message+CoreDataProperties.swift in Sources */,
+				E0620368214279CF00D17846 /* User+CoreDataClass.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
 				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
+				E062036A214279CF00D17846 /* Message+CoreDataClass.swift in Sources */,
+				E0620369214279CF00D17846 /* User+CoreDataProperties.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 				E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */,
 				E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */,
@@ -1087,6 +1143,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E01CC10E214216AC00CAFD93 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E01CC10F214216AC00CAFD93 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = E01CC10F214216AC00CAFD93 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E04D875A20DFA03B006A6ACD /* Project object */;
 }

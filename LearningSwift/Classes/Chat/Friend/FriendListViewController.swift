@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 
 class FriendListViewController: BaseViewController {
@@ -31,8 +32,8 @@ class FriendListViewController: BaseViewController {
         self.title = "好友列表"
         
         self.configUI()
-        self.getOnlineData()
-        
+        self.loadOnlineData()
+        self.loadCoreData()
     }
     
     func configUI() {
@@ -45,13 +46,28 @@ class FriendListViewController: BaseViewController {
         }
     }
     
-    func getOnlineData() {
-            NetworkHelper.loadFriendsList { (responseArr) in
-                
-                self.items = responseArr
-                self.tableView.reloadData()
-            }
+    func loadOnlineData() {
+        NetworkHelper.loadFriendsList { (responseArr) in
+            
+            self.items = responseArr
+            self.tableView.reloadData()
         }
+    }
+    
+    func loadCoreData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        do {
+            let fetchedResults = try managedObjectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                print("fetchResult: \(results)")
+            }
+        } catch {
+            fatalError("获取失败")
+        }
+    }
 }
 
 

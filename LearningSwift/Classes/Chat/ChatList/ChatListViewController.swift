@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ChatListViewController: BaseViewController {
     let dataSource = ChatListTableViewDataSource()
@@ -51,9 +52,13 @@ class ChatListViewController: BaseViewController {
                 
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.client?.subscribeClient(channelCode!)
+                
+                self.saveUserInfo(friendModel.user!)
+
             }
             self.dataSource.items = responseArr
             self.tableView.reloadData()
+            
         }
     }
     
@@ -61,6 +66,24 @@ class ChatListViewController: BaseViewController {
         let vc = FriendListViewController()
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func saveUserInfo(_ userModel: UserModel ) {
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: managedObjectContext)
+        let user = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
+        user.setValue(userModel.nick_name, forKey: "nick_name")
+        user.setValue(userModel.mobile, forKey: "mobile")
+        user.setValue(userModel.id, forKey: "id")
+        user.setValue(userModel.gender, forKey: "gender")
+
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("无法保存")
+        }
+        
     }
 }
 
