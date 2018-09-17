@@ -53,8 +53,6 @@ class ChatListViewController: BaseViewController {
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.client?.subscribeClient(channelCode!)
                 
-                self.saveUserInfo(friendModel.user!)
-
             }
             self.dataSource.items = responseArr
             self.tableView.reloadData()
@@ -83,6 +81,9 @@ class ChatListViewController: BaseViewController {
         } catch {
             fatalError("无法保存")
         }
+    }
+    
+    func saveFriendInfo(_ friendModel: FriendModel) {
         
     }
 }

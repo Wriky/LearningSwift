@@ -2,7 +2,7 @@
 //  Friend+CoreDataProperties.swift
 //  LearningSwift
 //
-//  Created by wangyuan on 2018/9/7.
+//  Created by wangyuan on 2018/9/11.
 //  Copyright © 2018年 wangyuan. All rights reserved.
 //
 //
@@ -20,8 +20,8 @@ extension Friend {
     @NSManaged public var contact_id: String?
     @NSManaged public var state: String?
     @NSManaged public var target_id: String?
-    @NSManaged public var user: NSObject?
     @NSManaged public var user_id: String?
-    @NSManaged public var contain: User?
+    @NSManaged public var user: User?
+    @NSManaged public var channel: Channel?
 
 }
