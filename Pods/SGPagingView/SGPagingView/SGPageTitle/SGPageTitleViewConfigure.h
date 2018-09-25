@@ -1,9 +1,4 @@
 //
-//  如遇到问题或有更好方案，请通过以下方式进行联系
-//      QQ群：429899752
-//      Email：kingsic@126.com
-//      GitHub：https://github.com/kingsic/SGPagingView
-//
 //  SGPageTitleViewConfigure.h
 //  SGPagingViewExample
 //
@@ -12,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
     /// 下划线样式
@@ -50,21 +44,20 @@ typedef enum : NSUInteger {
 /** 标题文字字号大小，默认 15 号字体 */
 @property (nonatomic, strong) UIFont *titleFont;
 /** 标题文字选中字号大小，默认 15 号字体。
-  * 一旦开启此属性，SGPageTitleView.h 里面的 isOpenTitleTextZoom 属性将不起作用，
-  * SGPageTitleView.m 内部已做处理 */
+  * 一旦设置此属性，titleTextZoom 属性将不起作用 */
 @property (nonatomic, strong) UIFont *titleSelectedFont;
-/** 普通状态下标题按钮文字的颜色，默认为黑色 */
+/** 普通状态下标题文字的颜色，默认为黑色 */
 @property (nonatomic, strong) UIColor *titleColor;
-/** 选中状态下标题按钮文字的颜色，默认为红色 */
+/** 选中状态下标题文字的颜色，默认为红色 */
 @property (nonatomic, strong) UIColor *titleSelectedColor;
-/** 是否让标题按钮文字具有渐变效果，默认为 NO */
+/** 是否让标题文字具有渐变效果，默认为 NO */
 @property (nonatomic, assign) BOOL titleGradientEffect;
-/** 是否让标题按钮文字具有缩放效果，默认为 NO */
+/** 是否让标题文字具有缩放效果，默认为 NO */
 @property (nonatomic, assign) BOOL titleTextZoom;
-/** 标题按钮文字缩放比，默认为 0.1f，取值范围 0 ～ 0.3f */
-@property (nonatomic, assign) CGFloat titleTextScaling;
-/** 按钮之间的间距，默认为 20.0f */
-@property (nonatomic, assign) CGFloat spacingBetweenButtons;
+/** 标题文字缩放到额外需增加的点尺寸，取值范围 3.0f ～ 10.f */
+@property (nonatomic, assign) CGFloat titleTextZoomAdditionalPointSize;
+/** 标题额外增加的宽度，默认为 20.0f */
+@property (nonatomic, assign) CGFloat titleAdditionalWidth;
 
 #pragma mark - - 指示器属性
 /** 是否显示指示器，默认为 YES */
@@ -101,5 +94,13 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIColor *verticalSeparatorColor;
 /** 按钮之间的分割线额外减少的高度，默认为 0.0f */
 @property (nonatomic, assign) CGFloat verticalSeparatorReduceHeight;
+
+#pragma mark - - badge 相关属性
+/** badge 颜色，默认红色 */
+@property (nonatomic, strong) UIColor *badgeColor;
+/** badge 尺寸大小，默认为 7.0f */
+@property (nonatomic, assign) CGFloat badgeSize;
+/** badge 偏移量，默认（0，0）*/
+@property (nonatomic, assign) CGPoint badgeOff;
 
 @end

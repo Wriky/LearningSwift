@@ -12,6 +12,7 @@
 
 #import "UIButton+SGPagingView.h"
 #import "UIView+SGPagingView.h"
+#import "SGPagingViewPopGestureVC.h"
 #import "SGPageContentCollectionView.h"
 #import "SGPageContentScrollView.h"
 #import "SGPageTitleView.h"

@@ -1,9 +1,4 @@
 //
-//  如遇到问题或有更好方案，请通过以下方式进行联系
-//      QQ群：429899752
-//      Email：kingsic@126.com
-//      GitHub：https://github.com/kingsic/SGPagingView
-//
 //  SGPageTitleView.h
 //  SGPagingViewExample
 //
@@ -55,7 +50,7 @@ typedef enum : NSUInteger {
  */
 + (instancetype)pageTitleViewWithFrame:(CGRect)frame delegate:(id<SGPageTitleViewDelegate>)delegate titleNames:(NSArray *)titleNames configure:(SGPageTitleViewConfigure *)configure;
 
-/** 给外界提供的方法，获取 SGPageContentView 的 progress／originalIndex／targetIndex, 必须实现 */
+/** 给外界提供的方法，获取 PageContent 的 progress／originalIndex／targetIndex, 必须实现 */
 - (void)setPageTitleViewWithProgress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex;
 
 /** 选中标题按钮下标，默认为 0 */
@@ -63,9 +58,13 @@ typedef enum : NSUInteger {
 /** 重置选中标题按钮下标（用于子控制器内的点击事件改变标题的选中下标）*/
 @property (nonatomic, assign) NSInteger resetSelectedIndex;
 
-/** 根据标题下标重置标题文字 */
+/** 根据标题下标值添加 badge */
+- (void)addBadgeForIndex:(NSInteger)index;
+/** 根据标题下标值移除 badge */
+- (void)removeBadgeForIndex:(NSInteger)index;
+/** 根据标题下标值重置标题文字 */
 - (void)resetTitle:(NSString *)title forIndex:(NSInteger)index;
-/** 根据标题下标设置标题的 attributedTitle 属性 */
+/** 根据标题下标值设置标题的 attributedTitle 属性 */
 - (void)setAttributedTitle:(NSMutableAttributedString *)attributedTitle selectedAttributedTitle:(NSMutableAttributedString *)selectedAttributedTitle forIndex:(NSInteger)index;
 /**
  *  设置标题图片及位置样式

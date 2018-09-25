@@ -1,9 +1,4 @@
 //
-//  如遇到问题或有更好方案，请通过以下方式进行联系
-//      QQ群：429899752
-//      Email：kingsic@126.com
-//      GitHub：https://github.com/kingsic/SGPagingView
-//
 //  SGPageTitleViewConfigure.m
 //  SGPagingViewExample
 //
@@ -69,20 +64,20 @@
     return _titleSelectedColor;
 }
 
-- (CGFloat)titleTextScaling {
-    if (_titleTextScaling >= 0.3) {
-        _titleTextScaling = 0.3;
-    } else {
-        _titleTextScaling = 0.1;
+- (CGFloat)titleTextZoomAdditionalPointSize {
+    if (_titleTextZoomAdditionalPointSize <= 3) {
+        _titleTextZoomAdditionalPointSize = 3;
+    } else if (_titleTextZoomAdditionalPointSize >= 10) {
+        _titleTextZoomAdditionalPointSize = 10;
     }
-    return _titleTextScaling;
+    return _titleTextZoomAdditionalPointSize;
 }
 
-- (CGFloat)spacingBetweenButtons {
-    if (_spacingBetweenButtons <= 0) {
-        _spacingBetweenButtons = 20;
+- (CGFloat)titleAdditionalWidth {
+    if (_titleAdditionalWidth <= 0) {
+        _titleAdditionalWidth = 20;
     }
-    return _spacingBetweenButtons;
+    return _titleAdditionalWidth;
 }
 
 #pragma mark - - 指示器属性
@@ -173,5 +168,26 @@
     return _verticalSeparatorReduceHeight;
 }
 
+#pragma mark - - badge 相关属性
+- (UIColor *)badgeColor {
+    if (!_badgeColor) {
+        _badgeColor = [UIColor redColor];
+    }
+    return _badgeColor;
+}
+
+- (CGFloat)badgeSize {
+    if (!_badgeSize) {
+        _badgeSize = 7.0f;
+    }
+    return _badgeSize;
+}
+
+- (CGPoint)badgeOff {
+    if (!_badgeOff.x && !_badgeOff.y) {
+        _badgeOff = CGPointMake(0, 0);
+    }
+    return _badgeOff;
+}
 
 @end

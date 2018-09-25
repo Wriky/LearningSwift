@@ -1,9 +1,4 @@
 //
-//  如遇到问题或有更好方案，请通过以下方式进行联系
-//      QQ群：429899752
-//      Email：kingsic@126.com
-//      GitHub：https://github.com/kingsic/SGPagingView
-//
 //  SGPageContentCollectionView.h
 //  SGPagingViewExample
 //
@@ -26,12 +21,16 @@
  */
 - (void)pageContentCollectionView:(SGPageContentCollectionView *)pageContentCollectionView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex;
 /**
- *  给 SGPageContentCollectionView 所在控制器提供的方法（根据偏移量来处理返回手势的问题）
+ *  获取 SGPageContentCollectionView 当前子控制器的下标值
  *
  *  @param pageContentCollectionView     SGPageContentCollectionView
- *  @param offsetX             SGPageContentCollectionView 内部视图的偏移量
+ *  @param index                         SGPageContentCollectionView 当前子控制器的下标值
  */
-- (void)pageContentCollectionView:(SGPageContentCollectionView *)pageContentCollectionView offsetX:(CGFloat)offsetX;
+- (void)pageContentCollectionView:(SGPageContentCollectionView *)pageContentCollectionView index:(NSInteger)index;
+/** SGPageContentCollectionView 内容开始拖拽方法 */
+- (void)pageContentCollectionViewWillBeginDragging;
+/** SGPageContentCollectionView 内容结束拖拽方法 */
+- (void)pageContentCollectionViewDidEndDecelerating;
 @end
 
 @interface SGPageContentCollectionView : UIView
@@ -56,6 +55,8 @@
 @property (nonatomic, weak) id<SGPageContentCollectionViewDelegate> delegatePageContentCollectionView;
 /** 是否需要滚动 SGPageContentCollectionView 默认为 YES；设为 NO 时，不必设置 SGPageContentCollectionView 的代理及代理方法 */
 @property (nonatomic, assign) BOOL isScrollEnabled;
+/** 点击标题触发动画切换滚动内容，默认为 NO */
+@property (nonatomic, assign) BOOL isAnimated;
 
 /** 给外界提供的方法，根据 SGPageTitleView 标题选中时的下标并显示相应的子控制器 */
 - (void)setPageContentCollectionViewCurrentIndex:(NSInteger)currentIndex;
