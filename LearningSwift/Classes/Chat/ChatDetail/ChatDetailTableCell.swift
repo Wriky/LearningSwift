@@ -37,15 +37,15 @@ class ChatDetailTableCell: BaseTableViewCell {
     }()
     
     private lazy var activityView: UIActivityIndicatorView = {
-        let activityView = UIActivityIndicatorView.init(activityIndicatorStyle:UIActivityIndicatorViewStyle.gray)
+        let activityView = UIActivityIndicatorView.init(style:UIActivityIndicatorView.Style.gray)
         return activityView
     }()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     
         self.contentView.backgroundColor = RGB(237, 237, 246)
-        self.selectionStyle = UITableViewCellSelectionStyle.none
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
         self.configUI()
     }
     
@@ -81,7 +81,7 @@ class ChatDetailTableCell: BaseTableViewCell {
         }
         
         contentLbl.snp.makeConstraints {
-            $0.edges.equalTo(UIEdgeInsetsMake(10, 18, 10, 12))
+            $0.edges.equalTo(UIEdgeInsets(top: 10, left: 18, bottom: 10, right: 12))
         }
         
         activityView.snp.makeConstraints {
@@ -121,9 +121,9 @@ class ChatDetailTableCell: BaseTableViewCell {
         
         contentLbl.snp.remakeConstraints {
             if isLeft {
-                $0.edges.equalTo(UIEdgeInsetsMake(10, 18, 10, 12))
+                $0.edges.equalTo(UIEdgeInsets(top: 10, left: 18, bottom: 10, right: 12))
             } else {
-                $0.edges.equalTo(UIEdgeInsetsMake(10, 12, 10, 18))
+                $0.edges.equalTo(UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 18))
             }
         }
         
@@ -143,7 +143,7 @@ class ChatDetailTableCell: BaseTableViewCell {
         self.updateConstraints(isLeft)
         
         let bubbleImage = UIImage.init(named: (isLeft ? "chat_bg_left":"chat_bg_right"))!
-        let resizable = bubbleImage.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+        let resizable = bubbleImage.resizableImage(withCapInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10), resizingMode: UIImage.ResizingMode.stretch)
         bubbleView.image = resizable
 
         avatarView.image = UIImage.init(named: "icon_center_information_upload")

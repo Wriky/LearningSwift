@@ -13,16 +13,11 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tabbar = UITabBar.appearance()
-        tabbar.theme_tintColor = ["#000", "#898989"]
-        tabbar.theme_barTintColor = ["#FFF", "#FFF"]
-
-
-        addChildViewControllers()
+        addTabChildViewControllers()
         
     }
 
-    private func addChildViewControllers() {
+    private func addTabChildViewControllers() {
         setChildViewController(NewsViewController(), title: "新闻", imageName: "home")
         setChildViewController(VideoViewController(), title: "视频", imageName: "video")
         setChildViewController(ChatListViewController(), title: "聊天", imageName: "weitoutiao")
@@ -30,25 +25,9 @@ class MainTabBarController: UITabBarController {
     
     private func setChildViewController(_ childController:UIViewController, title:String, imageName: String) {
         
-        if UserDefaults.standard.bool(forKey: kNight) {
-            setNightChildController(controller: childController, imageName: imageName)
-        } else {
-            setDayChildController(controller: childController, imageName: imageName)
-        }
         
         childController.title = title
-        addChildViewController(BaseNavigationController(rootViewController: childController))
+        addChild(BaseNavigationController(rootViewController: childController))
     }
-    
-    private func setNightChildController(controller: UIViewController, imageName: String) {
-        controller.tabBarItem.image = UIImage(named: imageName + "_tabbar_night_32x32_")
-        controller.tabBarItem.selectedImage = UIImage(named: imageName + "_tabbar_press_night_32x32_")
-    }
-    
-    private func setDayChildController(controller: UIViewController, imageName: String) {
-        controller.tabBarItem.image = UIImage(named: imageName + "_tabbar_32x32_")
-        controller.tabBarItem.selectedImage = UIImage(named: imageName + "_tabbar_press_32x32_")
-    }
-    
     
 }

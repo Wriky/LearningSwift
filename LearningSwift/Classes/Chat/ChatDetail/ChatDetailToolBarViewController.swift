@@ -75,14 +75,16 @@ class ChatDetailToolBarViewController: BaseViewController {
     }
 
     func addNotification() {
-         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { (notification) in
             self.keyBoardFrame = CGRect.zero
         }
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: OperationQueue.main) { (notification) in
+        
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: OperationQueue.main) { (notification) in
             
             let userInfo = notification.userInfo!
-            let keyBoardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+            let keyBoardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
             self.keyBoardFrame = keyBoardSize
             let keyBoardHeight: CGFloat = self.keyBoardFrame.height
             let chatBarStatus: ChatToolBarStatus = self.chatBar.status

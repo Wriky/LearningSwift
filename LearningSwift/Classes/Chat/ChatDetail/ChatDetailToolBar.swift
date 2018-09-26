@@ -27,10 +27,10 @@ class ChatDetailToolBar: BaseView {
     
     public lazy var voiceButton: UIButton = {
        let voiceButton = UIButton()
-        voiceButton.setImage(UIImage.init(named: "ToolViewInputVoice"), for: UIControlState.normal)
-        voiceButton.setImage(UIImage.init(named: "ToolViewInputVoiceHL"), for: UIControlState.highlighted)
-        voiceButton.setImage(UIImage.init(named: "ToolViewKeyboard"), for: UIControlState.selected)
-        voiceButton.addTarget(self, action: #selector(voiceButtonClick(_:)), for: UIControlEvents.touchUpInside)
+        voiceButton.setImage(UIImage.init(named: "ToolViewInputVoice"), for: UIControl.State.normal)
+        voiceButton.setImage(UIImage.init(named: "ToolViewInputVoiceHL"), for: UIControl.State.highlighted)
+        voiceButton.setImage(UIImage.init(named: "ToolViewKeyboard"), for: UIControl.State.selected)
+        voiceButton.addTarget(self, action: #selector(voiceButtonClick(_:)), for: UIControl.Event.touchUpInside)
         return voiceButton
     }()
     
@@ -47,7 +47,7 @@ class ChatDetailToolBar: BaseView {
         faceButton.setImage(UIImage.init(named: "ToolViewEmotion"), for: .normal)
         faceButton.setImage(UIImage.init(named: "ToolViewEmotionHL"), for: .highlighted)
         faceButton.setImage(UIImage.init(named: "ToolViewKeyboard"), for: .selected)
-        faceButton.addTarget(self, action: #selector(faceButtonClick(_:)), for: UIControlEvents.touchUpInside)
+        faceButton.addTarget(self, action: #selector(faceButtonClick(_:)), for: UIControl.Event.touchUpInside)
         return faceButton
     }()
     

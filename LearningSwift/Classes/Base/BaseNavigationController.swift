@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import SwiftTheme
+//import SwiftTheme
 
 class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let navigationBar = UINavigationBar.appearance()
-        navigationBar.theme_tintColor = ["#000","#000"]
-        navigationBar.setBackgroundImage(UIImage(named: "navigation_background"+(UserDefaults.standard.bool(forKey: kNight) ? "_night" : "")), for: .default)
+//        let navigationBar = UINavigationBar.appearance()
+//        navigationBar.theme_tintColor = ["#000","#000"]
+//        navigationBar.setBackgroundImage(UIImage(named: "navigation_background"+(UserDefaults.standard.bool(forKey: kNight) ? "_night" : "")), for: .default)
     }
 }

@@ -14,8 +14,6 @@ class BaseTableViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
-        tableView.theme_backgroundColor = "colors.tableViewBackgroundColor"
-        tableView.theme_separatorColor = "colors.separatorViewColor"
         
         func setupRefresh() {
             

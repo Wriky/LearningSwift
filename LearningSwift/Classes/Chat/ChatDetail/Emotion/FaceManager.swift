@@ -56,7 +56,7 @@ class FaceManager: NSObject {
         if expression == nil {
             return attributeStr
         }
-        attributeStr.addAttribute(kCTFontAttributeName as NSAttributedStringKey, value: font, range: NSMakeRange(0, attributeStr.length))
+        attributeStr.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: font, range: NSMakeRange(0, attributeStr.length))
         let resultArray = expression?.matches(in: message, options: .anchored, range: NSMakeRange(0, attributeStr.length))
         let mutableArray: NSMutableArray = NSMutableArray.init(capacity: resultArray!.count)
         

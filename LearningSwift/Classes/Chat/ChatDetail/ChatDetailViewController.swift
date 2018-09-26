@@ -19,7 +19,7 @@ class ChatDetailViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = RGB(237, 237, 246)
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(ChatDetailTableCell.self, forCellReuseIdentifier: kCellIdentifier)
         return tableView;
     }()
@@ -44,7 +44,7 @@ class ChatDetailViewController: BaseViewController {
     
     func configUI() {
         
-        self.addChildViewController(toolBarVC)
+        self.addChild(toolBarVC)
         view.addSubview(toolBarVC.view)
         
         view.addSubview(tableView);
@@ -121,7 +121,7 @@ extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 }
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftTheme
 import CoreData
 
 @UIApplicationMain
@@ -17,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var client: CentrifugeHelper?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         /// 设置主题颜色
-        ThemeManager.setTheme(plistName: UserDefaults.standard.bool(forKey: kNight) ? "night_theme" : "default_theme", path: .mainBundle)
+//        ThemeManager.setTheme(plistName: UserDefaults.standard.bool(forKey: kNight) ? "night_theme" : "default_theme", path: .mainBundle)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
