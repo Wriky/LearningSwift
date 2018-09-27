@@ -4,7 +4,8 @@
 target 'LearningSwift' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
+  
+  inhibit_all_warnings!           #取消三方框架导致的警告
   # Pods for LearningSwift
 
   pod 'Alamofire'
