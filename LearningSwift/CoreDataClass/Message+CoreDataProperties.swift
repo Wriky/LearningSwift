@@ -2,7 +2,7 @@
 //  Message+CoreDataProperties.swift
 //  LearningSwift
 //
-//  Created by wangyuan on 2018/9/11.
+//  Created by wangyuan on 2018/10/24.
 //  Copyright © 2018年 wangyuan. All rights reserved.
 //
 //

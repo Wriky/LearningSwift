@@ -13,7 +13,7 @@ import CoreData
 class FriendListViewController: BaseViewController {
 
     private let kCellIdentifier: String = "FriendListCellIdentifier"
-    var items = [FriendModel]()
+    var items: [NSManagedObject] = []
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -32,7 +32,7 @@ class FriendListViewController: BaseViewController {
         self.title = "好友列表"
         
         self.configUI()
-        self.loadOnlineData()
+//        self.loadOnlineData()
         self.loadCoreData()
     }
     
@@ -49,7 +49,7 @@ class FriendListViewController: BaseViewController {
     func loadOnlineData() {
         NetworkHelper.loadFriendsList { (responseArr) in
             
-            self.items = responseArr
+//            self.items = responseArr
             self.tableView.reloadData()
         }
     }
@@ -57,11 +57,13 @@ class FriendListViewController: BaseViewController {
     func loadCoreData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Friend")
         
         do {
             let fetchedResults = try managedObjectContext.fetch(fetchRequest) as? [NSManagedObject]
             if let results = fetchedResults {
+                self.items = results
+                self.tableView.reloadData()
                 print("fetchResult: \(results)")
             }
         } catch {
@@ -74,8 +76,9 @@ class FriendListViewController: BaseViewController {
 extension FriendListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier, for: indexPath) as! FriendListTableCell
-        let friendModel: FriendModel = items[indexPath.row]
-        cell.configureWithItem(friendModel.user!)
+        let friendModel = items[indexPath.row] as! Friend
+        let userModel = friendModel.user
+        cell.configureWithItem(userModel!)
         return cell
     }
     

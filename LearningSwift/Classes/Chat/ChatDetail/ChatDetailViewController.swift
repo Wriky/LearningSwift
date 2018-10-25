@@ -57,7 +57,7 @@ class ChatDetailViewController: BaseViewController {
         
         tableView.snp.makeConstraints {
             $0.top.left.right.equalTo(view)
-            $0.height.equalTo(kScreenHeight-kTabBarHeight-kNavBarHeight)
+            $0.height.equalTo(kScreenHeight-kTabBarHeight)
         }
         self.addTapGestureOnTableView()
     }

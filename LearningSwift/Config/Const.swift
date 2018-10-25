@@ -9,8 +9,8 @@
 import UIKit
 
 
-let device_id: Int = 6096495334
-let iid: Int = 5034850950
+let device_id: Int64 = 6096495334
+let iid: Int64 = 5034850950
 
 
 //服务器地址

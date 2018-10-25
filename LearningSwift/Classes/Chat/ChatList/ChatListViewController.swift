@@ -10,13 +10,13 @@ import UIKit
 import CoreData
 
 class ChatListViewController: BaseViewController {
-    let dataSource = ChatListTableViewDataSource()
+    let dataSourceSelf = ChatListTableViewDataSource()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.dataSource = dataSource
-        tableView.delegate = self;
-        tableView.register(ChatListTableCell.self, forCellReuseIdentifier: dataSource.kChatListCellIdentifier)
+        tableView.dataSource = dataSourceSelf
+        tableView.delegate = self
+        tableView.register(ChatListTableCell.self, forCellReuseIdentifier: dataSourceSelf.kChatListCellIdentifier)
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
@@ -53,8 +53,10 @@ class ChatListViewController: BaseViewController {
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.client?.subscribeClient(channelCode!)
                 
+                self.saveFriendInfo(friendModel)
+//                self.saveUserInfo(friendModel.user!)
             }
-            self.dataSource.items = responseArr
+            self.dataSourceSelf.items = responseArr
             self.tableView.reloadData()
             
         }
@@ -84,8 +86,37 @@ class ChatListViewController: BaseViewController {
     }
     
     func saveFriendInfo(_ friendModel: FriendModel) {
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Friend", in: managedObjectContext)
+        let friend: Friend = NSManagedObject(entity: entity!, insertInto: managedObjectContext) as! Friend
+        friend.setValue(friendModel.ID, forKey: "id")
+        friend.setValue(friendModel.state, forKey: "state")
+        friend.setValue(friendModel.target_id, forKey: "target_id")
         
+        let channelEntity = NSEntityDescription.entity(forEntityName: "Channel", in: managedObjectContext)
+        let channel: Channel = NSManagedObject(entity: channelEntity!, insertInto: managedObjectContext) as! Channel
+        channel.setValue(friendModel.channel?.resource_id, forKey: "resource_id")
+        channel.setValue(friendModel.channel?.code, forKey: "code")
+        channel.setValue(friendModel.channel?.resource_type, forKey: "resource_type")
+        friend.channel = channel
+        
+        let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedObjectContext)
+        let user: User = NSManagedObject(entity: userEntity!, insertInto: managedObjectContext) as! User
+        user.setValue(friendModel.user?.id, forKey: "id")
+        user.setValue(friendModel.user?.nick_name, forKey: "nick_name")
+        user.setValue(friendModel.user?.mobile, forKey: "mobile")
+        user.setValue(friendModel.user?.gender, forKey: "gender")
+        friend.user = user
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("无法保存")
+        }
+
     }
+    
 }
 
 extension ChatListViewController: UITableViewDelegate {
@@ -96,11 +127,29 @@ extension ChatListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let item: FriendModel = dataSource.items[indexPath.row]
+        let item: FriendModel = dataSourceSelf.items[indexPath.row]
         let vc = ChatDetailViewController()
         vc.itemModel = item
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            dataSourceSelf.removeAtIndex(indexPath.row)
+            
+            self.tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.fade)
+        }
     }
     
 }

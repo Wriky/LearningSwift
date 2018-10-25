@@ -21,8 +21,9 @@ class ChatListTableViewDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: kChatListCellIdentifier, for: indexPath) as! ChatListTableCell
         cell.configureWithItem(items[indexPath.row])
         return cell
-        
     }
     
-
+    func removeAtIndex(_ indexPathRow: Int) {
+        self.items.remove(at: indexPathRow)
+    }
 }

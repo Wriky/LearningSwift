@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FriendListTableCell: BaseTableViewCell {
 
@@ -69,10 +70,11 @@ class FriendListTableCell: BaseTableViewCell {
         }
     }
     
-    func configureWithItem(_ item: UserModel) {
+    func configureWithItem(_ item: NSManagedObject) {
         avatarView.backgroundColor = RGB(237, 237, 246)
-        nameLbl.text = item.nick_name
-        messageLbl.text = "Phone number :\(item.mobile)"
+        nameLbl.text = (item.value(forKey: "nick_name") as! String)
+        
+        let mobileStr = item.value(forKey: "mobile") as! String
+        messageLbl.text = "Phone number :" + mobileStr
     }
-
 }

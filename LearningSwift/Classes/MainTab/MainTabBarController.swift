@@ -25,8 +25,11 @@ class MainTabBarController: UITabBarController {
     
     private func setChildViewController(_ childController:UIViewController, title:String, imageName: String) {
         
-        
         childController.title = title
+        childController.tabBarItem.image = UIImage.init(named: imageName + "_tabbar_32x32_")
+        childController.tabBarItem.selectedImage = UIImage.init(named: imageName + "_tabbar_press_32x32_")
+    childController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for: UIControl.State.selected)
+        
         addChild(BaseNavigationController(rootViewController: childController))
     }
     
