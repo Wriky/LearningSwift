@@ -16,6 +16,7 @@ target 'LearningSwift' do
   pod 'MJRefresh'
   pod 'CentrifugeiOS'
   pod 'SnapKit', '~> 4.0.1'
+  pod 'MagicalRecord'
 
   target 'LearningSwiftTests' do
     inherit! :search_paths

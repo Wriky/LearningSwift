@@ -5,6 +5,9 @@ PODS:
     - Starscream (~> 3.0.4)
   - HandyJSON (4.2.0)
   - IDZSwiftCommonCrypto (0.10.0)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
   - MJRefresh (3.1.15.7)
   - SnapKit (4.0.1)
   - Starscream (3.0.5)
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - Alamofire
   - CentrifugeiOS
   - HandyJSON (~> 4.2.0)
+  - MagicalRecord
   - MJRefresh
   - SnapKit (~> 4.0.1)
   - SVProgressHUD
@@ -26,6 +30,7 @@ SPEC REPOS:
     - CentrifugeiOS
     - HandyJSON
     - IDZSwiftCommonCrypto
+    - MagicalRecord
     - MJRefresh
     - SnapKit
     - Starscream
@@ -37,12 +42,13 @@ SPEC CHECKSUMS:
   CentrifugeiOS: 1194c0928bda8f3cbbf3306d4165866e44a062e2
   HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
   IDZSwiftCommonCrypto: 4eef2c46e262dfbcbc1fd76365e066336680ad7d
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: cf5429d7574268960877a2b7b7a6c46923f2929f
+PODFILE CHECKSUM: d8ab2d2d6b029ce15b4f805f4fded2f5056b06e6
 
 COCOAPODS: 1.5.3

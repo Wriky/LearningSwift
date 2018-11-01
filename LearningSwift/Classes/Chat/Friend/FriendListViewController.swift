@@ -57,7 +57,7 @@ class FriendListViewController: BaseViewController {
     func loadCoreData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Friend")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
         do {
             let fetchedResults = try managedObjectContext.fetch(fetchRequest) as? [NSManagedObject]
@@ -76,9 +76,8 @@ class FriendListViewController: BaseViewController {
 extension FriendListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier, for: indexPath) as! FriendListTableCell
-        let friendModel = items[indexPath.row] as! Friend
-        let userModel = friendModel.user
-        cell.configureWithItem(userModel!)
+        let userModel = items[indexPath.row]
+        cell.configureWithItem(userModel)
         return cell
     }
     
