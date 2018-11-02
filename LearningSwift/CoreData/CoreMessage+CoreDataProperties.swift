@@ -1,8 +1,8 @@
 //
-//  Message+CoreDataProperties.swift
+//  CoreMessage+CoreDataProperties.swift
 //  LearningSwift
 //
-//  Created by wangyuan on 2018/11/1.
+//  Created by wangyuan on 2018/11/2.
 //  Copyright © 2018年 wangyuan. All rights reserved.
 //
 //
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension Message {
+extension CoreMessage {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Message> {
-        return NSFetchRequest<Message>(entityName: "Message")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CoreMessage> {
+        return NSFetchRequest<CoreMessage>(entityName: "CoreMessage")
     }
 
     @NSManaged public var channel_code: String?

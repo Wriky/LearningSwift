@@ -89,20 +89,20 @@ class ChatListViewController: BaseViewController {
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Friend", in: managedObjectContext)
-        let friend: Friend = NSManagedObject(entity: entity!, insertInto: managedObjectContext) as! Friend
+        let friend: CoreFriend = NSManagedObject(entity: entity!, insertInto: managedObjectContext) as! CoreFriend
         friend.setValue(friendModel.ID, forKey: "id")
         friend.setValue(friendModel.state, forKey: "state")
         friend.setValue(friendModel.target_id, forKey: "target_id")
         
         let channelEntity = NSEntityDescription.entity(forEntityName: "Channel", in: managedObjectContext)
-        let channel: Channel = NSManagedObject(entity: channelEntity!, insertInto: managedObjectContext) as! Channel
+        let channel: CoreChannel = NSManagedObject(entity: channelEntity!, insertInto: managedObjectContext) as! CoreChannel
         channel.setValue(friendModel.channel?.resource_id, forKey: "resource_id")
         channel.setValue(friendModel.channel?.code, forKey: "code")
         channel.setValue(friendModel.channel?.resource_type, forKey: "resource_type")
         friend.channel = channel
         
         let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedObjectContext)
-        let user: User = NSManagedObject(entity: userEntity!, insertInto: managedObjectContext) as! User
+        let user: CoreUser = NSManagedObject(entity: userEntity!, insertInto: managedObjectContext) as! CoreUser
         user.setValue(friendModel.user?.id, forKey: "id")
         user.setValue(friendModel.user?.nick_name, forKey: "nick_name")
         user.setValue(friendModel.user?.mobile, forKey: "mobile")
@@ -114,9 +114,7 @@ class ChatListViewController: BaseViewController {
         } catch {
             fatalError("无法保存")
         }
-
     }
-    
 }
 
 extension ChatListViewController: UITableViewDelegate {

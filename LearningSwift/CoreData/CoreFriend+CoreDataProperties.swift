@@ -1,8 +1,8 @@
 //
-//  Friend+CoreDataProperties.swift
+//  CoreFriend+CoreDataProperties.swift
 //  LearningSwift
 //
-//  Created by wangyuan on 2018/11/1.
+//  Created by wangyuan on 2018/11/2.
 //  Copyright © 2018年 wangyuan. All rights reserved.
 //
 //
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension Friend {
+extension CoreFriend {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Friend> {
-        return NSFetchRequest<Friend>(entityName: "Friend")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CoreFriend> {
+        return NSFetchRequest<CoreFriend>(entityName: "CoreFriend")
     }
 
     @NSManaged public var contact_id: String?
@@ -22,7 +22,7 @@ extension Friend {
     @NSManaged public var state: String?
     @NSManaged public var target_id: String?
     @NSManaged public var user_id: String?
-    @NSManaged public var channel: Channel?
-    @NSManaged public var user: User?
+    @NSManaged public var channel: CoreChannel?
+    @NSManaged public var user: CoreUser?
 
 }
