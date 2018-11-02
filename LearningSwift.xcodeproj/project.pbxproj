@@ -51,6 +51,10 @@
 		E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEF218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift */; };
 		E0901BF8218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BF0218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift */; };
 		E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BF1218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift */; };
+		E0901BFB218C2C36007FB089 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFA218C2C36007FB089 /* UserEntity.swift */; };
+		E0901BFD218C2C46007FB089 /* ChannelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFC218C2C46007FB089 /* ChannelEntity.swift */; };
+		E0901BFF218C2C57007FB089 /* FriendEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFE218C2C57007FB089 /* FriendEntity.swift */; };
+		E0901C01218C2C66007FB089 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C00218C2C66007FB089 /* MessageEntity.swift */; };
 		E0C00BC820F7432400E1654F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C00BC720F7432400E1654F /* Emoji.swift */; };
 		E0C00BCC20F7434900E1654F /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BC920F7434900E1654F /* emojis.plist */; };
 		E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCA20F7434900E1654F /* emoji_sort.plist */; };
@@ -152,6 +156,10 @@
 		E0901BEF218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0901BF0218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreFriend+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E0901BF1218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreFriend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0901BFA218C2C36007FB089 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		E0901BFC218C2C46007FB089 /* ChannelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelEntity.swift; sourceTree = "<group>"; };
+		E0901BFE218C2C57007FB089 /* FriendEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendEntity.swift; sourceTree = "<group>"; };
+		E0901C00218C2C66007FB089 /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
 		E0C00BC720F7432400E1654F /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		E0C00BC920F7434900E1654F /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		E0C00BCA20F7434900E1654F /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
@@ -527,6 +535,10 @@
 			children = (
 				E0C3072421226B2E00C9C263 /* WYEmotion.swift */,
 				E03DCF992140C6B000BB2E43 /* ChatModel.swift */,
+				E0901BFA218C2C36007FB089 /* UserEntity.swift */,
+				E0901BFC218C2C46007FB089 /* ChannelEntity.swift */,
+				E0901BFE218C2C57007FB089 /* FriendEntity.swift */,
+				E0901C00218C2C66007FB089 /* MessageEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -806,6 +818,8 @@
 				E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */,
 				E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */,
 				E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */,
+				E0901BFB218C2C36007FB089 /* UserEntity.swift in Sources */,
+				E0901BFD218C2C46007FB089 /* ChannelEntity.swift in Sources */,
 				E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */,
 				E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */,
 				E0E54314212C05EB00CB46EF /* NotificationConst.swift in Sources */,
@@ -823,6 +837,7 @@
 				E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,
 				E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */,
+				E0901BFF218C2C57007FB089 /* FriendEntity.swift in Sources */,
 				E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */,
 				E03DCF96213FD1A800BB2E43 /* FriendListViewController.swift in Sources */,
 				E0F5688420EC7A060017BED5 /* NetworkHelper.swift in Sources */,
@@ -835,6 +850,7 @@
 				E03A864A211C2E4E001CF144 /* Enums.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
 				E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */,
+				E0901C01218C2C66007FB089 /* MessageEntity.swift in Sources */,
 				E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */,
 				E01CC110214216AC00CAFD93 /* CoreDataModel.xcdatamodeld in Sources */,
 				E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */,
