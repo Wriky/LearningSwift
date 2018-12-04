@@ -57,7 +57,7 @@ class FriendListViewController: BaseViewController {
     func loadCoreData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreUser")
         
         do {
             let fetchedResults = try managedObjectContext.fetch(fetchRequest) as? [NSManagedObject]

@@ -71,7 +71,7 @@ class ChatListViewController: BaseViewController {
     func saveUserInfo(_ userModel: UserModel ) {
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: managedObjectContext)
+        let entity = NSEntityDescription.entity(forEntityName: "CoreUser", in: managedObjectContext)
         let user = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
         user.setValue(userModel.nick_name, forKey: "nick_name")
         user.setValue(userModel.mobile, forKey: "mobile")
@@ -88,20 +88,20 @@ class ChatListViewController: BaseViewController {
     func saveFriendInfo(_ friendModel: FriendModel) {
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Friend", in: managedObjectContext)
+        let entity = NSEntityDescription.entity(forEntityName: "CoreFriend", in: managedObjectContext)
         let friend: CoreFriend = NSManagedObject(entity: entity!, insertInto: managedObjectContext) as! CoreFriend
         friend.setValue(friendModel.ID, forKey: "id")
         friend.setValue(friendModel.state, forKey: "state")
         friend.setValue(friendModel.target_id, forKey: "target_id")
         
-        let channelEntity = NSEntityDescription.entity(forEntityName: "Channel", in: managedObjectContext)
+        let channelEntity = NSEntityDescription.entity(forEntityName: "CoreChannel", in: managedObjectContext)
         let channel: CoreChannel = NSManagedObject(entity: channelEntity!, insertInto: managedObjectContext) as! CoreChannel
         channel.setValue(friendModel.channel?.resource_id, forKey: "resource_id")
         channel.setValue(friendModel.channel?.code, forKey: "code")
         channel.setValue(friendModel.channel?.resource_type, forKey: "resource_type")
         friend.channel = channel
         
-        let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedObjectContext)
+        let userEntity = NSEntityDescription.entity(forEntityName: "CoreUser", in: managedObjectContext)
         let user: CoreUser = NSManagedObject(entity: userEntity!, insertInto: managedObjectContext) as! CoreUser
         user.setValue(friendModel.user?.id, forKey: "id")
         user.setValue(friendModel.user?.nick_name, forKey: "nick_name")

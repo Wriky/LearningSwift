@@ -22,8 +22,7 @@ class FriendEntity: NSObject {
     }
     
     class func oneToOneRelationship() -> Dictionary<String, String>? {
-        return ["user": "friend",
-             "channel": "friend"]
+        return ["user": "friend", "channel": "friend"]
     }
     
 }

@@ -55,6 +55,9 @@
 		E0901BFD218C2C46007FB089 /* ChannelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFC218C2C46007FB089 /* ChannelEntity.swift */; };
 		E0901BFF218C2C57007FB089 /* FriendEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFE218C2C57007FB089 /* FriendEntity.swift */; };
 		E0901C01218C2C66007FB089 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C00218C2C66007FB089 /* MessageEntity.swift */; };
+		E0901C04218C3303007FB089 /* CoreDataClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */; };
+		E0901C06218C3328007FB089 /* CoreDataPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C05218C3328007FB089 /* CoreDataPredicate.swift */; };
+		E0901C08218C338F007FB089 /* NSObject+CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */; };
 		E0C00BC820F7432400E1654F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C00BC720F7432400E1654F /* Emoji.swift */; };
 		E0C00BCC20F7434900E1654F /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BC920F7434900E1654F /* emojis.plist */; };
 		E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCA20F7434900E1654F /* emoji_sort.plist */; };
@@ -160,6 +163,9 @@
 		E0901BFC218C2C46007FB089 /* ChannelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelEntity.swift; sourceTree = "<group>"; };
 		E0901BFE218C2C57007FB089 /* FriendEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendEntity.swift; sourceTree = "<group>"; };
 		E0901C00218C2C66007FB089 /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
+		E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClassInfo.swift; sourceTree = "<group>"; };
+		E0901C05218C3328007FB089 /* CoreDataPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPredicate.swift; sourceTree = "<group>"; };
+		E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+CoreDataExtension.swift"; sourceTree = "<group>"; };
 		E0C00BC720F7432400E1654F /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		E0C00BC920F7434900E1654F /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		E0C00BCA20F7434900E1654F /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
@@ -498,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				E01CC10E214216AC00CAFD93 /* CoreDataModel.xcdatamodeld */,
+				E0901C02218C32CB007FB089 /* CoreExtension */,
 				E0901855218AEE99007FB089 /* NSManagedObject */,
 			);
 			path = CoreData;
@@ -516,6 +523,16 @@
 				E0901BF1218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift */,
 			);
 			name = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		E0901C02218C32CB007FB089 /* CoreExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */,
+				E0901C05218C3328007FB089 /* CoreDataPredicate.swift */,
+				E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */,
+			);
+			name = CoreExtension;
 			sourceTree = "<group>";
 		};
 		E0C3071D212269C400C9C263 /* Emotion */ = {
@@ -818,6 +835,7 @@
 				E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */,
 				E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */,
 				E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */,
+				E0901C06218C3328007FB089 /* CoreDataPredicate.swift in Sources */,
 				E0901BFB218C2C36007FB089 /* UserEntity.swift in Sources */,
 				E0901BFD218C2C46007FB089 /* ChannelEntity.swift in Sources */,
 				E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */,
@@ -858,6 +876,7 @@
 				E006B5B2211A8B4B0063F2A3 /* ChatListTableCell.swift in Sources */,
 				E0C3071F212269F500C9C263 /* EmotionMenuView.swift in Sources */,
 				E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */,
+				E0901C04218C3303007FB089 /* CoreDataClassInfo.swift in Sources */,
 				E03DCF98213FD1C600BB2E43 /* FriendListTableCell.swift in Sources */,
 				E04D876620DFA03C006A6ACD /* AppDelegate.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
@@ -865,6 +884,7 @@
 				E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
 				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
+				E0901C08218C338F007FB089 /* NSObject+CoreDataExtension.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 				E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */,
 				E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */,
