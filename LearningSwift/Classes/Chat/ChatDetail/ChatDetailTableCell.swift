@@ -148,10 +148,10 @@ class ChatDetailTableCell: BaseTableViewCell {
 
         avatarView.image = UIImage.init(named: "icon_center_information_upload")
         
-        let name: String = isLeft ? user.nick_name : "DownLoad"
+        let name: String = isLeft ? user.nick_name! : "DownLoad"
         nameLbl.text =  name
         
-        contentLbl.attributedText = FaceManager.transferMessageToEmoji(message: item.content, font: contentLbl.font, lineHeight: contentLbl.font.lineHeight)
+        contentLbl.attributedText = FaceManager.transferMessageToEmoji(message: item.content!, font: contentLbl.font, lineHeight: contentLbl.font.lineHeight)
     }
 
 }

@@ -104,7 +104,7 @@ class EmotionListView: BaseView {
             } else {
                 range.length = left
             }
-            pageView.setEmotions(emotions.subarray(with: range) as! Array<WYEmotion>)
+            pageView.setEmotions(emotions.subarray(with: range) as! Array<EmotionModel>)
             self.scrollView.addSubview(pageView)
         }
         self.setNeedsLayout()

@@ -103,10 +103,9 @@ extension NetworkHelperProtocol {
                 guard let datas = json["response"].array else {return}
                 
                 print("resultData + \(datas)")
-
+                
                 completionHandler(datas.compactMap({ data in
                     FriendModel.deserialize(from: data.description)
-                    
                 }))
             }
         }

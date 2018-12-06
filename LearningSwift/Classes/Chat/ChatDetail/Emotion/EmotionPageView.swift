@@ -10,7 +10,7 @@ import UIKit
 
 class EmotionPageView: BaseView {
 
-    var emotions = [WYEmotion]()
+    var emotions = [EmotionModel]()
     
     private lazy var deleteBtn: UIButton = {
         let deleteBtn: UIButton = UIButton()
@@ -31,9 +31,9 @@ class EmotionPageView: BaseView {
     }
    
     
-    func setEmotions(_ emotionArr: Array<WYEmotion>) {
+    func setEmotions(_ emotionArr: Array<EmotionModel>) {
         self.emotions = emotionArr
-        for emotion:WYEmotion in emotionArr {
+        for emotion:EmotionModel in emotionArr {
             let emotionBtn: EmotionButton = EmotionButton()
             emotionBtn.setEmotion(emotion)
             emotionBtn.addTarget(self, action: #selector(emotionBtnClicked(_:)), for: .touchUpInside)
@@ -68,7 +68,7 @@ class EmotionPageView: BaseView {
     }
     
     @objc func emotionBtnClicked(_ button: EmotionButton) {
-        var userInfoDic: [String: WYEmotion] = [:]
+        var userInfoDic: [String: EmotionModel] = [:]
         userInfoDic[SelectEmotionKey] = button.emotion
         
         NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: EmotionDidSelectNotification), object: nil, userInfo: userInfoDic))

@@ -32,7 +32,6 @@
 		E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF92213D24CE00BB2E43 /* ChatViewModel.swift */; };
 		E03DCF96213FD1A800BB2E43 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF95213FD1A800BB2E43 /* FriendListViewController.swift */; };
 		E03DCF98213FD1C600BB2E43 /* FriendListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF97213FD1C600BB2E43 /* FriendListTableCell.swift */; };
-		E03DCF9A2140C6B000BB2E43 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF992140C6B000BB2E43 /* ChatModel.swift */; };
 		E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */; };
 		E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A320EB0B4200E9569B /* MainTabBarController.swift */; };
 		E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */; };
@@ -43,6 +42,7 @@
 		E04D877020DFA045006A6ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D876E20DFA045006A6ACD /* LaunchScreen.storyboard */; };
 		E04D877B20DFA046006A6ACD /* LearningSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D877A20DFA046006A6ACD /* LearningSwiftTests.swift */; };
 		E04D878620DFA046006A6ACD /* LearningSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */; };
+		E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */; };
 		E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEA218C2B7A007FB089 /* CoreUser+CoreDataClass.swift */; };
 		E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEB218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift */; };
 		E0901BF4218C2B7A007FB089 /* CoreChannel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEC218C2B7A007FB089 /* CoreChannel+CoreDataClass.swift */; };
@@ -51,10 +51,10 @@
 		E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEF218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift */; };
 		E0901BF8218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BF0218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift */; };
 		E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BF1218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift */; };
-		E0901BFB218C2C36007FB089 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFA218C2C36007FB089 /* UserEntity.swift */; };
-		E0901BFD218C2C46007FB089 /* ChannelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFC218C2C46007FB089 /* ChannelEntity.swift */; };
-		E0901BFF218C2C57007FB089 /* FriendEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFE218C2C57007FB089 /* FriendEntity.swift */; };
-		E0901C01218C2C66007FB089 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C00218C2C66007FB089 /* MessageEntity.swift */; };
+		E0901BFB218C2C36007FB089 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFA218C2C36007FB089 /* UserModel.swift */; };
+		E0901BFD218C2C46007FB089 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFC218C2C46007FB089 /* ChannelModel.swift */; };
+		E0901BFF218C2C57007FB089 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BFE218C2C57007FB089 /* FriendModel.swift */; };
+		E0901C01218C2C66007FB089 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C00218C2C66007FB089 /* MessageModel.swift */; };
 		E0901C04218C3303007FB089 /* CoreDataClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */; };
 		E0901C06218C3328007FB089 /* CoreDataPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C05218C3328007FB089 /* CoreDataPredicate.swift */; };
 		E0901C08218C338F007FB089 /* NSObject+CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */; };
@@ -66,7 +66,6 @@
 		E0C3071F212269F500C9C263 /* EmotionMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3071E212269F500C9C263 /* EmotionMenuView.swift */; };
 		E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072021226A2700C9C263 /* EmotionButton.swift */; };
 		E0C3072321226AD200C9C263 /* EmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072221226AD200C9C263 /* EmotionPageView.swift */; };
-		E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072421226B2E00C9C263 /* WYEmotion.swift */; };
 		E0C3072821226DE600C9C263 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072721226DE600C9C263 /* String+Extension.swift */; };
 		E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C307292122836700C9C263 /* MessageConst.swift */; };
 		E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3072B2122D77100C9C263 /* FaceManager.swift */; };
@@ -75,6 +74,7 @@
 		E0E54314212C05EB00CB46EF /* NotificationConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54313212C05EB00CB46EF /* NotificationConst.swift */; };
 		E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54316212EBB7600CB46EF /* CentrifugeHelper.swift */; };
 		E0E54319212F968D00CB46EF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E54318212F968D00CB46EF /* Alert.swift */; };
+		E0E6237A21B926DD007EA234 /* EmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E6237921B926DD007EA234 /* EmotionModel.swift */; };
 		E0F5687720EB10880017BED5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687620EB10880017BED5 /* Const.swift */; };
 		E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687820EC61CF0017BED5 /* NewsViewController.swift */; };
 		E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687A20EC766B0017BED5 /* MomentViewController.swift */; };
@@ -134,7 +134,6 @@
 		E03DCF92213D24CE00BB2E43 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		E03DCF95213FD1A800BB2E43 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		E03DCF97213FD1C600BB2E43 /* FriendListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableCell.swift; sourceTree = "<group>"; };
-		E03DCF992140C6B000BB2E43 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		E044C79A20EA2AFF00E9569B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		E044C7A320EB0B4200E9569B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E044C7A520EB0D3A00E9569B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -151,6 +150,9 @@
 		E04D878120DFA046006A6ACD /* LearningSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSwiftUITests.swift; sourceTree = "<group>"; };
 		E04D878720DFA046006A6ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E071D13821B7D25B003156C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E071D13B21B8B451003156C4 /* LearningSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConst.swift; sourceTree = "<group>"; };
 		E0901BEA218C2B7A007FB089 /* CoreUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E0901BEB218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0901BEC218C2B7A007FB089 /* CoreChannel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreChannel+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -159,10 +161,10 @@
 		E0901BEF218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0901BF0218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreFriend+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E0901BF1218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreFriend+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E0901BFA218C2C36007FB089 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
-		E0901BFC218C2C46007FB089 /* ChannelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelEntity.swift; sourceTree = "<group>"; };
-		E0901BFE218C2C57007FB089 /* FriendEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendEntity.swift; sourceTree = "<group>"; };
-		E0901C00218C2C66007FB089 /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
+		E0901BFA218C2C36007FB089 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E0901BFC218C2C46007FB089 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		E0901BFE218C2C57007FB089 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
+		E0901C00218C2C66007FB089 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClassInfo.swift; sourceTree = "<group>"; };
 		E0901C05218C3328007FB089 /* CoreDataPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPredicate.swift; sourceTree = "<group>"; };
 		E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+CoreDataExtension.swift"; sourceTree = "<group>"; };
@@ -174,7 +176,6 @@
 		E0C3071E212269F500C9C263 /* EmotionMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionMenuView.swift; sourceTree = "<group>"; };
 		E0C3072021226A2700C9C263 /* EmotionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButton.swift; sourceTree = "<group>"; };
 		E0C3072221226AD200C9C263 /* EmotionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPageView.swift; sourceTree = "<group>"; };
-		E0C3072421226B2E00C9C263 /* WYEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYEmotion.swift; sourceTree = "<group>"; };
 		E0C3072721226DE600C9C263 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E0C307292122836700C9C263 /* MessageConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageConst.swift; sourceTree = "<group>"; };
 		E0C3072B2122D77100C9C263 /* FaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceManager.swift; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 		E0E54313212C05EB00CB46EF /* NotificationConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConst.swift; sourceTree = "<group>"; };
 		E0E54316212EBB7600CB46EF /* CentrifugeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentrifugeHelper.swift; sourceTree = "<group>"; };
 		E0E54318212F968D00CB46EF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		E0E6237921B926DD007EA234 /* EmotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionModel.swift; sourceTree = "<group>"; };
 		E0F5687620EB10880017BED5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E0F5687820EC61CF0017BED5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E0F5687A20EC766B0017BED5 /* MomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewController.swift; sourceTree = "<group>"; };
@@ -441,6 +443,8 @@
 				E04D876C20DFA045006A6ACD /* Assets.xcassets */,
 				E04D876E20DFA045006A6ACD /* LaunchScreen.storyboard */,
 				E04D877120DFA045006A6ACD /* Info.plist */,
+				E071D13821B7D25B003156C4 /* PrefixHeader.pch */,
+				E071D13B21B8B451003156C4 /* LearningSwift-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -550,12 +554,11 @@
 		E0C3072621226B3400C9C263 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E0C3072421226B2E00C9C263 /* WYEmotion.swift */,
-				E03DCF992140C6B000BB2E43 /* ChatModel.swift */,
-				E0901BFA218C2C36007FB089 /* UserEntity.swift */,
-				E0901BFC218C2C46007FB089 /* ChannelEntity.swift */,
-				E0901BFE218C2C57007FB089 /* FriendEntity.swift */,
-				E0901C00218C2C66007FB089 /* MessageEntity.swift */,
+				E0901BFA218C2C36007FB089 /* UserModel.swift */,
+				E0901BFC218C2C46007FB089 /* ChannelModel.swift */,
+				E0901BFE218C2C57007FB089 /* FriendModel.swift */,
+				E0901C00218C2C66007FB089 /* MessageModel.swift */,
+				E0E6237921B926DD007EA234 /* EmotionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				E0F5687620EB10880017BED5 /* Const.swift */,
 				E0C307292122836700C9C263 /* MessageConst.swift */,
 				E0E54313212C05EB00CB46EF /* NotificationConst.swift */,
+				E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */,
 				E03A8649211C2E4E001CF144 /* Enums.swift */,
 			);
 			path = Config;
@@ -828,7 +832,6 @@
 				E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */,
 				E0901BF6218C2B7A007FB089 /* CoreMessage+CoreDataClass.swift in Sources */,
 				E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */,
-				E03DCF9A2140C6B000BB2E43 /* ChatModel.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,
@@ -836,8 +839,8 @@
 				E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */,
 				E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */,
 				E0901C06218C3328007FB089 /* CoreDataPredicate.swift in Sources */,
-				E0901BFB218C2C36007FB089 /* UserEntity.swift in Sources */,
-				E0901BFD218C2C46007FB089 /* ChannelEntity.swift in Sources */,
+				E0901BFB218C2C36007FB089 /* UserModel.swift in Sources */,
+				E0901BFD218C2C46007FB089 /* ChannelModel.swift in Sources */,
 				E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */,
 				E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */,
 				E0E54314212C05EB00CB46EF /* NotificationConst.swift in Sources */,
@@ -855,7 +858,7 @@
 				E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,
 				E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */,
-				E0901BFF218C2C57007FB089 /* FriendEntity.swift in Sources */,
+				E0901BFF218C2C57007FB089 /* FriendModel.swift in Sources */,
 				E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */,
 				E03DCF96213FD1A800BB2E43 /* FriendListViewController.swift in Sources */,
 				E0F5688420EC7A060017BED5 /* NetworkHelper.swift in Sources */,
@@ -868,7 +871,8 @@
 				E03A864A211C2E4E001CF144 /* Enums.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
 				E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */,
-				E0901C01218C2C66007FB089 /* MessageEntity.swift in Sources */,
+				E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */,
+				E0901C01218C2C66007FB089 /* MessageModel.swift in Sources */,
 				E0F5687B20EC766B0017BED5 /* MomentViewController.swift in Sources */,
 				E01CC110214216AC00CAFD93 /* CoreDataModel.xcdatamodeld in Sources */,
 				E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */,
@@ -881,7 +885,7 @@
 				E04D876620DFA03C006A6ACD /* AppDelegate.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
-				E0C3072521226B2E00C9C263 /* WYEmotion.swift in Sources */,
+				E0E6237A21B926DD007EA234 /* EmotionModel.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
 				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
 				E0901C08218C338F007FB089 /* NSObject+CoreDataExtension.swift in Sources */,
@@ -1065,7 +1069,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7C2JFD9GT2;
+				DEVELOPMENT_TEAM = YDGCTJN54V;
+				GCC_PREFIX_HEADER = /Users/wangyuan/Documents/MyProject/SwiftProject/LearningSwift/LearningSwift/PrefixHeader.pch;
 				INFOPLIST_FILE = LearningSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1074,6 +1079,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.viper.LearningSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/wangyuan/Documents/MyProject/SwiftProject/LearningSwift/LearningSwift/LearningSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1087,7 +1093,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7C2JFD9GT2;
+				DEVELOPMENT_TEAM = YDGCTJN54V;
+				GCC_PREFIX_HEADER = /Users/wangyuan/Documents/MyProject/SwiftProject/LearningSwift/LearningSwift/PrefixHeader.pch;
 				INFOPLIST_FILE = LearningSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1096,6 +1103,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.viper.LearningSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/wangyuan/Documents/MyProject/SwiftProject/LearningSwift/LearningSwift/LearningSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

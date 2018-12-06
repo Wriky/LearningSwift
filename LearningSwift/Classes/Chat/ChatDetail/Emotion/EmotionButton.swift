@@ -10,14 +10,14 @@ import UIKit
 
 class EmotionButton: UIButton {
    
-    var emotion: WYEmotion = WYEmotion()
+    var emotion: EmotionModel = EmotionModel()
     
-    public func setEmotion(_ emotionParam: WYEmotion) {
+    public func setEmotion(_ emotionParam: EmotionModel) {
         emotion = emotionParam
-        if !emotion.code.isEmpty {
-            self.setTitle(emotion.code.emoji(), for: .normal)
+        if !emotion.code!.isEmpty {
+            self.setTitle(emotion.code!.emoji(), for: .normal)
         } else {
-            self.setImage(UIImage.init(named: emotion.face_name), for: .normal)
+            self.setImage(UIImage.init(named: emotion.face_name!), for: .normal)
         }
     }
     

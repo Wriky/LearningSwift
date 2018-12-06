@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 
+
 class FriendListViewController: BaseViewController {
 
     private let kCellIdentifier: String = "FriendListCellIdentifier"
@@ -55,8 +56,8 @@ class FriendListViewController: BaseViewController {
     }
     
     func loadCoreData() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        let managedObjectContext = NSManagedObjectContext.mr_default()
+
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreUser")
         
         do {

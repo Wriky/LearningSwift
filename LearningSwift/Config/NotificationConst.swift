@@ -9,7 +9,7 @@
 import UIKit
 
 
-public var EmotionDidSelectNotification: String = "EmotionDidSelectNotification"
-public var EmotionDidDeleteNotification: String = "EmotionDidDeleteNotification"
-public var EmotionDidSendNotification: String = "EmotionDidSendNotification"
-public var RecieveMessageNotification: String = "RecieveMessageNotification"
+public let EmotionDidSelectNotification: String = "EmotionDidSelectNotification"
+public let EmotionDidDeleteNotification: String = "EmotionDidDeleteNotification"
+public let EmotionDidSendNotification: String = "EmotionDidSendNotification"
+public let RecieveMessageNotification: String = "RecieveMessageNotification"

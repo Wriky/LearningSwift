@@ -1,5 +1,5 @@
 //
-//  UserEntity.swift
+//  UserModel.swift
 //  LearningSwift
 //
 //  Created by wangyuan on 2018/11/2.
@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import HandyJSON
 
-class UserEntity: NSObject {
+class UserModel: NSObject, HandyJSON {
     public var nick_name: String?
     public var mobile: String?
     public var id: String?
     public var gender: Int = 1
-    public var friend: FriendEntity?
+    public var friend: FriendModel?
 
+    required override init() {
+        
+    }
+    
     class func managedObjectClass() -> AnyClass {
         return NSClassFromString("CoreUser")!
     }
     
     class func oneToOneRelationship() -> Dictionary<String, String>? {
         return ["friend":"user"]
+    }
+    
+    class func primaryKeys() -> Dictionary<String, String>? {
+        return ["id": "id"]
     }
 }

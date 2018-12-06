@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 extension UIImage {
     func fillImageWithColor(color: UIColor) -> UIImage {
         let rect: CGRect = CGRect.init(x: 0, y: 0, width: 1, height: 1)

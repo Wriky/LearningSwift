@@ -1,5 +1,5 @@
 //
-//  ChannelEntity.swift
+//  ChannelModel.swift
 //  LearningSwift
 //
 //  Created by wangyuan on 2018/11/2.
@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import HandyJSON
 
-class ChannelEntity: NSObject {
+class ChannelModel: NSObject, HandyJSON {
     public var ID: String?
     public var code: String?
     public var resource_id:String?
     public var resource_type:String?
-    public var friend: FriendEntity?
+    public var friend: FriendModel?
 
+    required override init() {
+        
+    }
+    
     class func managedObjectClass() -> AnyClass {
         return NSClassFromString("CoreChannel")!
     }
@@ -22,4 +27,9 @@ class ChannelEntity: NSObject {
     class func oneToOneRelationship() -> Dictionary<String, String>? {
         return ["friend":"user"]
     }
+    
+    class func primaryKeys() -> Dictionary<String, String>? {
+        return ["ID": "ID"]
+    }
+
 }

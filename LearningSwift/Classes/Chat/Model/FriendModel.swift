@@ -1,5 +1,5 @@
 //
-//  FriendEntity.swift
+//  FriendModel.swift
 //  LearningSwift
 //
 //  Created by wangyuan on 2018/11/2.
@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import HandyJSON
 
-class FriendEntity: NSObject {
+class FriendModel: NSObject, HandyJSON {
     public var ID: String?
     public var state: String?
     public var target_id: String?
     public var user_id: String?
     public var contact_id: String?
-    public var user: UserEntity?
-    public var channel: ChannelEntity?
+    public var user: UserModel?
+    public var channel: ChannelModel?
+    
+    required override init() {
+        
+    }
     
     class func managedObjectClass() -> AnyClass {
         return NSClassFromString("CoreFriend")!
@@ -25,4 +30,7 @@ class FriendEntity: NSObject {
         return ["user": "friend", "channel": "friend"]
     }
     
+    class func primaryKeys() -> Dictionary<String, String>? {
+        return ["ID": "ID"]
+    }
 }

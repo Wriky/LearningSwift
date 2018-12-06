@@ -47,14 +47,13 @@ class ChatListViewController: BaseViewController {
     func loadFriendListData() {
         NetworkHelper.loadFriendsList { (responseArr) in
             
-            for friendModel: FriendModel in responseArr {
-                let channelCode = friendModel.channel?.code
-                
+            for friendEntity: FriendModel in responseArr {
+                let channelCode = friendEntity.channel?.code
+
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.client?.subscribeClient(channelCode!)
-                
-                self.saveFriendInfo(friendModel)
-//                self.saveUserInfo(friendModel.user!)
+
+                self.saveFriendInfo(friendEntity)
             }
             self.dataSourceSelf.items = responseArr
             self.tableView.reloadData()
@@ -68,52 +67,27 @@ class ChatListViewController: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func saveUserInfo(_ userModel: UserModel ) {
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "CoreUser", in: managedObjectContext)
-        let user = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
-        user.setValue(userModel.nick_name, forKey: "nick_name")
-        user.setValue(userModel.mobile, forKey: "mobile")
-        user.setValue(userModel.id, forKey: "id")
-        user.setValue(userModel.gender, forKey: "gender")
-
-        do {
-            try managedObjectContext.save()
-        } catch {
-            fatalError("无法保存")
-        }
-    }
-    
     func saveFriendInfo(_ friendModel: FriendModel) {
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "CoreFriend", in: managedObjectContext)
-        let friend: CoreFriend = NSManagedObject(entity: entity!, insertInto: managedObjectContext) as! CoreFriend
-        friend.setValue(friendModel.ID, forKey: "id")
-        friend.setValue(friendModel.state, forKey: "state")
-        friend.setValue(friendModel.target_id, forKey: "target_id")
+        let managedObjectContext = NSManagedObjectContext.mr_default()
+        let friendEntity: CoreFriend = CoreFriend.mr_createEntity(in: managedObjectContext)!
+        friendEntity.id = friendModel.ID
+        friendEntity.state = friendModel.state
+        friendEntity.target_id = friendModel.target_id
         
-        let channelEntity = NSEntityDescription.entity(forEntityName: "CoreChannel", in: managedObjectContext)
-        let channel: CoreChannel = NSManagedObject(entity: channelEntity!, insertInto: managedObjectContext) as! CoreChannel
-        channel.setValue(friendModel.channel?.resource_id, forKey: "resource_id")
-        channel.setValue(friendModel.channel?.code, forKey: "code")
-        channel.setValue(friendModel.channel?.resource_type, forKey: "resource_type")
-        friend.channel = channel
+        let channelEntity: CoreChannel = CoreChannel.mr_createEntity(in: managedObjectContext)!
+        channelEntity.resource_id = friendModel.channel?.resource_id
+        channelEntity.resource_type = friendModel.channel?.resource_type
+        channelEntity.code = friendModel.channel?.code
+        friendEntity.channel = channelEntity
         
-        let userEntity = NSEntityDescription.entity(forEntityName: "CoreUser", in: managedObjectContext)
-        let user: CoreUser = NSManagedObject(entity: userEntity!, insertInto: managedObjectContext) as! CoreUser
-        user.setValue(friendModel.user?.id, forKey: "id")
-        user.setValue(friendModel.user?.nick_name, forKey: "nick_name")
-        user.setValue(friendModel.user?.mobile, forKey: "mobile")
-        user.setValue(friendModel.user?.gender, forKey: "gender")
-        friend.user = user
+        let userEntity: CoreUser = CoreUser.mr_createEntity(in: managedObjectContext)!
+        userEntity.id = friendModel.user?.id
+        userEntity.nick_name = friendModel.user?.nick_name
+        userEntity.mobile = friendModel.user?.mobile
+        userEntity.gender = Int16((friendModel.user?.gender)!)
+        friendEntity.user = userEntity
         
-        do {
-            try managedObjectContext.save()
-        } catch {
-            fatalError("无法保存")
-        }
+        managedObjectContext.mr_saveToPersistentStoreAndWait()
     }
 }
 

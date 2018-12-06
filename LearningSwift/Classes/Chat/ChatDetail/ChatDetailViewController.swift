@@ -92,7 +92,7 @@ class ChatDetailViewController: BaseViewController {
     func addMessage(message: String, isSender:Bool) {
         appDelegate.client?.publish((self.itemModel?.user?.nick_name)!, message, (self.itemModel?.channel?.code)!)
         
-        self.items.append(MessageModel(msg_id: "1", content: message, msg_type: 1, user_id: (itemModel?.user_id)!, channel_code: (itemModel?.channel?.code)!, channel_type: 1))
+//        self.items.append(MessageModel(msg_id: "1", content: message, msg_type: 1, user_id: (itemModel?.user_id)!, channel_code: (itemModel?.channel?.code)!, channel_type: 1))
         self.tableView.reloadData()
         self.scrollToBottom()
     }

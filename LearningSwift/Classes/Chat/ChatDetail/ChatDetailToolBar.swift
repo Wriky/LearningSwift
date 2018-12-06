@@ -181,12 +181,12 @@ class ChatDetailToolBar: BaseView {
     }
     
     func emotionDidSelected(_ notification: Notification) {
-        let emotion: WYEmotion = notification.userInfo![SelectEmotionKey] as! WYEmotion
-        if !emotion.code.isEmpty {
-            self.textView.insertText(emotion.code.emoji())
+        let emotion: EmotionModel = notification.userInfo![SelectEmotionKey] as! EmotionModel
+        if !emotion.code!.isEmpty {
+            self.textView.insertText(emotion.code!.emoji())
         self.textView.scrollRangeToVisible(NSMakeRange(self.textView.text.lengthOfBytes(using: String.Encoding.utf8), 0))
         } else {
-            self.textView.insertText(emotion.face_name)
+            self.textView.insertText(emotion.face_name!)
         }
     }
     

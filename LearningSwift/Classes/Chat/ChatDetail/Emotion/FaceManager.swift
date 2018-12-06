@@ -23,7 +23,7 @@ class FaceManager: NSObject {
         let path: String = Bundle.main.path(forResource: "emoji.plist", ofType: nil)!
         
         let pathArr = NSArray(contentsOfFile: path)
-        emojiEmotions = [WYEmotion].deserialize(from: pathArr)! as NSArray
+        emojiEmotions = [EmotionModel].deserialize(from: pathArr)! as NSArray
         return emojiEmotions
     }
     
@@ -33,7 +33,7 @@ class FaceManager: NSObject {
         }
         let path: String = Bundle.main.path(forResource: "normal_face.plist", ofType: nil)!
         let pathArr = NSArray(contentsOfFile: path)
-        customEmotions = [WYEmotion].deserialize(from: pathArr)! as NSArray
+        customEmotions = [EmotionModel].deserialize(from: pathArr)! as NSArray
         
         return customEmotions
     }
@@ -44,7 +44,7 @@ class FaceManager: NSObject {
         }
         let path: String = Bundle.main.path(forResource: "normal_face.plist", ofType: nil)!
         let pathArr = NSArray(contentsOfFile: path)
-        gifEmotions = [WYEmotion].deserialize(from: pathArr)! as NSArray
+        gifEmotions = [EmotionModel].deserialize(from: pathArr)! as NSArray
         
         return gifEmotions
     }
@@ -68,11 +68,11 @@ class FaceManager: NSObject {
             let subRange = start..<end
             let subStr: String = String(message[subRange])
             
-            let faceArray:[WYEmotion] = FaceManager.customEmotion() as! [WYEmotion]
-            for face:WYEmotion in faceArray {
-                if face.face_name .elementsEqual(subStr) {
+            let faceArray:[EmotionModel] = FaceManager.customEmotion() as! [EmotionModel]
+            for face:EmotionModel in faceArray {
+                if face.face_name! .elementsEqual(subStr) {
                     let attach: NSTextAttachment = NSTextAttachment()
-                    attach.image = UIImage.init(named: face.face_name)
+                    attach.image = UIImage.init(named: face.face_name!)
                     
                     //位置调整Y值
                     attach.bounds = CGRect(x: 0, y: -4, width: lineHeight, height: lineHeight)
