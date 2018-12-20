@@ -9,6 +9,13 @@
 import UIKit
 import CoreData
 
-class CoreDataHelper: NSObject {
+protocol CoreDataHelper: class {
+    
+    
+}
 
+extension CoreDataHelper {
+    
+    func ifUndefinedPrimaryKeyBreak(obj: AnyObject) {
+    }
 }

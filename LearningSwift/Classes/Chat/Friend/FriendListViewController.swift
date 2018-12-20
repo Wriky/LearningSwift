@@ -33,7 +33,6 @@ class FriendListViewController: BaseViewController {
         self.title = "好友列表"
         
         self.configUI()
-//        self.loadOnlineData()
         self.loadCoreData()
     }
     

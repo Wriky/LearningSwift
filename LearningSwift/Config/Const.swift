@@ -14,44 +14,61 @@ let iid: Int64 = 5034850950
 
 
 //服务器地址
-public let BaseUrl = "https://is.snssdk.com"
+let BaseUrl = "https://is.snssdk.com"
 
 //屏幕宽度
-public let kScreenWidth = UIScreen.main.bounds.size.width
+let kScreenWidth = UIScreen.main.bounds.size.width
 
 //屏幕高度
-public let kScreenHeight = UIScreen.main.bounds.size.height
+let kScreenHeight = UIScreen.main.bounds.size.height
+
+//比例计算
+func Scale(num: Int) -> CGFloat {
+    return kScreenWidth/375.0 * CGFloat(num)
+}
 
 //状态栏高度
-public let kStatusBarHeight: CGFloat = 20
+let kStatusBarHeight: CGFloat = 20
 
 //底部导航栏高度
-public let kTabBarHeight: CGFloat = 49
+let kTabBarHeight: CGFloat = 49
 
 //导航栏高度
-public let kNavBarHeight: CGFloat = 64
+let kNavBarHeight: CGFloat = 64
 
 //聊天ToolBar高度
-public let kChatBarHeight: CGFloat = 215
+let kChatBarHeight: CGFloat = 215
 
-public let kNight = "Night"
+//iPhoneX
+let isIphoneX: Bool = (kScreenWidth == 812)
 
-public let isIphoneX: Bool = (kScreenWidth == 812)
-
-public func RGBA(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat,_ a:CGFloat) -> UIColor {
+//颜色RGB
+func RGBA(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat,_ a:CGFloat) -> UIColor {
     return UIColor.init(red: r/255, green: g/255, blue: b/255, alpha: a)
 }
 
-public func RGBASame(_ r: CGFloat,_ a: CGFloat) -> UIColor {
+func RGBASame(_ r: CGFloat,_ a: CGFloat) -> UIColor {
     return RGBA(r, r, r, a)
 }
 
-public func RGB(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat) -> UIColor {
+func RGB(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat) -> UIColor {
     return RGBA(r, g, b, 1)
 }
 
-public func RGBSame(_ r: CGFloat) -> UIColor {
+func RGBSame(_ r: CGFloat) -> UIColor {
     return RGBA(r, r, r, 1)
 }
+
+//16进制颜色
+//func HexColor(hex: String) -> UIColor {
+//
+//}
+
+//block
+typealias CommnonBlock = (_ result: Any?) -> ()
+
+//AppDelegate
+let RootDelegate = (UIApplication.shared.delegate) as! AppDelegate
+
 
 

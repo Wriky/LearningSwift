@@ -20,6 +20,7 @@
 		E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */; };
 		E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CC10C214213E800CAFD93 /* CoreDataHelper.swift */; };
 		E01CC110214216AC00CAFD93 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E01CC10E214216AC00CAFD93 /* CoreDataModel.xcdatamodeld */; };
+		E0379AD421CB6DD100D7AEAF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379AD321CB6DD100D7AEAF /* UIColor+Extension.swift */; };
 		E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */; };
 		E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */; };
 		E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */; };
@@ -57,7 +58,6 @@
 		E0901C01218C2C66007FB089 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C00218C2C66007FB089 /* MessageModel.swift */; };
 		E0901C04218C3303007FB089 /* CoreDataClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */; };
 		E0901C06218C3328007FB089 /* CoreDataPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C05218C3328007FB089 /* CoreDataPredicate.swift */; };
-		E0901C08218C338F007FB089 /* NSObject+CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */; };
 		E0C00BC820F7432400E1654F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C00BC720F7432400E1654F /* Emoji.swift */; };
 		E0C00BCC20F7434900E1654F /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BC920F7434900E1654F /* emojis.plist */; };
 		E0C00BCD20F7434900E1654F /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C00BCA20F7434900E1654F /* emoji_sort.plist */; };
@@ -122,6 +122,7 @@
 		E006B5BD211AC7AF0063F2A3 /* ChatDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailTableCell.swift; sourceTree = "<group>"; };
 		E01CC10C214213E800CAFD93 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		E01CC10F214216AC00CAFD93 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		E0379AD321CB6DD100D7AEAF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBar.swift; sourceTree = "<group>"; };
 		E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBarViewController.swift; sourceTree = "<group>"; };
@@ -167,7 +168,6 @@
 		E0901C00218C2C66007FB089 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClassInfo.swift; sourceTree = "<group>"; };
 		E0901C05218C3328007FB089 /* CoreDataPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPredicate.swift; sourceTree = "<group>"; };
-		E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+CoreDataExtension.swift"; sourceTree = "<group>"; };
 		E0C00BC720F7432400E1654F /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		E0C00BC920F7434900E1654F /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		E0C00BCA20F7434900E1654F /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
@@ -417,6 +417,7 @@
 				E0F5688C20EC9C020017BED5 /* UIKit+Extension.swift */,
 				E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */,
 				E0C3072721226DE600C9C263 /* String+Extension.swift */,
+				E0379AD321CB6DD100D7AEAF /* UIColor+Extension.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -534,7 +535,6 @@
 			children = (
 				E0901C03218C3303007FB089 /* CoreDataClassInfo.swift */,
 				E0901C05218C3328007FB089 /* CoreDataPredicate.swift */,
-				E0901C07218C338F007FB089 /* NSObject+CoreDataExtension.swift */,
 			);
 			name = CoreExtension;
 			sourceTree = "<group>";
@@ -883,12 +883,12 @@
 				E0901C04218C3303007FB089 /* CoreDataClassInfo.swift in Sources */,
 				E03DCF98213FD1C600BB2E43 /* FriendListTableCell.swift in Sources */,
 				E04D876620DFA03C006A6ACD /* AppDelegate.swift in Sources */,
+				E0379AD421CB6DD100D7AEAF /* UIColor+Extension.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
 				E0E6237A21B926DD007EA234 /* EmotionModel.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
 				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
-				E0901C08218C338F007FB089 /* NSObject+CoreDataExtension.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 				E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */,
 				E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */,
