@@ -13,7 +13,7 @@ extension SVProgressHUD {
     static func configuration() {
         SVProgressHUD.setForegroundColor(.white)
         SVProgressHUD.setMinimumDismissTimeInterval(1.5)
-        SVProgressHUD.setBackgroundColor(UIColor(r: 0, g: 0, b: 0, alpha: 0.3))
+        SVProgressHUD.setBackgroundColor(UIColor(r: 0, g: 0, b: 0, a: 0.3))
     }
 }
 

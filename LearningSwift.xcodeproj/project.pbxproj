@@ -21,6 +21,13 @@
 		E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CC10C214213E800CAFD93 /* CoreDataHelper.swift */; };
 		E01CC110214216AC00CAFD93 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E01CC10E214216AC00CAFD93 /* CoreDataModel.xcdatamodeld */; };
 		E0379AD421CB6DD100D7AEAF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379AD321CB6DD100D7AEAF /* UIColor+Extension.swift */; };
+		E0379AD621CB77C200D7AEAF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379AD521CB77C200D7AEAF /* Date+Extension.swift */; };
+		E0379AD821CB77F400D7AEAF /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379AD721CB77F400D7AEAF /* Dictionary+Extension.swift */; };
+		E0379ADA21CC9B6500D7AEAF /* TimePassed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379AD921CC9B6500D7AEAF /* TimePassed.swift */; };
+		E0379ADC21CCD58B00D7AEAF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379ADB21CCD58B00D7AEAF /* Array+Extension.swift */; };
+		E0379ADE21D0D16900D7AEAF /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379ADD21D0D16900D7AEAF /* UITextField+Extension.swift */; };
+		E0379AE021D0D40900D7AEAF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379ADF21D0D40900D7AEAF /* UIFont+Extension.swift */; };
+		E0379AE221D0E02000D7AEAF /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379AE121D0E02000D7AEAF /* UIDevice+Extension.swift */; };
 		E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */; };
 		E03A8642211BEDDA001CF144 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */; };
 		E03A8644211C1D68001CF144 /* ChatDetailToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */; };
@@ -123,6 +130,13 @@
 		E01CC10C214213E800CAFD93 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		E01CC10F214216AC00CAFD93 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E0379AD321CB6DD100D7AEAF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E0379AD521CB77C200D7AEAF /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		E0379AD721CB77F400D7AEAF /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		E0379AD921CC9B6500D7AEAF /* TimePassed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePassed.swift; sourceTree = "<group>"; };
+		E0379ADB21CCD58B00D7AEAF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		E0379ADD21D0D16900D7AEAF /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		E0379ADF21D0D40900D7AEAF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		E0379AE121D0E02000D7AEAF /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		E03A863C211BD57E001CF144 /* ChatDetailToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBar.swift; sourceTree = "<group>"; };
 		E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E03A8643211C1D68001CF144 /* ChatDetailToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailToolBarViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +432,13 @@
 				E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */,
 				E0C3072721226DE600C9C263 /* String+Extension.swift */,
 				E0379AD321CB6DD100D7AEAF /* UIColor+Extension.swift */,
+				E0379AD521CB77C200D7AEAF /* Date+Extension.swift */,
+				E0379AD721CB77F400D7AEAF /* Dictionary+Extension.swift */,
+				E0379ADB21CCD58B00D7AEAF /* Array+Extension.swift */,
+				E0379AD921CC9B6500D7AEAF /* TimePassed.swift */,
+				E0379ADD21D0D16900D7AEAF /* UITextField+Extension.swift */,
+				E0379ADF21D0D40900D7AEAF /* UIFont+Extension.swift */,
+				E0379AE121D0E02000D7AEAF /* UIDevice+Extension.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -833,6 +854,7 @@
 				E0901BF6218C2B7A007FB089 /* CoreMessage+CoreDataClass.swift in Sources */,
 				E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
+				E0379AD821CB77F400D7AEAF /* Dictionary+Extension.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,
 				E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */,
@@ -843,6 +865,7 @@
 				E0901BFD218C2C46007FB089 /* ChannelModel.swift in Sources */,
 				E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */,
 				E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */,
+				E0379AD621CB77C200D7AEAF /* Date+Extension.swift in Sources */,
 				E0E54314212C05EB00CB46EF /* NotificationConst.swift in Sources */,
 				E006B5A921199F7F0063F2A3 /* ChatListViewController.swift in Sources */,
 				E0901BF4218C2B7A007FB089 /* CoreChannel+CoreDataClass.swift in Sources */,
@@ -854,7 +877,9 @@
 				E0C3072321226AD200C9C263 /* EmotionPageView.swift in Sources */,
 				E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
+				E0379AE021D0D40900D7AEAF /* UIFont+Extension.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
+				E0379AE221D0E02000D7AEAF /* UIDevice+Extension.swift in Sources */,
 				E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,
 				E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */,
@@ -868,7 +893,9 @@
 				E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */,
 				E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */,
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
+				E0379ADE21D0D16900D7AEAF /* UITextField+Extension.swift in Sources */,
 				E03A864A211C2E4E001CF144 /* Enums.swift in Sources */,
+				E0379ADC21CCD58B00D7AEAF /* Array+Extension.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
 				E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */,
 				E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */,
@@ -892,6 +919,7 @@
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 				E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */,
 				E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */,
+				E0379ADA21CC9B6500D7AEAF /* TimePassed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

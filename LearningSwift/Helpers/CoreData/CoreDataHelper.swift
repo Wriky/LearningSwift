@@ -17,5 +17,6 @@ protocol CoreDataHelper: class {
 extension CoreDataHelper {
     
     func ifUndefinedPrimaryKeyBreak(obj: AnyObject) {
+        
     }
 }
