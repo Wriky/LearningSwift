@@ -79,9 +79,7 @@ public class AuthorizationManager: SessionManager {
         self.cachedTasks.removeAll()
         for task in cachedTaskCopy {
             task(nil, nil, nil)
-        }
-//        cachedTaskCopy.map { $0(nil, nil, nil) }
-        
+        }        
         self.isRefreshing = false
     }
 }
