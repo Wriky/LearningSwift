@@ -10,6 +10,7 @@ target 'LearningSwift' do
   # Pods for LearningSwift
 
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'HandyJSON', '~> 4.2.0'
   pod 'SVProgressHUD'

@@ -8,6 +8,7 @@
 
 import UIKit
 import HandyJSON
+import SwiftyJSON
 
 class UserModel: NSObject, HandyJSON {
     public var nick_name: String?

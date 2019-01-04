@@ -28,7 +28,7 @@ func Scale(num: Int) -> CGFloat {
 }
 
 //状态栏高度
-let kStatusBarHeight: CGFloat = 20
+let kStatusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
 
 //底部导航栏高度
 let kTabBarHeight: CGFloat = 49
@@ -42,7 +42,6 @@ let kChatBarHeight: CGFloat = 215
 //iPhoneX
 let isIphoneX: Bool = (kScreenWidth == 812)
 
-//颜色RGB
 func RGBA(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat,_ a:CGFloat) -> UIColor {
     return UIColor.init(red: r/255, green: g/255, blue: b/255, alpha: a)
 }

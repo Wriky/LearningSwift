@@ -50,6 +50,18 @@
 		E04D877020DFA045006A6ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D876E20DFA045006A6ACD /* LaunchScreen.storyboard */; };
 		E04D877B20DFA046006A6ACD /* LearningSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D877A20DFA046006A6ACD /* LearningSwiftTests.swift */; };
 		E04D878620DFA046006A6ACD /* LearningSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */; };
+		E058550721D627CB0095319D /* Character+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550621D627CB0095319D /* Character+Extension.swift */; };
+		E058550921D70F8C0095319D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550821D70F8C0095319D /* UIApplication+Extension.swift */; };
+		E058550B21D753B90095319D /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550A21D753B90095319D /* DispatchQueue+Extension.swift */; };
+		E058550D21D75DB30095319D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550C21D75DB30095319D /* UIImageView+Extension.swift */; };
+		E058550F21D75F5C0095319D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550E21D75F5B0095319D /* UILabel+Extension.swift */; };
+		E058551121D75FF90095319D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551021D75FF90095319D /* UIView+Extension.swift */; };
+		E058551321D763E80095319D /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551221D763E80095319D /* CGFloat+Extension.swift */; };
+		E058551521D767150095319D /* GestureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551421D767150095319D /* GestureBlock.swift */; };
+		E058551721D76C430095319D /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551621D76C430095319D /* URL+Extension.swift */; };
+		E058551921D775BC0095319D /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551821D775BC0095319D /* NSAttributedString+Extension.swift */; };
+		E068EE3521DDFD630018B121 /* RequestManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */; };
+		E068EE3721DDFD960018B121 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE3621DDFD960018B121 /* AuthorizationManager.swift */; };
 		E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */; };
 		E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEA218C2B7A007FB089 /* CoreUser+CoreDataClass.swift */; };
 		E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEB218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift */; };
@@ -165,6 +177,18 @@
 		E04D878120DFA046006A6ACD /* LearningSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSwiftUITests.swift; sourceTree = "<group>"; };
 		E04D878720DFA046006A6ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E058550621D627CB0095319D /* Character+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extension.swift"; sourceTree = "<group>"; };
+		E058550821D70F8C0095319D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		E058550A21D753B90095319D /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
+		E058550C21D75DB30095319D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		E058550E21D75F5B0095319D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		E058551021D75FF90095319D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		E058551221D763E80095319D /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		E058551421D767150095319D /* GestureBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureBlock.swift; sourceTree = "<group>"; };
+		E058551621D76C430095319D /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		E058551821D775BC0095319D /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerHelper.swift; sourceTree = "<group>"; };
+		E068EE3621DDFD960018B121 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		E071D13821B7D25B003156C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E071D13B21B8B451003156C4 /* LearningSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConst.swift; sourceTree = "<group>"; };
@@ -430,6 +454,7 @@
 				E0F5688A20EC9C020017BED5 /* SVProgressHUD+Extension.swift */,
 				E0F5688C20EC9C020017BED5 /* UIKit+Extension.swift */,
 				E03A8641211BEDDA001CF144 /* UIImage+Extension.swift */,
+				E058550C21D75DB30095319D /* UIImageView+Extension.swift */,
 				E0C3072721226DE600C9C263 /* String+Extension.swift */,
 				E0379AD321CB6DD100D7AEAF /* UIColor+Extension.swift */,
 				E0379AD521CB77C200D7AEAF /* Date+Extension.swift */,
@@ -439,6 +464,15 @@
 				E0379ADD21D0D16900D7AEAF /* UITextField+Extension.swift */,
 				E0379ADF21D0D40900D7AEAF /* UIFont+Extension.swift */,
 				E0379AE121D0E02000D7AEAF /* UIDevice+Extension.swift */,
+				E058550621D627CB0095319D /* Character+Extension.swift */,
+				E058550821D70F8C0095319D /* UIApplication+Extension.swift */,
+				E058550A21D753B90095319D /* DispatchQueue+Extension.swift */,
+				E058550E21D75F5B0095319D /* UILabel+Extension.swift */,
+				E058551021D75FF90095319D /* UIView+Extension.swift */,
+				E058551621D76C430095319D /* URL+Extension.swift */,
+				E058551221D763E80095319D /* CGFloat+Extension.swift */,
+				E058551421D767150095319D /* GestureBlock.swift */,
+				E058551821D775BC0095319D /* NSAttributedString+Extension.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -609,6 +643,8 @@
 			children = (
 				E0F5688320EC7A060017BED5 /* NetworkHelper.swift */,
 				E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */,
+				E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */,
+				E068EE3621DDFD960018B121 /* AuthorizationManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -796,6 +832,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LearningSwift/Pods-LearningSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CentrifugeiOS/CentrifugeiOS.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IDZSwiftCommonCrypto/IDZSwiftCommonCrypto.framework",
@@ -809,6 +846,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CentrifugeiOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IDZSwiftCommonCrypto.framework",
@@ -851,12 +889,14 @@
 			files = (
 				E0C3071C211D9A4F00C9C263 /* EmotionListView.swift in Sources */,
 				E03A863D211BD57E001CF144 /* ChatDetailToolBar.swift in Sources */,
+				E058551321D763E80095319D /* CGFloat+Extension.swift in Sources */,
 				E0901BF6218C2B7A007FB089 /* CoreMessage+CoreDataClass.swift in Sources */,
 				E0C3072C2122D77100C9C263 /* FaceManager.swift in Sources */,
 				E0C00BC820F7432400E1654F /* Emoji.swift in Sources */,
 				E0379AD821CB77F400D7AEAF /* Dictionary+Extension.swift in Sources */,
 				E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */,
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,
+				E058550F21D75F5C0095319D /* UILabel+Extension.swift in Sources */,
 				E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */,
 				E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */,
 				E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */,
@@ -870,12 +910,15 @@
 				E006B5A921199F7F0063F2A3 /* ChatListViewController.swift in Sources */,
 				E0901BF4218C2B7A007FB089 /* CoreChannel+CoreDataClass.swift in Sources */,
 				E0901BF5218C2B7A007FB089 /* CoreChannel+CoreDataProperties.swift in Sources */,
+				E058551121D75FF90095319D /* UIView+Extension.swift in Sources */,
 				E03DCF8B2133FA3A00BB2E43 /* NewsModel.swift in Sources */,
 				E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */,
 				E006B5B4211A92C80063F2A3 /* BaseViewController.swift in Sources */,
 				E0C3072821226DE600C9C263 /* String+Extension.swift in Sources */,
+				E058550721D627CB0095319D /* Character+Extension.swift in Sources */,
 				E0C3072321226AD200C9C263 /* EmotionPageView.swift in Sources */,
 				E006B5BE211AC7B00063F2A3 /* ChatDetailTableCell.swift in Sources */,
+				E058550921D70F8C0095319D /* UIApplication+Extension.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E0379AE021D0D40900D7AEAF /* UIFont+Extension.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
@@ -895,6 +938,7 @@
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
 				E0379ADE21D0D16900D7AEAF /* UITextField+Extension.swift in Sources */,
 				E03A864A211C2E4E001CF144 /* Enums.swift in Sources */,
+				E068EE3721DDFD960018B121 /* AuthorizationManager.swift in Sources */,
 				E0379ADC21CCD58B00D7AEAF /* Array+Extension.swift in Sources */,
 				E044C7A620EB0D3A00E9569B /* BaseNavigationController.swift in Sources */,
 				E0E54317212EBB7600CB46EF /* CentrifugeHelper.swift in Sources */,
@@ -907,19 +951,25 @@
 				E006B5B2211A8B4B0063F2A3 /* ChatListTableCell.swift in Sources */,
 				E0C3071F212269F500C9C263 /* EmotionMenuView.swift in Sources */,
 				E0F5687920EC61CF0017BED5 /* NewsViewController.swift in Sources */,
+				E058550D21D75DB30095319D /* UIImageView+Extension.swift in Sources */,
 				E0901C04218C3303007FB089 /* CoreDataClassInfo.swift in Sources */,
 				E03DCF98213FD1C600BB2E43 /* FriendListTableCell.swift in Sources */,
 				E04D876620DFA03C006A6ACD /* AppDelegate.swift in Sources */,
 				E0379AD421CB6DD100D7AEAF /* UIColor+Extension.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
+				E058551521D767150095319D /* GestureBlock.swift in Sources */,
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
 				E0E6237A21B926DD007EA234 /* EmotionModel.swift in Sources */,
+				E058551921D775BC0095319D /* NSAttributedString+Extension.swift in Sources */,
 				E0F5687720EB10880017BED5 /* Const.swift in Sources */,
+				E058551721D76C430095319D /* URL+Extension.swift in Sources */,
 				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 				E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */,
 				E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */,
+				E068EE3521DDFD630018B121 /* RequestManagerHelper.swift in Sources */,
 				E0379ADA21CC9B6500D7AEAF /* TimePassed.swift in Sources */,
+				E058550B21D753B90095319D /* DispatchQueue+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
