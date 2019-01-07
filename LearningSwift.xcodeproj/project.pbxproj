@@ -533,6 +533,7 @@
 		E04D876420DFA03B006A6ACD /* LearningSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E068EE4A21E348E10018B121 /* ApiEntity */,
 				E0901854218AEE79007FB089 /* CoreData */,
 				E0F5687520EB10750017BED5 /* Config */,
 				E044C7A020EB0A7500E9569B /* Categories */,
@@ -561,6 +562,13 @@
 				E04D878720DFA046006A6ACD /* Info.plist */,
 			);
 			path = LearningSwiftUITests;
+			sourceTree = "<group>";
+		};
+		E068EE4A21E348E10018B121 /* ApiEntity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiEntity;
 			sourceTree = "<group>";
 		};
 		E0901854218AEE79007FB089 /* CoreData */ = {
