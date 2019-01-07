@@ -62,6 +62,7 @@
 		E058551921D775BC0095319D /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551821D775BC0095319D /* NSAttributedString+Extension.swift */; };
 		E068EE3521DDFD630018B121 /* RequestManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */; };
 		E068EE3721DDFD960018B121 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE3621DDFD960018B121 /* AuthorizationManager.swift */; };
+		E068EE4721E2F8070018B121 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE4621E2F8070018B121 /* NewsDetailViewController.swift */; };
 		E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */; };
 		E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEA218C2B7A007FB089 /* CoreUser+CoreDataClass.swift */; };
 		E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEB218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift */; };
@@ -189,6 +190,7 @@
 		E058551821D775BC0095319D /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerHelper.swift; sourceTree = "<group>"; };
 		E068EE3621DDFD960018B121 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		E068EE4621E2F8070018B121 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		E071D13821B7D25B003156C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E071D13B21B8B451003156C4 /* LearningSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConst.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			children = (
 				E03DCF892133FA1400BB2E43 /* Model */,
 				E0F5687820EC61CF0017BED5 /* NewsViewController.swift */,
+				E068EE4621E2F8070018B121 /* NewsDetailViewController.swift */,
 				E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */,
 			);
 			path = News;
@@ -911,6 +914,7 @@
 				E0901BF4218C2B7A007FB089 /* CoreChannel+CoreDataClass.swift in Sources */,
 				E0901BF5218C2B7A007FB089 /* CoreChannel+CoreDataProperties.swift in Sources */,
 				E058551121D75FF90095319D /* UIView+Extension.swift in Sources */,
+				E068EE4721E2F8070018B121 /* NewsDetailViewController.swift in Sources */,
 				E03DCF8B2133FA3A00BB2E43 /* NewsModel.swift in Sources */,
 				E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */,
 				E006B5B4211A92C80063F2A3 /* BaseViewController.swift in Sources */,

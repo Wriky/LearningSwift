@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class NewsListTableCell: BaseTableViewCell {
 
@@ -31,7 +33,11 @@ class NewsListTableCell: BaseTableViewCell {
     }()
     
     func configureWithItem(_ item: NewsModel){
-        iconImgView.image = UIImage.init(named: "[棒棒糖]")
+        Alamofire.request((item.media_info?.avatar_url)!).responseImage { response in
+            if let image = response.result.value {
+                self.iconImgView.image = image
+            }
+        }
         titleLbl.text = item.title
         subTitleLbl.text = item.abstract
     }

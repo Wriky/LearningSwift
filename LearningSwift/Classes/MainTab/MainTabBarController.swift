@@ -13,6 +13,9 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tabAppearance = UITabBar.appearance()
+        tabAppearance.isTranslucent = false
+        
         addTabChildViewControllers()
         
     }

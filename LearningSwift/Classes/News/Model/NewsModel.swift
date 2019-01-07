@@ -8,9 +8,19 @@
 
 import HandyJSON
 
+struct MediaInfo: HandyJSON {
+    var avatar_url: String = ""
+    var follow: Bool = false
+    var is_star_user: Bool = false
+    var name: String = ""
+}
+
 struct NewsModel: HandyJSON {
     var abstract: String = ""
     var title: String = ""
     var description = ""
+    var media_info: MediaInfo?
 }
+
+
 
