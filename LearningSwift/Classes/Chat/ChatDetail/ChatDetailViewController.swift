@@ -64,7 +64,7 @@ class ChatDetailViewController: BaseViewController {
     
     func getOnlineData() {
 
-        NetworkHelper.loadMessageHistory((itemModel?.channel?.code)!) { (messgeList) in
+        RequestHelper.loadMessageHistory((itemModel?.channel?.code)!) { (messgeList) in
             self.items = messgeList
             
             self.tableView.reloadData()
@@ -147,7 +147,7 @@ extension ChatDetailViewController: ChatDetailToolBarViewControllerDelegate {
     func sendTextMessage(textStr: String) {
         self.addMessage(message: textStr, isSender: true)
         
-        NetworkHelper.sendMessageInfo(textStr, (itemModel?.channel?.code)!) { messageObject in
+        RequestHelper.sendMessageInfo(textStr, (itemModel?.channel?.code)!) { messageObject in
             
         }
     }

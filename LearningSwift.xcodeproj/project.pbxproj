@@ -101,7 +101,7 @@
 		E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5687C20EC77540017BED5 /* BaseTableViewController.swift */; };
 		E0F5688020EC77A20017BED5 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0F5687E20EC77A20017BED5 /* night_theme.plist */; };
 		E0F5688120EC77A20017BED5 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0F5687F20EC77A20017BED5 /* default_theme.plist */; };
-		E0F5688420EC7A060017BED5 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5688320EC7A060017BED5 /* NetworkHelper.swift */; };
+		E0F5688420EC7A060017BED5 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5688320EC7A060017BED5 /* RequestHelper.swift */; };
 		E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5688520EC7AEF0017BED5 /* RefreshHeader.swift */; };
 		E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5688A20EC9C020017BED5 /* SVProgressHUD+Extension.swift */; };
 		E0F5688F20EC9C020017BED5 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5688B20EC9C020017BED5 /* Foundation+Extension.swift */; };
@@ -231,7 +231,7 @@
 		E0F5687C20EC77540017BED5 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		E0F5687E20EC77A20017BED5 /* night_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
 		E0F5687F20EC77A20017BED5 /* default_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
-		E0F5688320EC7A060017BED5 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		E0F5688320EC7A060017BED5 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
 		E0F5688520EC7AEF0017BED5 /* RefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshHeader.swift; sourceTree = "<group>"; };
 		E0F5688A20EC9C020017BED5 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		E0F5688B20EC9C020017BED5 /* Foundation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extension.swift"; sourceTree = "<group>"; };
@@ -652,7 +652,7 @@
 		E0F5688220EC79CD0017BED5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E0F5688320EC7A060017BED5 /* NetworkHelper.swift */,
+				E0F5688320EC7A060017BED5 /* RequestHelper.swift */,
 				E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */,
 				E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */,
 				E068EE3621DDFD960018B121 /* AuthorizationManager.swift */,
@@ -941,7 +941,7 @@
 				E0901BFF218C2C57007FB089 /* FriendModel.swift in Sources */,
 				E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */,
 				E03DCF96213FD1A800BB2E43 /* FriendListViewController.swift in Sources */,
-				E0F5688420EC7A060017BED5 /* NetworkHelper.swift in Sources */,
+				E0F5688420EC7A060017BED5 /* RequestHelper.swift in Sources */,
 				E0901BF8218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift in Sources */,
 				E04D876820DFA03C006A6ACD /* VideoViewController.swift in Sources */,
 				E03DCF882133EEBF00BB2E43 /* NewsListTableCell.swift in Sources */,

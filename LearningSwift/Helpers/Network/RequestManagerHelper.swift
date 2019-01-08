@@ -9,18 +9,3 @@
 import UIKit
 import Alamofire
 
-public typealias NetworkSuccessHandler = (AnyObject?) -> Void
-public typealias NetworkFailureHandler = (HTTPURLResponse?, AnyObject?, NSError) -> Void
-
-protocol RequestManagerHelperProtocol {
-    
-    
-}
-
-extension RequestManagerHelperProtocol {
-    
-}
-
-struct RequestManagerHelper: RequestManagerHelperProtocol {
-
-}

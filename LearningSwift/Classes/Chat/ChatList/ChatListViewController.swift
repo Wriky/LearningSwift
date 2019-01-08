@@ -45,7 +45,7 @@ class ChatListViewController: BaseViewController {
     }
     
     func loadFriendListData() {
-        NetworkHelper.loadFriendsList { (responseArr) in
+        RequestHelper.loadFriendsList { (responseArr) in
             
             for friendEntity: FriendModel in responseArr {
                 let channelCode = friendEntity.channel?.code

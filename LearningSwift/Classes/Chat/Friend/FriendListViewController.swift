@@ -47,7 +47,7 @@ class FriendListViewController: BaseViewController {
     }
     
     func loadOnlineData() {
-        NetworkHelper.loadFriendsList { (responseArr) in
+        RequestHelper.loadFriendsList { (responseArr) in
             
 //            self.items = responseArr
             self.tableView.reloadData()

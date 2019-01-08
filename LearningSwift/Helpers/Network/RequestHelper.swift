@@ -1,5 +1,5 @@
 //
-//  NetworkHelper.swift
+//  RequestHelper.swift
 //  LearningSwift
 //
 //  Created by wangyuan on 2018/7/4.
@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 
-protocol NetworkHelperProtocol {
+protocol RequestHelperProtocol {
     //获取新闻列表数据
     static func loadNewsFeeds(category: NewsTitleCategory, ttFrom: TTFrom, _ completionHandler: @escaping (_ maxBehotTime: TimeInterval, _ news: [NewsModel]) -> ())
     
@@ -28,7 +28,7 @@ protocol NetworkHelperProtocol {
     static func sendMessageInfo(_ content: String ,_ channelCode: String, _ completionHandler: @escaping(_ messageList: MessageModel) -> ())
 }
 
-extension NetworkHelperProtocol {
+extension RequestHelperProtocol {
     
     static func loadNewsFeeds(category: NewsTitleCategory, ttFrom: TTFrom, _ completionHandler: @escaping (_ maxBehotTime: TimeInterval, _ news: [NewsModel]) -> ()) {
         
@@ -171,7 +171,7 @@ extension NetworkHelperProtocol {
     }
 }
 
-struct NetworkHelper: NetworkHelperProtocol {
+struct RequestHelper: RequestHelperProtocol {
     
 }
 
