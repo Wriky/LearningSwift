@@ -34,7 +34,6 @@
 		E03A8646211C21E2001CF144 /* ChatMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8645211C21E2001CF144 /* ChatMoreView.swift */; };
 		E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8647211C21F5001CF144 /* ChatFaceView.swift */; };
 		E03A864A211C2E4E001CF144 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8649211C2E4E001CF144 /* Enums.swift */; };
-		E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */; };
 		E03DCF882133EEBF00BB2E43 /* NewsListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */; };
 		E03DCF8B2133FA3A00BB2E43 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF8A2133FA3A00BB2E43 /* NewsModel.swift */; };
 		E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DCF92213D24CE00BB2E43 /* ChatViewModel.swift */; };
@@ -60,9 +59,15 @@
 		E058551521D767150095319D /* GestureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551421D767150095319D /* GestureBlock.swift */; };
 		E058551721D76C430095319D /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551621D76C430095319D /* URL+Extension.swift */; };
 		E058551921D775BC0095319D /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058551821D775BC0095319D /* NSAttributedString+Extension.swift */; };
-		E068EE3521DDFD630018B121 /* RequestManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */; };
+		E068EE3521DDFD630018B121 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE3421DDFD630018B121 /* NetworkManager.swift */; };
 		E068EE3721DDFD960018B121 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE3621DDFD960018B121 /* AuthorizationManager.swift */; };
 		E068EE4721E2F8070018B121 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE4621E2F8070018B121 /* NewsDetailViewController.swift */; };
+		E068EE5021E47DAC0018B121 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE4F21E47DAC0018B121 /* NetworkResponse.swift */; };
+		E068EE5221E47F200018B121 /* NewsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5121E47F200018B121 /* NewsRequest.swift */; };
+		E068EE5421E4902E0018B121 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5321E4902E0018B121 /* NetworkConfig.swift */; };
+		E068EE5621E49A870018B121 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5521E49A870018B121 /* NetworkUtils.swift */; };
+		E068EE5821E49E0D0018B121 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5721E49E0D0018B121 /* NetworkCache.swift */; };
+		E068EE5B21E4A6C90018B121 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5A21E4A6C90018B121 /* NetworkRequest.swift */; };
 		E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */; };
 		E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEA218C2B7A007FB089 /* CoreUser+CoreDataClass.swift */; };
 		E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEB218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift */; };
@@ -156,7 +161,6 @@
 		E03A8645211C21E2001CF144 /* ChatMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMoreView.swift; sourceTree = "<group>"; };
 		E03A8647211C21F5001CF144 /* ChatFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFaceView.swift; sourceTree = "<group>"; };
 		E03A8649211C2E4E001CF144 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OathTokenHelper.swift; sourceTree = "<group>"; };
 		E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableCell.swift; sourceTree = "<group>"; };
 		E03DCF8A2133FA3A00BB2E43 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		E03DCF92213D24CE00BB2E43 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
@@ -188,9 +192,15 @@
 		E058551421D767150095319D /* GestureBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureBlock.swift; sourceTree = "<group>"; };
 		E058551621D76C430095319D /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		E058551821D775BC0095319D /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
-		E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerHelper.swift; sourceTree = "<group>"; };
+		E068EE3421DDFD630018B121 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E068EE3621DDFD960018B121 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		E068EE4621E2F8070018B121 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		E068EE4F21E47DAC0018B121 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		E068EE5121E47F200018B121 /* NewsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRequest.swift; sourceTree = "<group>"; };
+		E068EE5321E4902E0018B121 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		E068EE5521E49A870018B121 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		E068EE5721E49E0D0018B121 /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
+		E068EE5A21E4A6C90018B121 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		E071D13821B7D25B003156C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E071D13B21B8B451003156C4 /* LearningSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConst.swift; sourceTree = "<group>"; };
@@ -567,8 +577,19 @@
 		E068EE4A21E348E10018B121 /* ApiEntity */ = {
 			isa = PBXGroup;
 			children = (
+				E068EE5921E4A6AD0018B121 /* Base */,
+				E068EE5121E47F200018B121 /* NewsRequest.swift */,
 			);
 			path = ApiEntity;
+			sourceTree = "<group>";
+		};
+		E068EE5921E4A6AD0018B121 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E068EE4F21E47DAC0018B121 /* NetworkResponse.swift */,
+				E068EE5A21E4A6C90018B121 /* NetworkRequest.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E0901854218AEE79007FB089 /* CoreData */ = {
@@ -653,9 +674,11 @@
 			isa = PBXGroup;
 			children = (
 				E0F5688320EC7A060017BED5 /* RequestHelper.swift */,
-				E03DCF852133E50000BB2E43 /* OathTokenHelper.swift */,
-				E068EE3421DDFD630018B121 /* RequestManagerHelper.swift */,
 				E068EE3621DDFD960018B121 /* AuthorizationManager.swift */,
+				E068EE3421DDFD630018B121 /* NetworkManager.swift */,
+				E068EE5321E4902E0018B121 /* NetworkConfig.swift */,
+				E068EE5521E49A870018B121 /* NetworkUtils.swift */,
+				E068EE5721E49E0D0018B121 /* NetworkCache.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -910,10 +933,12 @@
 				E058550F21D75F5C0095319D /* UILabel+Extension.swift in Sources */,
 				E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */,
 				E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */,
+				E068EE5421E4902E0018B121 /* NetworkConfig.swift in Sources */,
 				E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */,
 				E0901C06218C3328007FB089 /* CoreDataPredicate.swift in Sources */,
 				E0901BFB218C2C36007FB089 /* UserModel.swift in Sources */,
 				E0901BFD218C2C46007FB089 /* ChannelModel.swift in Sources */,
+				E068EE5221E47F200018B121 /* NewsRequest.swift in Sources */,
 				E0C3072A2122836700C9C263 /* MessageConst.swift in Sources */,
 				E0C3072121226A2700C9C263 /* EmotionButton.swift in Sources */,
 				E0379AD621CB77C200D7AEAF /* Date+Extension.swift in Sources */,
@@ -936,6 +961,7 @@
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
 				E0379AE221D0E02000D7AEAF /* UIDevice+Extension.swift in Sources */,
 				E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */,
+				E068EE5621E49A870018B121 /* NetworkUtils.swift in Sources */,
 				E0F5689020EC9C020017BED5 /* UIKit+Extension.swift in Sources */,
 				E006B5B6211A93160063F2A3 /* BaseTableViewCell.swift in Sources */,
 				E0901BFF218C2C57007FB089 /* FriendModel.swift in Sources */,
@@ -944,7 +970,9 @@
 				E0F5688420EC7A060017BED5 /* RequestHelper.swift in Sources */,
 				E0901BF8218C2B7A007FB089 /* CoreFriend+CoreDataClass.swift in Sources */,
 				E04D876820DFA03C006A6ACD /* VideoViewController.swift in Sources */,
+				E068EE5021E47DAC0018B121 /* NetworkResponse.swift in Sources */,
 				E03DCF882133EEBF00BB2E43 /* NewsListTableCell.swift in Sources */,
+				E068EE5821E49E0D0018B121 /* NetworkCache.swift in Sources */,
 				E006B5BC211AC1810063F2A3 /* ChatDetailViewController.swift in Sources */,
 				E03A8648211C21F5001CF144 /* ChatFaceView.swift in Sources */,
 				E044C7A420EB0B4200E9569B /* MainTabBarController.swift in Sources */,
@@ -970,6 +998,7 @@
 				E0379AD421CB6DD100D7AEAF /* UIColor+Extension.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
 				E058551521D767150095319D /* GestureBlock.swift in Sources */,
+				E068EE5B21E4A6C90018B121 /* NetworkRequest.swift in Sources */,
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
 				E0E6237A21B926DD007EA234 /* EmotionModel.swift in Sources */,
 				E058551921D775BC0095319D /* NSAttributedString+Extension.swift in Sources */,
@@ -978,8 +1007,7 @@
 				E0E54319212F968D00CB46EF /* Alert.swift in Sources */,
 				E0F5688620EC7AEF0017BED5 /* RefreshHeader.swift in Sources */,
 				E03DCF93213D24CE00BB2E43 /* ChatViewModel.swift in Sources */,
-				E03DCF862133E50000BB2E43 /* OathTokenHelper.swift in Sources */,
-				E068EE3521DDFD630018B121 /* RequestManagerHelper.swift in Sources */,
+				E068EE3521DDFD630018B121 /* NetworkManager.swift in Sources */,
 				E0379ADA21CC9B6500D7AEAF /* TimePassed.swift in Sources */,
 				E058550B21D753B90095319D /* DispatchQueue+Extension.swift in Sources */,
 			);
