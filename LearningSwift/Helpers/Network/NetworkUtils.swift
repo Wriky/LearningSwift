@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public class NetworkUtils {
     // 生成请求链接
     static func generalUrl(baseUrlStr: String, requestUrlStr: String) -> URL {
@@ -40,6 +41,5 @@ public class NetworkUtils {
     }
      */
     
-    // 对象转字典
     
 }

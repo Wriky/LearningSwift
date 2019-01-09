@@ -28,7 +28,6 @@ class FriendListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.view.backgroundColor = UIColor.white
         self.title = "好友列表"
         

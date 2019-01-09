@@ -10,6 +10,7 @@ import UIKit
 import HandyJSON
 
 class FriendModel: NSObject, HandyJSON {
+    
     public var ID: String?
     public var state: String?
     public var target_id: String?

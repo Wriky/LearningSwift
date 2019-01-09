@@ -14,6 +14,7 @@ PODS:
   - SnapKit (4.0.1)
   - Starscream (3.0.6)
   - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - MJRefresh
   - SnapKit (~> 4.0.1)
   - SVProgressHUD
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -37,6 +39,7 @@ SPEC REPOS:
     - SnapKit
     - Starscream
     - SVProgressHUD
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -49,7 +52,8 @@ SPEC CHECKSUMS:
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: ed3295203d4b991569050e5ae518bea66d0bdf1f
+PODFILE CHECKSUM: 7eb5b919c0c36a307a6a0e17ca3e5c0d96744ad1
 
 COCOAPODS: 1.5.3

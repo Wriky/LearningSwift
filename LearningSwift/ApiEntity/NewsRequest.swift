@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsRequest: NetworkManager {
+class NewsRequest: NetworkRequest {
     
     var category: NewsTitleCategory?
     var tt_From: TTFrom?
