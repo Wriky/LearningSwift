@@ -320,7 +320,7 @@ extension String {
         }
     }
     
-    //Converts String to Float
+    //String 转换 Float
     public func toFloat() -> Float? {
         if let num = NumberFormatter().number(from: self) {
             return num.floatValue
@@ -329,7 +329,7 @@ extension String {
         }
     }
     
-    //Converts String to Bool
+    //String 转换 Bool
     public func toBool() -> Bool? {
         let trimmedString = trimmed().lowercased()
         if trimmedString == "true" || trimmedString == "false" {
@@ -346,16 +346,16 @@ extension String {
         return nil
     }
     
-    //Converts String to NSString
+    //String 转换 NSString
     public var toNSString: NSString { return self as NSString }
     
-    //Returns bold NSAttributedString
+    //粗体-富文本
     public func bold() -> NSAttributedString {
         let boldString = NSMutableAttributedString(string: self, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
         return boldString
     }
     
-    //Returns underlined NSAttributedString
+    //下划线-富文本
     public func underline() -> NSAttributedString {
         let underlineString = NSAttributedString(string: self, attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         return underlineString
@@ -367,7 +367,7 @@ extension String {
         return italicString
     }
     
-    //Returns hight of rendered string
+    //Returns height of rendered string
     public func height(_ width: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?) -> CGFloat {
         var attrib: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
         if lineBreakMode != nil {
@@ -380,13 +380,13 @@ extension String {
     }
     
     
-    //Returns NSAttributedString
+    //全部字体颜色-富文本
     public func color(_ color: UIColor) -> NSAttributedString {
         let colorString = NSMutableAttributedString(string: self, attributes: [NSAttributedString.Key.foregroundColor: color])
         return colorString
     }
     
-    //Returns NSAttributedString
+    //部分字体颜色-富文本
     public func colorSubString(_ subString: String, color: UIColor) -> NSMutableAttributedString {
         var start = 0
         var ranges: [NSRange] = []
@@ -434,7 +434,7 @@ extension String {
         return false
     }
     
-    //copy string to pasteboard
+    //拷贝文字到剪贴板
     public func addToPasteboard() {
         let pasteboard = UIPasteboard.general
         pasteboard.string = self
@@ -482,14 +482,14 @@ public func ~=<T> (pattern: ((T) -> Bool), value: T) -> Bool {
     return pattern(value)
 }
 
-//Can be used in switch-case
+//前缀
 public func hasPrefix(_ prefix: String) -> (_ value: String) -> Bool {
     return { (value: String) -> Bool in
         value.hasPrefix(prefix)
     }
 }
 
-//Can be used in switch-case
+//后缀
 public func hasSuffix(_ suffix: String) -> (_ value: String) -> Bool {
     return { (value: String) -> Bool in
         value.hasSuffix(suffix)

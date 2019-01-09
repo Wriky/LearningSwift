@@ -17,6 +17,8 @@ class NewsViewController: BaseViewController {
     
     //刷新时间
     var maxBehotTime: TimeInterval = 0.0
+    
+    var newsRequest: NewsRequest!
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -50,35 +52,40 @@ class NewsViewController: BaseViewController {
     }
     
     func loadOnlineData() {
-        RequestHelper.loadNewsFeeds(category: .hot, ttFrom: .pull) { (timeInterval, news) in
-            if self.tableView.mj_header.isRefreshing {
-                self.tableView.mj_header.endRefreshing()
-            }
-            
-            self.maxBehotTime = timeInterval
-            self.items = news
-            
-            self.tableView.reloadData()
-        }
+//        RequestHelper.loadNewsFeeds(category: .hot, ttFrom: .pull) { (timeInterval, news) in
+//            if self.tableView.mj_header.isRefreshing {
+//                self.tableView.mj_header.endRefreshing()
+//            }
+//
+//            self.maxBehotTime = timeInterval
+//            self.items = news
+//
+//            self.tableView.reloadData()
+//        }
+        
     }
     
     func loadMoreOnlineData() {
         
-        RequestHelper.loadMoreNewsFeeds(category: .hot, ttFrom: .loadMore, maxBehotTime: self.maxBehotTime, listCount: self.items.count) { (news) in
-            
-            self.tableView.mj_footer.pullingPercent = 0
-            if self.tableView.mj_footer.isRefreshing {
-                self.tableView.mj_footer.endRefreshing()
-            }
-            
-            if news.count == 0 {
-                SVProgressHUD.showInfo(withStatus: "没有更多数据啦！")
-                return
-            }
-            
-            self.items += news
-            self.tableView.reloadData()
-        }
+//        RequestHelper.loadMoreNewsFeeds(category: .hot, ttFrom: .loadMore, maxBehotTime: self.maxBehotTime, listCount: self.items.count) { (news) in
+//
+//            self.tableView.mj_footer.pullingPercent = 0
+//            if self.tableView.mj_footer.isRefreshing {
+//                self.tableView.mj_footer.endRefreshing()
+//            }
+//
+//            if news.count == 0 {
+//                SVProgressHUD.showInfo(withStatus: "没有更多数据啦！")
+//                return
+//            }
+//
+//            self.items += news
+//            self.tableView.reloadData()
+//        }
+        
+        
+        
+        
     }
     
     func setupRefresh() {
@@ -126,3 +133,5 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+extension NewsViewController:

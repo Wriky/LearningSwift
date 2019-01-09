@@ -9,32 +9,23 @@
 import UIKit
 import Alamofire
 
-class NetworkManager: NSObject {
-    public typealias NetworkSuccessHandler = (AnyObject?) -> Void
-    public typealias NetworkFailureHandler = (HTTPURLResponse?, AnyObject?, NSError) -> Void
 
-    var manager: SessionManager?
+class NetworkManager: NSObject {
+    //成功回调
+    public typealias NetworkSuccessHandler = (AnyObject?) -> Void
     
-    static let shared = NetworkManager()
+    //失败回调
+    public typealias NetworkFailureHandler = (NSError) -> Void
+
     
-    private override init() {
-        super.init()
+    /// 进行请求
+    public func startRequest(request: NetworkRequest, success: NetworkSuccessHandler, failure: NetworkFailureHandler) {
+        
     }
+    
+   
 }
 
 extension NetworkManager {
-    func startRequest(_ request: NetworkRequest,
-                      _ success: @escaping NetworkSuccessHandler,
-                      _ failure: @escaping NetworkFailureHandler) -> (){
-        
-        guard request.requestURL().count > 0 else {
-            #if DEBUGSWIFT
-                print("请求路径为空")
-            #endif
-                failure(nil, nil, NSError())
-            return
-        }
-        
-        
-    }
+    
 }

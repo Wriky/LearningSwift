@@ -67,7 +67,7 @@
 		E068EE5421E4902E0018B121 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5321E4902E0018B121 /* NetworkConfig.swift */; };
 		E068EE5621E49A870018B121 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5521E49A870018B121 /* NetworkUtils.swift */; };
 		E068EE5821E49E0D0018B121 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5721E49E0D0018B121 /* NetworkCache.swift */; };
-		E068EE5B21E4A6C90018B121 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5A21E4A6C90018B121 /* NetworkRequest.swift */; };
+		E068EE5D21E58A2F0018B121 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5C21E58A2F0018B121 /* NetworkRequest.swift */; };
 		E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */; };
 		E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEA218C2B7A007FB089 /* CoreUser+CoreDataClass.swift */; };
 		E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEB218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift */; };
@@ -200,7 +200,7 @@
 		E068EE5321E4902E0018B121 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		E068EE5521E49A870018B121 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		E068EE5721E49E0D0018B121 /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
-		E068EE5A21E4A6C90018B121 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		E068EE5C21E58A2F0018B121 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		E071D13821B7D25B003156C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E071D13B21B8B451003156C4 /* LearningSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConst.swift; sourceTree = "<group>"; };
@@ -587,7 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				E068EE4F21E47DAC0018B121 /* NetworkResponse.swift */,
-				E068EE5A21E4A6C90018B121 /* NetworkRequest.swift */,
+				E068EE5C21E58A2F0018B121 /* NetworkRequest.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -875,7 +875,6 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -889,7 +888,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -998,7 +996,7 @@
 				E0379AD421CB6DD100D7AEAF /* UIColor+Extension.swift in Sources */,
 				E0F5688E20EC9C020017BED5 /* SVProgressHUD+Extension.swift in Sources */,
 				E058551521D767150095319D /* GestureBlock.swift in Sources */,
-				E068EE5B21E4A6C90018B121 /* NetworkRequest.swift in Sources */,
+				E068EE5D21E58A2F0018B121 /* NetworkRequest.swift in Sources */,
 				E006B5B8211A93310063F2A3 /* BaseView.swift in Sources */,
 				E0E6237A21B926DD007EA234 /* EmotionModel.swift in Sources */,
 				E058551921D775BC0095319D /* NSAttributedString+Extension.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 
 public class NetworkConfig {
     // Base url
-    var baseUrl: String = ""
+    var baseUrl: String = "https://is.snssdk.com"
     
     static let shared = NetworkConfig()
     

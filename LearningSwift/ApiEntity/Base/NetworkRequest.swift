@@ -2,7 +2,7 @@
 //  NetworkRequest.swift
 //  LearningSwift
 //
-//  Created by wangyuan on 2019/1/8.
+//  Created by wangyuan on 2019/1/9.
 //  Copyright © 2019 wangyuan. All rights reserved.
 //
 
@@ -10,9 +10,10 @@ import Foundation
 import Alamofire
 
 class NetworkRequest: NSObject {
-    /// 返回数据
-    var response: NetworkResponse?    
     
+    /// 返回数据
+    var response: NetworkResponse?
+
     /// === 子类继承 ===
     //请求链接
     public func requestURL() -> String {
@@ -29,4 +30,8 @@ class NetworkRequest: NSObject {
         return .get;
     }
     
+    //请求头
+    public func requestHeaderFieldValueDictionary() -> [String: String]? {
+        return nil;
+    }
 }

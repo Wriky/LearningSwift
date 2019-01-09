@@ -92,7 +92,7 @@ extension Dictionary {
         return !contains { !test($0, $1) }
     }
     
-    //Unserialize JSON string into Dictionary
+    //Json字符串 转 字典
     public static func constructFromJSON (json: String) -> Dictionary? {
         if let data = (try? JSONSerialization.jsonObject(
             with: json.data(using: String.Encoding.utf8,
@@ -104,7 +104,7 @@ extension Dictionary {
         }
     }
     
-    //Serialize Dictionary into JSON string
+    //字典 转 Json字符串
     public func formatJSON() -> String? {
         if let jsonData = try? JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions()) {
             let jsonStr = String(data: jsonData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
