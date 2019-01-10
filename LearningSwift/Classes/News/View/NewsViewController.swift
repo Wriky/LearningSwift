@@ -53,17 +53,22 @@ class NewsViewController: BaseViewController {
     }
     
     func loadOnlineData() {
-        RequestHelper.loadNewsFeeds(category: .hot, ttFrom: .pull) { (timeInterval, news) in
-            if self.tableView.mj_header.isRefreshing {
-                self.tableView.mj_header.endRefreshing()
-            }
-
-            self.maxBehotTime = timeInterval
-            self.items = news
-
-            self.tableView.reloadData()
-        }
+//        RequestHelper.loadNewsFeeds(category: .hot, ttFrom: .pull) { (timeInterval, news) in
+//            if self.tableView.mj_header.isRefreshing {
+//                self.tableView.mj_header.endRefreshing()
+//            }
+//
+//            self.maxBehotTime = timeInterval
+//            self.items = news
+//
+//            self.tableView.reloadData()
+//        }
         
+        NewsViewModel.requestNewsData(category: .hot, ttFrom: .pull, success: { (response) in
+            print(response as Any)
+        }) { (error) in
+            print(error)
+        }
     }
     
     func loadMoreOnlineData() {

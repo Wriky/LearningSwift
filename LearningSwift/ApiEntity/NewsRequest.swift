@@ -12,10 +12,12 @@ class NewsRequest: NetworkRequest {
     
     var category: NewsTitleCategory?
     var tt_From: TTFrom?
+    var pullTime: TimeInterval?
     
-    init(category: NewsTitleCategory, ttFrom: TTFrom) {
+    init(category: NewsTitleCategory, ttFrom: TTFrom, pullTime: TimeInterval) {
         self.category = category
         self.tt_From = ttFrom
+        self.pullTime = pullTime
     }
     
     override func requestURL() -> String {
@@ -23,13 +25,12 @@ class NewsRequest: NetworkRequest {
     }
     
     override func requestParameters() -> [String : Any]? {
-        let pullTime = Date().timeIntervalSince1970
 
         return ["device_id": device_id,
                 "count": 20,
                 "list_count": 15,
                 "category": category!.rawValue,
-                "min_behot_time": pullTime,
+                "min_behot_time": pullTime!,
                 "strict": 0,
                 "detail": 1,
                 "refresh_reason": 1,
@@ -38,3 +39,5 @@ class NewsRequest: NetworkRequest {
     }
    
 }
+
+

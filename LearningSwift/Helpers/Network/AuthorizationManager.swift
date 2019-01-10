@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 public class AuthorizationManager: SessionManager {
-    public typealias NetworkSuccessHandler = (AnyObject?) -> Void
-    public typealias NetworkFailureHandler = (HTTPURLResponse?, AnyObject?, NSError) -> Void
+    public typealias NetworkSuccessBlock = (AnyObject?) -> Void
+    public typealias NetworkFailureBlock = (HTTPURLResponse?, AnyObject?, NSError) -> Void
     
     private typealias CachedTask = (HTTPURLResponse?, AnyObject?, NSError?) -> Void
     
@@ -19,13 +19,13 @@ public class AuthorizationManager: SessionManager {
     private var isRefreshing = false
     
     @discardableResult
-    public func startRequest(
+    public func startAuthorizationRequest(
         method: HTTPMethod,
         URLString: URLConvertible,
         parameters: [String: AnyObject]?,
         encoding: ParameterEncoding,
-        success: NetworkSuccessHandler?,
-        failure: NetworkFailureHandler?)-> DataRequest?
+        success: NetworkSuccessBlock?,
+        failure: NetworkFailureBlock?)-> DataRequest?
     {
         let cachedTask: CachedTask = { [weak self] URLResponse, data, error in
             guard let strongSelf = self else { return }
@@ -33,7 +33,7 @@ public class AuthorizationManager: SessionManager {
             if let error = error {
                 failure?(URLResponse, data, error)
             } else {
-            strongSelf.startRequest(
+            strongSelf.startAuthorizationRequest(
                     method: method,
                     URLString: URLString,
                     parameters: parameters,

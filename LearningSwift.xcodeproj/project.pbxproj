@@ -68,6 +68,7 @@
 		E068EE5621E49A870018B121 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5521E49A870018B121 /* NetworkUtils.swift */; };
 		E068EE5821E49E0D0018B121 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5721E49E0D0018B121 /* NetworkCache.swift */; };
 		E068EE5D21E58A2F0018B121 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE5C21E58A2F0018B121 /* NetworkRequest.swift */; };
+		E068EE6121E59F620018B121 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E068EE6021E59F620018B121 /* NewsViewModel.swift */; };
 		E071D13D21B8B6A4003156C4 /* CoreDataConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */; };
 		E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEA218C2B7A007FB089 /* CoreUser+CoreDataClass.swift */; };
 		E0901BF3218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0901BEB218C2B7A007FB089 /* CoreUser+CoreDataProperties.swift */; };
@@ -201,6 +202,7 @@
 		E068EE5521E49A870018B121 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		E068EE5721E49E0D0018B121 /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
 		E068EE5C21E58A2F0018B121 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		E068EE6021E59F620018B121 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		E071D13821B7D25B003156C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E071D13B21B8B451003156C4 /* LearningSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E071D13C21B8B6A4003156C4 /* CoreDataConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConst.swift; sourceTree = "<group>"; };
@@ -342,10 +344,9 @@
 		E006B5AC2119A2DF0063F2A3 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				E068EE5F21E59F1C0018B121 /* View */,
+				E068EE5E21E59F120018B121 /* ViewModel */,
 				E03DCF892133FA1400BB2E43 /* Model */,
-				E0F5687820EC61CF0017BED5 /* NewsViewController.swift */,
-				E068EE4621E2F8070018B121 /* NewsDetailViewController.swift */,
-				E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -590,6 +591,24 @@
 				E068EE5C21E58A2F0018B121 /* NetworkRequest.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		E068EE5E21E59F120018B121 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E068EE6021E59F620018B121 /* NewsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E068EE5F21E59F1C0018B121 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5687820EC61CF0017BED5 /* NewsViewController.swift */,
+				E068EE4621E2F8070018B121 /* NewsDetailViewController.swift */,
+				E03DCF872133EEBF00BB2E43 /* NewsListTableCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E0901854218AEE79007FB089 /* CoreData */ = {
@@ -958,6 +977,7 @@
 				E058550921D70F8C0095319D /* UIApplication+Extension.swift in Sources */,
 				E0F5687D20EC77540017BED5 /* BaseTableViewController.swift in Sources */,
 				E0379AE021D0D40900D7AEAF /* UIFont+Extension.swift in Sources */,
+				E068EE6121E59F620018B121 /* NewsViewModel.swift in Sources */,
 				E044C79B20EA2AFF00E9569B /* CommunityViewController.swift in Sources */,
 				E0379AE221D0E02000D7AEAF /* UIDevice+Extension.swift in Sources */,
 				E01CC10D214213E800CAFD93 /* CoreDataHelper.swift in Sources */,

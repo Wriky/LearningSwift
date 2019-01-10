@@ -9,12 +9,8 @@
 import Foundation
 import Alamofire
 
-class NetworkRequest: NSObject {
+public class NetworkRequest: NSObject {
     
-    /// 返回数据
-    var response: NetworkResponse?
-
-    /// === 子类继承 ===
     //请求链接
     public func requestURL() -> String {
         return ""
@@ -31,7 +27,12 @@ class NetworkRequest: NSObject {
     }
     
     //请求头
-    public func requestHeaderFieldValueDictionary() -> [String: String]? {
-        return nil;
+    public func requestHeaderFieldValueDictionary() -> Dictionary<String,String>? {
+        return nil
+    }
+    
+    //编码类型
+    public func requestParameterEncoding() -> ParameterEncoding {
+        return URLEncoding.default
     }
 }
