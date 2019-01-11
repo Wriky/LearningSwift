@@ -11,6 +11,11 @@ import Alamofire
 
 public class NetworkRequest: NSObject {
     
+    //服务器地址
+    public func baseURL() -> String {
+        return BaseUrl
+    }
+    
     //请求链接
     public func requestURL() -> String {
         return ""

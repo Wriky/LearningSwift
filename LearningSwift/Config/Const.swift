@@ -14,7 +14,7 @@ let iid: Int64 = 5034850950
 
 
 //服务器地址
-let BaseUrl = "https://is.snssdk.com"
+let BaseUrl = "http://wd-api.h2he.cn"
 
 //屏幕宽度
 let kScreenWidth = UIScreen.main.bounds.size.width

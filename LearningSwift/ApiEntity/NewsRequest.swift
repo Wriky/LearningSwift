@@ -13,11 +13,17 @@ class NewsRequest: NetworkRequest {
     var category: NewsTitleCategory?
     var tt_From: TTFrom?
     var pullTime: TimeInterval?
-    
-    init(category: NewsTitleCategory, ttFrom: TTFrom, pullTime: TimeInterval) {
+    var listCount: Int?
+
+    init(category: NewsTitleCategory, ttFrom: TTFrom, pullTime: TimeInterval, listCount: Int) {
         self.category = category
         self.tt_From = ttFrom
         self.pullTime = pullTime
+        self.listCount = listCount
+    }
+    
+    override func baseURL() -> String {
+       return "https://is.snssdk.com"
     }
     
     override func requestURL() -> String {
@@ -28,7 +34,7 @@ class NewsRequest: NetworkRequest {
 
         return ["device_id": device_id,
                 "count": 20,
-                "list_count": 15,
+                "list_count": listCount,
                 "category": category!.rawValue,
                 "min_behot_time": pullTime!,
                 "strict": 0,

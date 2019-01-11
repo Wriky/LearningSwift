@@ -20,12 +20,12 @@ public class NetworkManager: NSObject {
    
     /// 进行请求
     @discardableResult
-    public func startRequest(requestEntity: NetworkRequest,
+    public class func startRequest(requestEntity: NetworkRequest,
                              success: NetworkSuccessHandler?,
                              failure: NetworkFailureHandler?) -> DataRequest {
         
         
-        let urlStr: URLConvertible = BaseUrl + requestEntity.requestURL()
+        let urlStr: URLConvertible = requestEntity.baseURL() + requestEntity.requestURL()
         let method: HTTPMethod = requestEntity.requestHttpMethod()
         let parameters: [String: Any] = requestEntity.requestParameters()!
         let encoding: ParameterEncoding = requestEntity.requestParameterEncoding()
@@ -37,29 +37,14 @@ public class NetworkManager: NSObject {
           
             if response.result.isSuccess {
                 if let value = response.result.value {
-                    let json = JSON(value)
-                    
+                    success?(value as AnyObject)
+                } else {
+                    failure?(response.error! as NSError)
                 }
-                
+            } else {
+                failure?(response.error! as NSError)
+
             }
-            
-            
-//            if let error = response.error {
-//                failure?(error as NSError)
-//            } else {
-//                if let value = response.result.value {
-//                    let json = JSON(value)
-//                    guard json["message"] == "success" else { return }
-//                    guard let datas = json["data"].array else { return }
-
-
-//                    completionHandler(pullTime, datas.compactMap({
-//                        NewsModel.deserialize(from: $0["content"].string)
-//                    }))
-//                }
-//
-//                success?(response.data as AnyObject)
-//            }
         }
         return request
     }

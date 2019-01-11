@@ -53,19 +53,16 @@ class NewsViewController: BaseViewController {
     }
     
     func loadOnlineData() {
-//        RequestHelper.loadNewsFeeds(category: .hot, ttFrom: .pull) { (timeInterval, news) in
-//            if self.tableView.mj_header.isRefreshing {
-//                self.tableView.mj_header.endRefreshing()
-//            }
-//
-//            self.maxBehotTime = timeInterval
-//            self.items = news
-//
-//            self.tableView.reloadData()
-//        }
-        
-        NewsViewModel.requestNewsData(category: .hot, ttFrom: .pull, success: { (response) in
-            print(response as Any)
+
+        self.maxBehotTime = Date().timeIntervalSince1970
+
+        NewsViewModel.requestNewsData(category: .hot, ttFrom: .pull, pullTime: self.maxBehotTime, success: { (response) in
+            
+            if self.tableView.mj_header.isRefreshing {
+                self.tableView.mj_header.endRefreshing()
+            }
+            self.items = response as! [NewsModel]
+            self.tableView.reloadData()
         }) { (error) in
             print(error)
         }
@@ -73,20 +70,20 @@ class NewsViewController: BaseViewController {
     
     func loadMoreOnlineData() {
         
-        RequestHelper.loadMoreNewsFeeds(category: .hot, ttFrom: .loadMore, maxBehotTime: self.maxBehotTime, listCount: self.items.count) { (news) in
-
+        NewsViewModel.requestMoreNewsData(category: .hot, ttFrom: .loadMore, pullTime: self.maxBehotTime, listCount: self.items.count, success: { (response) in
             self.tableView.mj_footer.pullingPercent = 0
             if self.tableView.mj_footer.isRefreshing {
                 self.tableView.mj_footer.endRefreshing()
             }
-
+            let news = response as! [NewsModel]
             if news.count == 0 {
                 SVProgressHUD.showInfo(withStatus: "没有更多数据啦！")
                 return
             }
-
             self.items += news
             self.tableView.reloadData()
+        }) { (error) in
+            
         }
     }
     
