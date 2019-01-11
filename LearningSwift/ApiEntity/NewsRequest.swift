@@ -34,7 +34,7 @@ class NewsRequest: NetworkRequest {
 
         return ["device_id": device_id,
                 "count": 20,
-                "list_count": listCount,
+                "list_count": listCount as Any,
                 "category": category!.rawValue,
                 "min_behot_time": pullTime!,
                 "strict": 0,

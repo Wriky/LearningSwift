@@ -33,6 +33,7 @@ class FriendListViewController: BaseViewController {
         
         self.configUI()
         self.loadCoreData()
+//        self.loadOnlineData()
     }
     
     func configUI() {
@@ -46,10 +47,11 @@ class FriendListViewController: BaseViewController {
     }
     
     func loadOnlineData() {
-        RequestHelper.loadFriendsList { (responseArr) in
+        ChatViewModel.requestFriendList(success: { (response) in
             
-//            self.items = responseArr
-            self.tableView.reloadData()
+            
+        }) { (error) in
+            
         }
     }
     

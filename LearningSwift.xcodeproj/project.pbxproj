@@ -49,6 +49,7 @@
 		E04D877020DFA045006A6ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D876E20DFA045006A6ACD /* LaunchScreen.storyboard */; };
 		E04D877B20DFA046006A6ACD /* LearningSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D877A20DFA046006A6ACD /* LearningSwiftTests.swift */; };
 		E04D878620DFA046006A6ACD /* LearningSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */; };
+		E053F01E21E8947E008A1C4F /* FriendListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053F01D21E8947E008A1C4F /* FriendListRequest.swift */; };
 		E058550721D627CB0095319D /* Character+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550621D627CB0095319D /* Character+Extension.swift */; };
 		E058550921D70F8C0095319D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550821D70F8C0095319D /* UIApplication+Extension.swift */; };
 		E058550B21D753B90095319D /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058550A21D753B90095319D /* DispatchQueue+Extension.swift */; };
@@ -183,6 +184,7 @@
 		E04D878120DFA046006A6ACD /* LearningSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04D878520DFA046006A6ACD /* LearningSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSwiftUITests.swift; sourceTree = "<group>"; };
 		E04D878720DFA046006A6ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E053F01D21E8947E008A1C4F /* FriendListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRequest.swift; sourceTree = "<group>"; };
 		E058550621D627CB0095319D /* Character+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extension.swift"; sourceTree = "<group>"; };
 		E058550821D70F8C0095319D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		E058550A21D753B90095319D /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 			children = (
 				E068EE5921E4A6AD0018B121 /* Base */,
 				E068EE5121E47F200018B121 /* NewsRequest.swift */,
+				E053F01D21E8947E008A1C4F /* FriendListRequest.swift */,
 			);
 			path = ApiEntity;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				E006B5B02119A3580063F2A3 /* ChatListTableViewDataSource.swift in Sources */,
 				E058550F21D75F5C0095319D /* UILabel+Extension.swift in Sources */,
 				E0901BF9218C2B7A007FB089 /* CoreFriend+CoreDataProperties.swift in Sources */,
+				E053F01E21E8947E008A1C4F /* FriendListRequest.swift in Sources */,
 				E0901BF2218C2B7A007FB089 /* CoreUser+CoreDataClass.swift in Sources */,
 				E068EE5421E4902E0018B121 /* NetworkConfig.swift in Sources */,
 				E0901BF7218C2B7A007FB089 /* CoreMessage+CoreDataProperties.swift in Sources */,
